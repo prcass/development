@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Validation Fix Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .output { background: #f5f5f5; padding: 10px; margin: 10px 0; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+        button { padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Ranking Validation Fix Test</h1>
+    <p>This test verifies that the RankingValidator works correctly with the fixed data access patterns.</p>
+    
+    <button onclick="testBasicRanking()">Test Basic Ranking</button>
+    <button onclick="testRealisticSimulation()">Test Realistic Simulation</button>
+    <button onclick="clearOutput()">Clear Output</button>
+    
+    <div id="output" class="output"></div>
+
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+    
+    <script>
+        function log(message, type = 'info') {
+            const output = document.getElementById('output');
+            const div = document.createElement('div');
+            div.className = type;
+            div.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            output.appendChild(div);
+        }
+
+        function clearOutput() {
+            document.getElementById('output').innerHTML = '';
+        }
+
+        function testBasicRanking() {
+            clearOutput();
+            log('Testing basic ranking functionality...', 'info');
+            
+            try {
+                if (typeof window.RankingValidator === 'undefined') {
+                    log('❌ RankingValidator not available', 'error');
+                    return;
+                }
+                
+                // Test with correct numeric IDs
+                const testCards = ['001', '002', '003']; // Germany, France, Italy
+                const testChallenge = 'gdp_total';
+                const testPrompt = { 
+                    challenge: 'gdp_total', 
+                    label: 'Countries ranked from highest to lowest by GDP' 
+                };
+                
+                log(`Testing cards: ${testCards.join(', ')}`, 'info');
+                log(`Challenge: ${testChallenge}`, 'info');
+                
+                // Check if items exist
+                const categoryData = window.GAME_DATA.categories.countries;
+                testCards.forEach(cardId => {
+                    const item = categoryData.items[cardId];
+                    if (item) {
+                        log(`✅ Card ${cardId}: ${item.name} (GDP: $${item.gdp_total})`, 'success');
+                    } else {
+                        log(`❌ Card ${cardId}: Not found`, 'error');
+                    }
+                });
+                
+                // Test correct ranking calculation
+                const correctRanking = window.RankingValidator.calculateCorrectRanking(
+                    testCards, testChallenge, testPrompt
+                );
+                
+                log(`Correct ranking: ${correctRanking.join(' → ')}`, 'success');
+                
+                // Test validation
+                const validation = window.RankingValidator.validatePlayerRanking(
+                    correctRanking, testChallenge, testPrompt
+                );
+                
+                log(`Validation result: ${validation.isValid ? 'VALID' : 'INVALID'}`, 
+                    validation.isValid ? 'success' : 'error');
+                
+                if (validation.isValid) {
+                    log('✅ Basic ranking test PASSED', 'success');
+                } else {
+                    log(`❌ Basic ranking test FAILED: ${validation.message}`, 'error');
+                }
+                
+            } catch (error) {
+                log(`❌ Test failed with error: ${error.message}`, 'error');
+                console.error('Full error:', error);
+            }
+        }
+
+        function testRealisticSimulation() {
+            clearOutput();
+            log('Testing realistic simulation with random data...', 'info');
+            
+            try {
+                if (typeof window.RankingValidator === 'undefined') {
+                    log('❌ RankingValidator not available', 'error');
+                    return;
+                }
+                
+                const trials = 5;
+                let successes = 0;
+                
+                for (let i = 0; i < trials; i++) {
+                    // Select random category
+                    const categories = Object.keys(window.GAME_DATA.categories);
+                    const category = categories[Math.floor(Math.random() * categories.length)];
+                    const categoryData = window.GAME_DATA.categories[category];
+                    
+                    // Check if prompts exist
+                    if (!categoryData || !categoryData.prompts) {
+                        log(`⚠️ Trial ${i+1}: Missing prompts for category ${category}`, 'error');
+                        continue;
+                    }
+                    
+                    // Select random prompt
+                    const prompts = categoryData.prompts;
+                    const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+                    const challenge = randomPrompt.challenge;
+                    
+                    // Check if items exist
+                    if (!categoryData.items) {
+                        log(`⚠️ Trial ${i+1}: Missing items for category ${category}`, 'error');
+                        continue;
+                    }
+                    
+                    // Select random items
+                    const allItems = Object.keys(categoryData.items);
+                    const testCards = allItems.slice(0, 3); // Take first 3 items
+                    
+                    // Calculate correct ranking
+                    const correctRanking = window.RankingValidator.calculateCorrectRanking(
+                        testCards, challenge, randomPrompt
+                    );
+                    
+                    // Validate the ranking
+                    const validation = window.RankingValidator.validatePlayerRanking(
+                        correctRanking, challenge, randomPrompt
+                    );
+                    
+                    if (validation.isValid) {
+                        successes++;
+                        log(`✅ Trial ${i+1}: ${category}/${challenge} - PASSED`, 'success');
+                    } else {
+                        log(`❌ Trial ${i+1}: ${category}/${challenge} - FAILED: ${validation.message}`, 'error');
+                    }
+                }
+                
+                log(`\n📊 Simulation Results: ${successes}/${trials} successful`, 
+                    successes === trials ? 'success' : 'error');
+                
+                if (successes === trials) {
+                    log('🎉 All trials PASSED - Ranking validation is working correctly!', 'success');
+                } else {
+                    log(`⚠️ ${trials - successes} trials failed - Check the errors above`, 'error');
+                }
+                
+            } catch (error) {
+                log(`❌ Simulation failed with error: ${error.message}`, 'error');
+                console.error('Full error:', error);
+            }
+        }
+
+        // Auto-test on page load
+        window.addEventListener('load', () => {
+            log('🚀 Test page loaded. Click buttons to run tests.', 'info');
+        });
+    </script>
+</body>
+</html>

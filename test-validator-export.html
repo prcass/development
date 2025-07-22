@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick RankingValidator Export Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .results {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .error { color: #dc3545; }
+        .success { color: #28a745; }
+        .info { color: #007bff; }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="results">
+        <h1>🔧 RankingValidator Export Test</h1>
+        <p>Quick test to verify RankingValidator is now accessible globally.</p>
+        
+        <button onclick="testValidatorAccess()">Test Validator Access</button>
+        <button onclick="testBasicFunction()">Test Basic Function</button>
+        
+        <div id="output" style="margin-top: 20px;"></div>
+    </div>
+
+    <!-- Load game dependencies -->
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+    
+    <script>
+        let output = document.getElementById('output');
+        
+        function log(message, type = 'info') {
+            const emoji = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
+            output.innerHTML += `<div class="${type}">${emoji} ${message}</div>`;
+        }
+        
+        function testValidatorAccess() {
+            output.innerHTML = '';
+            log('Testing RankingValidator access...', 'info');
+            
+            // Test if class exists
+            if (typeof window.RankingValidator === 'undefined') {
+                log('❌ RankingValidator not found in window object', 'error');
+                return;
+            }
+            log('✅ RankingValidator found in window object', 'success');
+            
+            // Test if methods exist
+            const methods = ['detectChallengeType', 'calculateCorrectRanking', 'validatePlayerRanking'];
+            methods.forEach(method => {
+                if (typeof window.RankingValidator[method] === 'function') {
+                    log(`✅ Method ${method} exists`, 'success');
+                } else {
+                    log(`❌ Method ${method} missing`, 'error');
+                }
+            });
+            
+            log('RankingValidator access test complete!', 'success');
+        }
+        
+        function testBasicFunction() {
+            output.innerHTML = '';
+            log('Testing basic RankingValidator functionality...', 'info');
+            
+            try {
+                if (typeof window.RankingValidator === 'undefined') {
+                    log('❌ RankingValidator not available', 'error');
+                    return;
+                }
+                
+                // Test challenge type detection
+                const testPrompt1 = { label: 'Countries ranked from lowest to highest by unemployment rate' };
+                const type1 = window.RankingValidator.detectChallengeType(testPrompt1);
+                log(`Challenge type detection 1: "${testPrompt1.label}" → ${type1}`, type1 === 'ascending' ? 'success' : 'error');
+                
+                const testPrompt2 = { label: 'Movies ranked from highest to lowest by box office revenue' };
+                const type2 = window.RankingValidator.detectChallengeType(testPrompt2);
+                log(`Challenge type detection 2: "${testPrompt2.label}" → ${type2}`, type2 === 'descending' ? 'success' : 'error');
+                
+                // Test with game data
+                if (window.GAME_DATA && window.GAME_DATA.categories.countries) {
+                    const testCards = ['001', '002', '003'];
+                    const testChallenge = 'gdp_total';
+                    const testPrompt = { label: 'Countries ranked from highest to lowest by GDP' };
+                    
+                    const correctRanking = window.RankingValidator.calculateCorrectRanking(
+                        testCards, testChallenge, testPrompt
+                    );
+                    
+                    log(`Correct ranking calculation: ${testCards.join(', ')} → ${correctRanking.join(', ')}`, 'success');
+                    
+                    // Test validation
+                    const validation = window.RankingValidator.validatePlayerRanking(
+                        testCards, testChallenge, testPrompt
+                    );
+                    
+                    log(`Validation result: ${validation.isCorrect ? 'CORRECT' : 'INCORRECT'}`, validation.isCorrect ? 'success' : 'info');
+                    log(`Validation object:`, 'info');
+                    log(`<pre>${JSON.stringify(validation, null, 2)}</pre>`, 'info');
+                } else {
+                    log('⚠️ Game data not available for advanced testing', 'error');
+                }
+                
+                log('✅ Basic functionality test complete!', 'success');
+                
+            } catch (error) {
+                log(`❌ Test failed: ${error.message}`, 'error');
+                console.error('Full error:', error);
+            }
+        }
+        
+        // Auto-test on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                log('Page loaded. Click buttons to test the RankingValidator export fix.', 'info');
+            }, 100);
+        });
+    </script>
+</body>
+</html>

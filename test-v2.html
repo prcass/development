@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outrank Automated Test v2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .status {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        
+        .results {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .results.show {
+            display: block;
+        }
+        
+        .error {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .success {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .warning {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        
+        pre {
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        
+        .config-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+        
+        .config-section h3 {
+            margin-top: 0;
+        }
+        
+        .config-option {
+            margin: 10px 0;
+        }
+        
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+        
+        input[type="number"], select {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Outrank Automated Test v2</h1>
+        
+        <div class="config-section">
+            <h3>Test Configuration</h3>
+            
+            <div class="config-option">
+                <label>Preset:</label>
+                <select id="preset" onchange="loadPreset()">
+                    <option value="custom">Custom</option>
+                    <option value="quick">Quick (3 rounds)</option>
+                    <option value="thorough">Thorough (10 rounds)</option>
+                    <option value="headless">Headless (no UI)</option>
+                    <option value="debug">Debug (always fail)</option>
+                </select>
+            </div>
+            
+            <div class="config-option">
+                <label>Max Rounds:</label>
+                <input type="number" id="maxRounds" value="6" min="1" max="20">
+            </div>
+            
+            <div class="config-option">
+                <label>Block Frequency:</label>
+                <input type="number" id="blockFrequency" value="0.4" min="0" max="1" step="0.1">
+            </div>
+            
+            <div class="config-option">
+                <label>Ranking Accuracy:</label>
+                <input type="number" id="rankingAccuracy" value="0.7" min="0" max="1" step="0.1">
+            </div>
+            
+            <div class="config-option">
+                <label>Show UI:</label>
+                <input type="checkbox" id="showUI" checked>
+            </div>
+            
+            <div class="config-option">
+                <label>UI Delay (ms):</label>
+                <input type="number" id="uiDelay" value="300" min="0" max="2000" step="100">
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button onclick="runTest()" id="runBtn">Run Test</button>
+            <button onclick="openGame()" id="gameBtn">Open Game</button>
+            <button onclick="viewLastResults()" id="resultsBtn">View Last Results</button>
+            <button onclick="clearResults()" id="clearBtn">Clear Results</button>
+        </div>
+        
+        <div class="status" id="status">
+            Ready to run test. Make sure the game is loaded in another tab/window.
+        </div>
+        
+        <div class="results" id="results"></div>
+    </div>
+    
+    <script>
+        let currentTest = null;
+        
+        function updateStatus(message, type = 'info') {
+            const status = document.getElementById('status');
+            status.innerHTML = message;
+            status.className = 'status ' + type;
+        }
+        
+        function loadPreset() {
+            const preset = document.getElementById('preset').value;
+            
+            if (preset === 'custom') return;
+            
+            const configs = {
+                quick: {
+                    maxRounds: 3,
+                    blockFrequency: 0.4,
+                    rankingAccuracy: 0.7,
+                    showUI: true,
+                    uiDelay: 100
+                },
+                thorough: {
+                    maxRounds: 10,
+                    blockFrequency: 0.4,
+                    rankingAccuracy: 0.5,
+                    showUI: true,
+                    uiDelay: 200
+                },
+                headless: {
+                    maxRounds: 6,
+                    blockFrequency: 0.4,
+                    rankingAccuracy: 0.7,
+                    showUI: false,
+                    uiDelay: 0
+                },
+                debug: {
+                    maxRounds: 2,
+                    blockFrequency: 1.0,
+                    rankingAccuracy: 0.0,
+                    showUI: true,
+                    uiDelay: 500
+                }
+            };
+            
+            const config = configs[preset];
+            if (config) {
+                document.getElementById('maxRounds').value = config.maxRounds;
+                document.getElementById('blockFrequency').value = config.blockFrequency;
+                document.getElementById('rankingAccuracy').value = config.rankingAccuracy;
+                document.getElementById('showUI').checked = config.showUI;
+                document.getElementById('uiDelay').value = config.uiDelay;
+            }
+        }
+        
+        async function runTest() {
+            const runBtn = document.getElementById('runBtn');
+            runBtn.disabled = true;
+            
+            try {
+                // Check if game window exists
+                const gameWindow = window.opener || window.parent;
+                if (!gameWindow || !gameWindow.OutrankAutomatedTest) {
+                    updateStatus('❌ Game not loaded! Please open the game first.', 'error');
+                    return;
+                }
+                
+                // Get configuration
+                const config = {
+                    maxRounds: parseInt(document.getElementById('maxRounds').value),
+                    blockFrequency: parseFloat(document.getElementById('blockFrequency').value),
+                    rankingAccuracy: parseFloat(document.getElementById('rankingAccuracy').value),
+                    showUI: document.getElementById('showUI').checked,
+                    uiDelay: parseInt(document.getElementById('uiDelay').value)
+                };
+                
+                updateStatus('🚀 Running automated test...', 'info');
+                
+                // Run test in game window
+                currentTest = new gameWindow.OutrankAutomatedTest(config);
+                const results = await currentTest.run();
+                
+                // Display results
+                displayResults(results);
+                
+                if (results.errors.length === 0) {
+                    updateStatus('✅ Test completed successfully!', 'success');
+                } else {
+                    updateStatus(`❌ Test completed with ${results.errors.length} errors`, 'error');
+                }
+                
+            } catch (error) {
+                console.error('Test error:', error);
+                updateStatus(`❌ Test failed: ${error.message}`, 'error');
+            } finally {
+                runBtn.disabled = false;
+            }
+        }
+        
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            
+            let html = '<h2>Test Results</h2>';
+            
+            // Summary
+            html += '<div class="summary">';
+            html += `<p><strong>Test ID:</strong> ${results.testId}</p>`;
+            html += `<p><strong>Duration:</strong> ${results.summary.duration}ms</p>`;
+            html += `<p><strong>Rounds Played:</strong> ${results.summary.roundsPlayed}</p>`;
+            html += `<p><strong>Status:</strong> ${results.summary.testPassed ? 
+                '<span class="success">PASSED</span>' : 
+                '<span class="error">FAILED</span>'}</p>`;
+            html += `<p><strong>Errors:</strong> ${results.errors.length}</p>`;
+            html += `<p><strong>Warnings:</strong> ${results.warnings.length}</p>`;
+            html += '</div>';
+            
+            // Player Stats
+            html += '<h3>Player Statistics</h3>';
+            html += '<pre>' + JSON.stringify(results.playerStats, null, 2) + '</pre>';
+            
+            // Errors
+            if (results.errors.length > 0) {
+                html += '<h3 class="error">Errors</h3>';
+                html += '<ul>';
+                results.errors.forEach(error => {
+                    html += `<li><strong>${error.code}:</strong> ${error.message} (Round ${error.round || 'N/A'})</li>`;
+                });
+                html += '</ul>';
+            }
+            
+            // Warnings
+            if (results.warnings.length > 0) {
+                html += '<h3 class="warning">Warnings</h3>';
+                html += '<ul>';
+                results.warnings.forEach(warning => {
+                    html += `<li><strong>${warning.code}:</strong> ${warning.message}</li>`;
+                });
+                html += '</ul>';
+            }
+            
+            // Rounds Summary
+            html += '<h3>Rounds Summary</h3>';
+            html += '<pre>' + JSON.stringify(results.rounds.map(r => ({
+                round: r.round,
+                category: r.category,
+                winner: r.bidWinner,
+                bid: r.bidAmount,
+                success: r.bidSuccess,
+                blocks: r.blocks.length,
+                duration: r.duration + 'ms'
+            })), null, 2) + '</pre>';
+            
+            resultsDiv.innerHTML = html;
+            resultsDiv.classList.add('show');
+            
+            // Save to window for debugging
+            window.lastTestResults = results;
+        }
+        
+        function openGame() {
+            // Try to open game in new window
+            const gameUrl = 'index.html';
+            const gameWindow = window.open(gameUrl, 'outrank_game');
+            
+            if (!gameWindow) {
+                updateStatus('⚠️ Please allow popups to open the game', 'warning');
+            } else {
+                // Load the test script in game window
+                setTimeout(() => {
+                    const script = gameWindow.document.createElement('script');
+                    script.src = 'automated-test-v2.js';
+                    gameWindow.document.head.appendChild(script);
+                    updateStatus('✅ Game opened and test system loaded', 'success');
+                }, 1000);
+            }
+        }
+        
+        function viewLastResults() {
+            if (window.lastTestResults) {
+                displayResults(window.lastTestResults);
+            } else {
+                updateStatus('No test results available', 'warning');
+            }
+        }
+        
+        function clearResults() {
+            document.getElementById('results').classList.remove('show');
+            window.lastTestResults = null;
+            updateStatus('Results cleared', 'info');
+        }
+    </script>
+</body>
+</html>

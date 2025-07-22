@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Game Mechanics Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .results {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .error { color: #dc3545; }
+        .success { color: #28a745; }
+        .warning { color: #ffc107; }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Base Game Mechanics Test</h1>
+    
+    <div class="results">
+        <h2>Testing Core Game Functions</h2>
+        <p>This page verifies the base game mechanics work correctly with the current configuration.</p>
+        
+        <button onclick="testBaseMechanics()">Test Base Game Mechanics</button>
+        <button onclick="clearOutput()">Clear Output</button>
+        
+        <div id="output" style="margin-top: 20px;"></div>
+    </div>
+
+    <!-- Load game dependencies -->
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+    <script src="automated-test-v3.js"></script>
+    
+    <script>
+        let testOutput = document.getElementById('output');
+        
+        function log(message, type = 'info') {
+            const emoji = type === 'error' ? '❌' : type === 'success' ? '✅' : type === 'warning' ? '⚠️' : 'ℹ️';
+            testOutput.innerHTML += `<div class="${type}">${emoji} ${message}</div>`;
+        }
+        
+        function clearOutput() {
+            testOutput.innerHTML = '';
+        }
+        
+        async function testBaseMechanics() {
+            clearOutput();
+            log('Testing base game mechanics with current configuration...', 'info');
+            
+            try {
+                // Test 1: Check required functions exist
+                log('<h3>1. Function Availability Check</h3>', 'info');
+                const requiredFunctions = [
+                    'newGame', 'GameState', 'calculateAndApplyScores', 
+                    'RankingValidator', 'runTestV3'
+                ];
+                
+                requiredFunctions.forEach(fn => {
+                    const exists = typeof window[fn] !== 'undefined';
+                    log(`${fn}: ${exists ? 'Available' : 'Missing'}`, exists ? 'success' : 'error');
+                });
+                
+                // Test 2: Check game data
+                log('<h3>2. Game Data Check</h3>', 'info');
+                if (window.GAME_DATA?.categories) {
+                    const categories = Object.keys(window.GAME_DATA.categories);
+                    log(`Categories available: ${categories.join(', ')}`, 'success');
+                    
+                    categories.forEach(cat => {
+                        const items = Object.keys(window.GAME_DATA.categories[cat].items || {}).length;
+                        log(`${cat}: ${items} items`, 'info');
+                    });
+                } else {
+                    log('Game data not available', 'error');
+                    return;
+                }
+                
+                // Test 3: Check current rule configuration
+                log('<h3>3. Current Rule Configuration</h3>', 'info');
+                if (typeof ACTIVE_RULES !== 'undefined') {
+                    log(`Token Ownership: ${ACTIVE_RULES.tokenOwnership ? 'ON' : 'OFF'}`, 'info');
+                    log(`Allow Owned in Selection: ${ACTIVE_RULES.allowOwnedInSelection ? 'ON' : 'OFF'}`, 'info');
+                    log(`Token Replacement: ${ACTIVE_RULES.tokenReplacement ? 'ON' : 'OFF'}`, 'info');
+                    log(`Allow Blocking: ${ACTIVE_RULES.allowBlocking ? 'ON' : 'OFF'}`, 'info');
+                    log(`Refresh Used Cards: ${ACTIVE_RULES.refreshUsedCards ? 'ON' : 'OFF'}`, 'info');
+                } else {
+                    log('ACTIVE_RULES not available', 'error');
+                }
+                
+                // Test 4: Run a short automated test
+                log('<h3>4. Running Short Automated Test</h3>', 'info');
+                log('Starting v3 test with quick configuration...', 'info');
+                
+                // Capture console logs
+                const originalLog = console.log;
+                const logs = [];
+                console.log = (...args) => {
+                    const logText = args.join(' ');
+                    logs.push(logText);
+                    originalLog(...args);
+                };
+                
+                // Run short test
+                const testConfig = {
+                    playerNames: ['Alice', 'Bob'],
+                    maxRounds: 2,
+                    blockFrequency: 0.5,
+                    rankingAccuracy: 0.5,
+                    logLevel: 'normal',
+                    continueOnError: true
+                };
+                
+                const results = await window.runTestV3(testConfig);
+                
+                // Restore console
+                console.log = originalLog;
+                
+                // Analyze results
+                log(`Test Status: ${results.summary.testPassed ? 'PASSED' : 'FAILED'}`, 
+                    results.summary.testPassed ? 'success' : 'error');
+                log(`Duration: ${results.summary.duration}ms`, 'info');
+                log(`Rounds Played: ${results.summary.roundsPlayed}`, 'info');
+                log(`Total Errors: ${results.summary.totalErrors}`, 
+                    results.summary.totalErrors === 0 ? 'success' : 'error');
+                
+                // Check for specific base game mechanics
+                log('<h3>5. Base Game Mechanics Validation</h3>', 'info');
+                
+                // Check blocksWon = tokensGained relationship
+                let mechanicsValid = true;
+                Object.keys(results.playerStats).forEach(player => {
+                    const stats = results.playerStats[player];
+                    const blocksWonEqualsTokens = (stats.blocksWon || 0) === (stats.tokensGained || 0);
+                    
+                    log(`${player}: blocksWon(${stats.blocksWon || 0}) = tokensGained(${stats.tokensGained || 0}): ${blocksWonEqualsTokens ? 'Valid' : 'Invalid'}`, 
+                        blocksWonEqualsTokens ? 'success' : 'error');
+                    
+                    if (!blocksWonEqualsTokens) mechanicsValid = false;
+                });
+                
+                // Look for critical errors in logs
+                const criticalErrors = logs.filter(log => 
+                    log.includes('ERROR') || 
+                    log.includes('CRITICAL') || 
+                    log.includes('FAILED') ||
+                    log.includes('❌')
+                );
+                
+                if (criticalErrors.length > 0) {
+                    log('<h3>6. Critical Issues Found</h3>', 'error');
+                    criticalErrors.slice(0, 5).forEach(error => {
+                        log(error, 'error');
+                    });
+                    mechanicsValid = false;
+                } else {
+                    log('No critical errors found in test logs', 'success');
+                }
+                
+                // Final assessment
+                log('<h3>7. Final Assessment</h3>', 'info');
+                if (mechanicsValid && results.summary.testPassed) {
+                    log('✅ Base game mechanics are working correctly', 'success');
+                    log('The core token/blocking/scoring logic is sound', 'success');
+                } else {
+                    log('❌ Base game mechanics have issues that need fixing', 'error');
+                    log('Core game logic needs attention before enabling advanced features', 'warning');
+                }
+                
+                // Store results for inspection
+                window.baseMechanicsTestResults = {
+                    testResults: results,
+                    logs: logs,
+                    mechanicsValid: mechanicsValid
+                };
+                
+            } catch (error) {
+                log(`Test failed with error: ${error.message}`, 'error');
+                console.error('Full error:', error);
+            }
+        }
+        
+        // Auto-run on page load
+        window.addEventListener('load', () => {
+            log('Base Game Mechanics Test loaded. Click "Test Base Game Mechanics" to run validation.', 'info');
+        });
+    </script>
+</body>
+</html>

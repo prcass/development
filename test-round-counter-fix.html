@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round Counter Fix Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .results {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .error { color: #dc3545; }
+        .success { color: #28a745; }
+        .warning { color: #ffc107; }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 Round Counter Fix Test</h1>
+    
+    <div class="results">
+        <h2>Testing v3 Round Management</h2>
+        <p>This page tests if the round counter fix resolves the scoring bug.</p>
+        
+        <button onclick="runRoundTest()">Test Round Progression</button>
+        <button onclick="runFullTest()">Run Full v3 Test</button>
+        <button onclick="clearOutput()">Clear Output</button>
+        
+        <div id="output" style="margin-top: 20px;"></div>
+    </div>
+
+    <!-- Load game dependencies -->
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+    
+    <script>
+        let testOutput = document.getElementById('output');
+        
+        function log(message, type = 'info') {
+            const emoji = type === 'error' ? '❌' : type === 'success' ? '✅' : type === 'warning' ? '⚠️' : 'ℹ️';
+            testOutput.innerHTML += `<div class="${type}">${emoji} ${message}</div>`;
+        }
+        
+        function clearOutput() {
+            testOutput.innerHTML = '';
+        }
+        
+        async function loadTestSystem() {
+            return new Promise((resolve, reject) => {
+                if (typeof window.runTestV3 === 'function') {
+                    resolve();
+                    return;
+                }
+                
+                const script = document.createElement('script');
+                script.src = 'automated-test-v3.js?v=' + Date.now();
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error('Failed to load test system'));
+                document.head.appendChild(script);
+            });
+        }
+        
+        async function runRoundTest() {
+            clearOutput();
+            log('Testing round progression manually...');
+            
+            try {
+                await loadTestSystem();
+                log('Test system loaded', 'success');
+                
+                // Initialize game
+                if (typeof newGame === 'function') {
+                    newGame();
+                    log('Game initialized', 'success');
+                } else {
+                    log('newGame function not found', 'error');
+                    return;
+                }
+                
+                // Set up basic game state
+                GameState.set('players.list', ['Alice', 'Bob']);
+                const initialRound = GameState.get('currentRound');
+                const initialFlag = GameState.get('players.scoresCalculatedThisRound');
+                
+                log(`Initial state: Round=${initialRound}, ScoreFlag=${initialFlag}`, 'info');
+                
+                // Test prepareRound function
+                if (typeof GameInterface !== 'undefined' && GameInterface.prepareRound) {
+                    await GameInterface.prepareRound(2);
+                    
+                    const newRound = GameState.get('currentRound');
+                    const newFlag = GameState.get('players.scoresCalculatedThisRound');
+                    
+                    log(`After prepareRound(2): Round=${newRound}, ScoreFlag=${newFlag}`, newRound === 2 && newFlag === false ? 'success' : 'error');
+                    
+                    // Test round 3
+                    await GameInterface.prepareRound(3);
+                    
+                    const round3 = GameState.get('currentRound');
+                    const flag3 = GameState.get('players.scoresCalculatedThisRound');
+                    
+                    log(`After prepareRound(3): Round=${round3}, ScoreFlag=${flag3}`, round3 === 3 && flag3 === false ? 'success' : 'error');
+                    
+                    log('Round progression test: PASSED', 'success');
+                } else {
+                    log('GameInterface.prepareRound not found', 'error');
+                }
+                
+            } catch (error) {
+                log(`Test failed: ${error.message}`, 'error');
+                console.error('Full error:', error);
+            }
+        }
+        
+        async function runFullTest() {
+            clearOutput();
+            log('Running full v3 test with round fix...');
+            
+            try {
+                await loadTestSystem();
+                
+                const config = {
+                    playerNames: ['Alice', 'Bob'],
+                    maxRounds: 3,
+                    blockFrequency: 0.3,
+                    rankingAccuracy: 0.8,
+                    logLevel: 'normal',
+                    validateEachRound: true
+                };
+                
+                log('Starting test...', 'info');
+                
+                // Capture console logs to monitor round progression
+                const originalLog = console.log;
+                const logs = [];
+                console.log = (...args) => {
+                    logs.push(args.join(' '));
+                    originalLog(...args);
+                };
+                
+                const results = await window.runTestV3(config);
+                
+                // Restore console
+                console.log = originalLog;
+                
+                // Check for scoring issues in logs
+                const scoringIssues = logs.filter(log => 
+                    log.includes('Scores already calculated') || 
+                    log.includes('Round: 1 Bidder:')
+                );
+                
+                if (scoringIssues.length > 0) {
+                    log('🚨 SCORING ISSUES DETECTED:', 'error');
+                    scoringIssues.forEach(issue => {
+                        log(`  ${issue}`, 'error');
+                    });
+                } else {
+                    log('✅ No scoring issues detected!', 'success');
+                }
+                
+                // Display results
+                log(`Test completed: ${results.summary.testPassed ? 'PASSED' : 'FAILED'}`, results.summary.testPassed ? 'success' : 'error');
+                log(`Duration: ${results.summary.duration}ms`, 'info');
+                log(`Rounds: ${results.summary.roundsPlayed}`, 'info');
+                log(`Errors: ${results.summary.totalErrors}`, results.summary.totalErrors > 0 ? 'error' : 'success');
+                
+                if (results.errors.length > 0) {
+                    log('Errors found:', 'error');
+                    results.errors.forEach((error, i) => {
+                        log(`${i + 1}. ${error.rule || error.type}: ${error.message}`, 'error');
+                    });
+                }
+                
+                // Show relevant console logs
+                log('Key console logs:', 'info');
+                const relevantLogs = logs.filter(log => 
+                    log.includes('📍 ROUND') || 
+                    log.includes('Calculating scores') ||
+                    log.includes('Preparing round') ||
+                    log.includes('Score flag')
+                );
+                
+                log(`<pre>${relevantLogs.slice(0, 20).join('\\n')}</pre>`, 'info');
+                
+                window.testResults = results;
+                
+            } catch (error) {
+                log(`Test failed: ${error.message}`, 'error');
+                console.error('Full error:', error);
+            }
+        }
+        
+        // Auto-load on page ready
+        window.addEventListener('load', () => {
+            log('Page loaded. Click "Test Round Progression" to verify the fix.', 'info');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Charlie Fix</title>
+</head>
+<body>
+    <h1>Charlie Block Issue Fix Test</h1>
+    
+    <p>The fix has been applied to prevent bidders from attempting blocks in the automated test.</p>
+    
+    <h2>What was fixed:</h2>
+    <ul>
+        <li>Added bidder validation check in automated test logic (line ~7308)</li>
+        <li>Automated test now skips block attempt if current player is the bidder</li>
+        <li>This prevents the `blocksMade` counter from being incremented for invalid blocks</li>
+    </ul>
+    
+    <h2>Testing Steps:</h2>
+    <ol>
+        <li>Run Fast Test again</li>
+        <li>Check console for: "🚫 AUTOMATED TEST: Skipping [player] - bidders cannot block!"</li>
+        <li>Verify no more `blocksMade > tokensGained` discrepancies</li>
+        <li>Confirm `blocksWon = tokensGained` for all players</li>
+    </ol>
+    
+    <h2>Expected Result:</h2>
+    <p>Charlie (and all other bidders) should no longer have `blocksMade` incremented when they are the bidder.</p>
+    
+    <script>
+        console.log('🧪 Charlie fix test page loaded');
+        console.log('✅ Automated test bidder validation added');
+        console.log('🔄 Ready to test - run Fast Test to verify fix');
+    </script>
+</body>
+</html>

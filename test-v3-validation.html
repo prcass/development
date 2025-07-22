@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test v3 Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .results {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .error { color: #dc3545; }
+        .success { color: #28a745; }
+        .warning { color: #ffc107; }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test v3 System Validation</h1>
+    
+    <div class="results">
+        <h2>Quick Validation Test</h2>
+        <p>This page tests the v3 automated test system components without running a full game.</p>
+        
+        <button onclick="testSystemLoad()">Test System Load</button>
+        <button onclick="testGameIntegration()">Test Game Integration</button>
+        <button onclick="runQuickTest()">Run Quick Test</button>
+        <button onclick="openGame()">Open Game</button>
+        
+        <div id="output" style="margin-top: 20px;"></div>
+    </div>
+
+    <!-- Load game dependencies -->
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+    
+    <script>
+        function log(message, type = 'info') {
+            const output = document.getElementById('output');
+            const emoji = type === 'error' ? '❌' : type === 'success' ? '✅' : type === 'warning' ? '⚠️' : 'ℹ️';
+            output.innerHTML += `<div class="${type}">${emoji} ${message}</div>`;
+        }
+        
+        function clear() {
+            document.getElementById('output').innerHTML = '';
+        }
+        
+        async function testSystemLoad() {
+            clear();
+            log('Testing v3 system load...');
+            
+            try {
+                // Check if game dependencies loaded
+                if (typeof window.GAME_DATA === 'undefined') {
+                    log('Game data not loaded', 'error');
+                    return;
+                }
+                log('Game data loaded successfully', 'success');
+                
+                if (typeof GameState === 'undefined') {
+                    log('GameState not loaded', 'error');
+                    return;
+                }
+                log('GameState loaded successfully', 'success');
+                
+                // Load test system
+                const script = document.createElement('script');
+                script.src = 'automated-test-v3.js?v=' + Date.now();
+                script.onload = () => {
+                    log('Test system script loaded', 'success');
+                    
+                    // Check if classes are available
+                    if (typeof TestOrchestrator !== 'undefined') {
+                        log('TestOrchestrator class available', 'success');
+                    } else {
+                        log('TestOrchestrator class not found', 'error');
+                    }
+                    
+                    if (typeof window.runTestV3 === 'function') {
+                        log('runTestV3 function available', 'success');
+                    } else {
+                        log('runTestV3 function not found', 'error');
+                    }
+                };
+                script.onerror = () => {
+                    log('Failed to load test system script', 'error');
+                };
+                document.head.appendChild(script);
+                
+            } catch (error) {
+                log(`Error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testGameIntegration() {
+            clear();
+            log('Testing game integration...');
+            
+            try {
+                // Check required game functions
+                const requiredFunctions = ['newGame', 'calculateAndApplyScores'];
+                requiredFunctions.forEach(fn => {
+                    if (typeof window[fn] === 'function') {
+                        log(`Function ${fn} available`, 'success');
+                    } else {
+                        log(`Function ${fn} missing`, 'error');
+                    }
+                });
+                
+                // Test GameState
+                GameState.set('test.value', 123);
+                const testValue = GameState.get('test.value');
+                if (testValue === 123) {
+                    log('GameState working correctly', 'success');
+                } else {
+                    log('GameState not working correctly', 'error');
+                }
+                
+                // Check game data structure
+                const categories = window.GAME_DATA?.categories;
+                if (categories) {
+                    const categoryNames = Object.keys(categories);
+                    log(`Game categories: ${categoryNames.join(', ')}`, 'success');
+                    
+                    categoryNames.forEach(cat => {
+                        const items = categories[cat]?.items;
+                        if (items) {
+                            log(`${cat}: ${Object.keys(items).length} items`, 'success');
+                        } else {
+                            log(`${cat}: no items found`, 'error');
+                        }
+                    });
+                } else {
+                    log('Game categories not found', 'error');
+                }
+                
+            } catch (error) {
+                log(`Error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function runQuickTest() {
+            clear();
+            log('Running quick test...');
+            
+            try {
+                if (typeof window.runTestV3 !== 'function') {
+                    log('Test system not loaded. Run "Test System Load" first.', 'error');
+                    return;
+                }
+                
+                log('Starting quick test configuration...', 'info');
+                
+                const quickConfig = {
+                    playerNames: ['Alice', 'Bob'],
+                    maxRounds: 2,
+                    blockFrequency: 0.5,
+                    rankingAccuracy: 0.7,
+                    logLevel: 'normal',
+                    validateEachRound: true
+                };
+                
+                log('Test configuration:', 'info');
+                log(`<pre>${JSON.stringify(quickConfig, null, 2)}</pre>`, 'info');
+                
+                log('Running test...', 'info');
+                const results = await window.runTestV3(quickConfig);
+                
+                log('Test completed!', 'success');
+                log(`Duration: ${results.summary.duration}ms`, 'info');
+                log(`Rounds: ${results.summary.roundsPlayed}`, 'info');
+                log(`Errors: ${results.summary.totalErrors}`, results.summary.totalErrors > 0 ? 'error' : 'success');
+                log(`Status: ${results.summary.testPassed ? 'PASSED' : 'FAILED'}`, results.summary.testPassed ? 'success' : 'error');
+                
+                if (results.errors.length > 0) {
+                    log('Errors found:', 'error');
+                    results.errors.forEach((error, i) => {
+                        log(`${i + 1}. ${error.rule || error.type}: ${error.message}`, 'error');
+                    });
+                }
+                
+                // Store results globally
+                window.testResults = results;
+                log('Full results stored in window.testResults', 'info');
+                
+            } catch (error) {
+                log(`Test failed: ${error.message}`, 'error');
+                console.error('Full error:', error);
+            }
+        }
+        
+        function openGame() {
+            window.open('index.html', 'outrank_game');
+        }
+        
+        // Auto-load on page load
+        window.addEventListener('load', () => {
+            log('Page loaded. Click "Test System Load" to begin validation.', 'info');
+        });
+    </script>
+</body>
+</html>

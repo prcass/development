@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Validation System Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .results {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .error { color: #dc3545; }
+        .success { color: #28a745; }
+        .warning { color: #ffc107; }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        .test-section {
+            border: 1px solid #ddd;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Ranking Validation System Test</h1>
+    
+    <div class="results">
+        <h2>Testing New Centralized Validation</h2>
+        <p>This page tests the new RankingValidator class and automated test integration.</p>
+        
+        <button onclick="testValidatorClass()">Test RankingValidator Class</button>
+        <button onclick="testRealisticRanking()">Test Realistic Ranking</button>
+        <button onclick="runFullValidationTest()">Run Full v3 Test</button>
+        <button onclick="clearOutput()">Clear Output</button>
+        
+        <div id="output" style="margin-top: 20px;"></div>
+    </div>
+
+    <!-- Load game dependencies -->
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+    
+    <script>
+        let testOutput = document.getElementById('output');
+        
+        function log(message, type = 'info') {
+            const emoji = type === 'error' ? '❌' : type === 'success' ? '✅' : type === 'warning' ? '⚠️' : 'ℹ️';
+            testOutput.innerHTML += `<div class="${type}">${emoji} ${message}</div>`;
+        }
+        
+        function clearOutput() {
+            testOutput.innerHTML = '';
+        }
+        
+        async function loadTestSystem() {
+            return new Promise((resolve, reject) => {
+                if (typeof window.runTestV3 === 'function') {
+                    resolve();
+                    return;
+                }
+                
+                const script = document.createElement('script');
+                script.src = 'automated-test-v3.js?v=' + Date.now();
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error('Failed to load test system'));
+                document.head.appendChild(script);
+            });
+        }
+        
+        async function testValidatorClass() {
+            clearOutput();
+            log('Testing RankingValidator class...', 'info');
+            
+            try {
+                // Check if RankingValidator exists
+                if (typeof window.RankingValidator === 'undefined') {
+                    log('RankingValidator class not found', 'error');
+                    return;
+                }
+                log('RankingValidator class found', 'success');
+                
+                // Test challenge type detection
+                const testPrompts = [
+                    { label: 'Countries ranked from lowest to highest by unemployment rate' },
+                    { label: 'Movies ranked from highest to lowest by box office revenue' },
+                    { label: 'Companies by market cap' }
+                ];
+                
+                log('<div class="test-section"><h3>Challenge Type Detection</h3>', 'info');
+                testPrompts.forEach((prompt, i) => {
+                    const type = window.RankingValidator.detectChallengeType(prompt);
+                    log(`Prompt ${i+1}: "${prompt.label}" → ${type}`, 'info');
+                });
+                log('</div>', 'info');
+                
+                // Test with real game data
+                if (window.GAME_DATA && window.GAME_DATA.categories.countries) {
+                    log('<div class="test-section"><h3>Real Data Test</h3>', 'info');
+                    
+                    const countries = window.GAME_DATA.categories.countries;
+                    const testCards = ['001', '002', '003']; // First 3 countries by numeric ID
+                    const testChallenge = 'gdp_total';
+                    const testPrompt = { label: 'Countries ranked from highest to lowest by GDP' };
+                    
+                    log(`Testing cards: ${testCards.join(', ')}`, 'info');
+                    log(`Challenge: ${testChallenge}`, 'info');
+                    
+                    const correctRanking = window.RankingValidator.calculateCorrectRanking(
+                        testCards, testChallenge, testPrompt
+                    );
+                    log(`Correct ranking: ${correctRanking.join(' → ')}`, 'success');
+                    
+                    // Test validation
+                    const playerRanking = ['003', '002', '001']; // Wrong order
+                    const validation = window.RankingValidator.validatePlayerRanking(
+                        playerRanking, testChallenge, testPrompt
+                    );
+                    
+                    log(`Player ranking: ${playerRanking.join(' → ')}`, 'info');
+                    log(`Validation result: ${validation.isCorrect ? 'CORRECT' : 'INCORRECT'}`, validation.isCorrect ? 'success' : 'error');
+                    if (!validation.isCorrect) {
+                        log(`Errors: ${validation.errors.join(', ')}`, 'error');
+                    }
+                    log('</div>', 'info');
+                } else {
+                    log('Game data not available for testing', 'warning');
+                }
+                
+                log('RankingValidator class test complete', 'success');
+                
+            } catch (error) {
+                log(`Test failed: ${error.message}`, 'error');
+                console.error('Full error:', error);
+            }
+        }
+        
+        async function testRealisticRanking() {
+            clearOutput();
+            log('Testing realistic ranking simulation...', 'info');
+            
+            try {
+                await loadTestSystem();
+                
+                if (typeof window.RankingValidator === 'undefined') {
+                    log('RankingValidator not available', 'error');
+                    return;
+                }
+                
+                // Simulate multiple ranking attempts to see realistic success rates
+                const trials = 20;
+                let successes = 0;
+                const results = [];
+                
+                log(`Running ${trials} ranking simulations...`, 'info');
+                
+                for (let i = 0; i < trials; i++) {
+                    // Use real game data
+                    const categories = Object.keys(window.GAME_DATA.categories);
+                    const category = categories[Math.floor(Math.random() * categories.length)];
+                    const categoryData = window.GAME_DATA.categories[category];
+                    
+                    // Check if prompts exist before accessing
+                    if (!categoryData || !categoryData.prompts) {
+                        console.warn('Missing prompts for category:', category);
+                        continue;
+                    }
+                    
+                    const prompts = categoryData.prompts;
+                    const randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+                    const challenge = randomPrompt.challenge;
+                    const prompt = randomPrompt;
+                    
+                    // Check if items exist before accessing
+                    if (!categoryData.items) {
+                        console.warn('Missing items for category:', category);
+                        continue;
+                    }
+                    
+                    const allItems = Object.keys(categoryData.items);
+                    const testCards = allItems.slice(0, 4); // Take first 4 items
+                    
+                    // Calculate correct ranking
+                    const correctRanking = window.RankingValidator.calculateCorrectRanking(
+                        testCards, challenge, prompt
+                    );
+                    
+                    // Simulate imperfect player ranking (70% accuracy)
+                    let playerRanking = [...correctRanking];
+                    if (Math.random() > 0.7) { // 30% chance to make errors
+                        // Shuffle some positions
+                        for (let j = 0; j < 2; j++) {
+                            const idx1 = Math.floor(Math.random() * playerRanking.length);
+                            const idx2 = Math.floor(Math.random() * playerRanking.length);
+                            [playerRanking[idx1], playerRanking[idx2]] = [playerRanking[idx2], playerRanking[idx1]];
+                        }
+                    }
+                    
+                    // Validate
+                    const validation = window.RankingValidator.validatePlayerRanking(
+                        playerRanking, challenge, prompt
+                    );
+                    
+                    if (validation.isCorrect) successes++;
+                    
+                    results.push({
+                        trial: i + 1,
+                        category,
+                        challenge,
+                        correct: validation.isCorrect,
+                        challengeType: window.RankingValidator.detectChallengeType(prompt)
+                    });
+                }
+                
+                const successRate = (successes / trials * 100).toFixed(1);
+                log(`Success rate: ${successes}/${trials} (${successRate}%)`, 
+                    successRate > 60 && successRate < 80 ? 'success' : 'warning');
+                
+                // Show breakdown by challenge type
+                const ascending = results.filter(r => r.challengeType === 'ascending');
+                const descending = results.filter(r => r.challengeType === 'descending');
+                
+                log(`Ascending challenges: ${ascending.filter(r => r.correct).length}/${ascending.length}`, 'info');
+                log(`Descending challenges: ${descending.filter(r => r.correct).length}/${descending.length}`, 'info');
+                
+                // Show sample results
+                log('<div class="test-section"><h3>Sample Results</h3>', 'info');
+                results.slice(0, 5).forEach(r => {
+                    log(`${r.trial}. ${r.category}/${r.challenge} (${r.challengeType}): ${r.correct ? 'PASS' : 'FAIL'}`, 
+                        r.correct ? 'success' : 'error');
+                });
+                log('</div>', 'info');
+                
+            } catch (error) {
+                log(`Test failed: ${error.message}`, 'error');
+                console.error('Full error:', error);
+            }
+        }
+        
+        async function runFullValidationTest() {
+            clearOutput();
+            log('Running full v3 test with new validation system...', 'info');
+            
+            try {
+                await loadTestSystem();
+                
+                // Use the quick configuration which has 4 players and high blocking frequency
+                const config = window.testConfigsV3.quick;
+                
+                log('Starting test with realistic validation...', 'info');
+                
+                // Capture relevant logs
+                const originalLog = console.log;
+                const logs = [];
+                console.log = (...args) => {
+                    const logText = args.join(' ');
+                    logs.push(logText);
+                    originalLog(...args);
+                };
+                
+                const results = await window.runTestV3(config);
+                
+                // Restore console
+                console.log = originalLog;
+                
+                // Analyze results
+                log(`Test completed: ${results.summary.testPassed ? 'PASSED' : 'FAILED'}`, 
+                    results.summary.testPassed ? 'success' : 'error');
+                log(`Duration: ${results.summary.duration}ms`, 'info');
+                log(`Rounds: ${results.summary.roundsPlayed}`, 'info');
+                log(`Errors: ${results.summary.totalErrors}`, results.summary.totalErrors > 0 ? 'error' : 'success');
+                
+                // Check for ranking-related logs
+                const rankingLogs = logs.filter(log => 
+                    log.includes('ranking') || 
+                    log.includes('SUCCESS') || 
+                    log.includes('FAILED') ||
+                    log.includes('RankingValidator')
+                );
+                
+                if (rankingLogs.length > 0) {
+                    log('<div class="test-section"><h3>Ranking Validation Logs</h3>', 'info');
+                    rankingLogs.slice(0, 10).forEach(logText => {
+                        const type = logText.includes('SUCCESS') ? 'success' : 
+                                   logText.includes('FAILED') ? 'error' : 'info';
+                        log(logText, type);
+                    });
+                    log('</div>', 'info');
+                }
+                
+                // Check rounds for success/failure distribution
+                if (results.rounds) {
+                    const successes = results.rounds.filter(r => r.bidSuccess === true).length;
+                    const failures = results.rounds.filter(r => r.bidSuccess === false).length;
+                    
+                    log(`Round outcomes: ${successes} successes, ${failures} failures`, 'info');
+                    
+                    if (successes === results.rounds.length) {
+                        log('⚠️ All rounds successful - validation may still be artificial', 'warning');
+                    } else {
+                        log('✅ Mixed success/failure - realistic validation working', 'success');
+                    }
+                }
+                
+                window.testResults = results;
+                
+            } catch (error) {
+                log(`Test failed: ${error.message}`, 'error');
+                console.error('Full error:', error);
+            }
+        }
+        
+        // Auto-load on page ready
+        window.addEventListener('load', () => {
+            log('Page loaded. Test the new ranking validation system!', 'info');
+        });
+    </script>
+</body>
+</html>
