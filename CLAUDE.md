@@ -76,6 +76,36 @@ Outrank is a JavaScript-based trivia ranking game where players bid on how many 
 - `index.html` - Complete UI screens and structure
 - `styles.css` - Mobile-first styling
 
+### Repository Structure
+
+**Two-Repository Setup for Clean Development/Production Separation:**
+
+🔧 **Development Repository:**
+- **Local**: `/home/randycass/projects/know-it-all/`
+- **GitHub**: `https://github.com/prcass/development.git`
+- **Purpose**: All development work, research, experiments
+- **Contains**: Source code, research-archive/, backups/, validation scripts, documentation
+
+🚀 **Production Repository:**
+- **Local**: `/home/randycass/projects/know-it-all/outrank-deploy/`
+- **GitHub**: `https://github.com/prcass/outrank.git`
+- **Purpose**: Clean production deployment only
+- **Auto-deploys to**: `https://prcass.github.io/outrank/` (GitHub Pages)
+- **Contains**: Only essential game files (game.js, data.js, index.html, styles.css)
+
+**Deployment Workflow:**
+```
+Development → Test → Copy to outrank-deploy/ → Push to Production → Live Site
+    ↓                                              ↓
+development.git                               outrank.git → GitHub Pages
+```
+
+**Benefits:**
+- Clean separation between messy development and professional production
+- Automated GitHub Pages deployment for live site
+- Proper version control with tagged releases
+- Easy collaboration (others can fork just the game or development)
+
 ### State Management
 - `GameState` - Centralized state management system with reactive updates
 - All state access through `GameState.get(path)` and `GameState.set(path, value)`
@@ -164,6 +194,32 @@ Outrank is a JavaScript-based trivia ranking game where players bid on how many 
 - **Emergency rollback** → `git checkout outrank-v2.1` always available
 
 ## Repository Structure & Recovery
+
+### Development/Production Repository Separation
+
+**Two-Repository Setup for Clean Development/Production Separation:**
+
+🔧 **Development Repository:**
+- **Local**: `/home/randycass/projects/know-it-all/`
+- **GitHub**: `https://github.com/prcass/development.git`
+- **Purpose**: All development work, research, experiments
+- **Contains**: Source code, research-archive/, backups/, validation scripts, documentation
+
+🚀 **Production Repository:**
+- **Local**: `/home/randycass/projects/know-it-all/outrank-deploy/`
+- **GitHub**: `https://github.com/prcass/outrank.git`
+- **Purpose**: Clean production deployment only
+- **Auto-deploys to**: `https://prcass.github.io/outrank/` (GitHub Pages)
+- **Contains**: Only essential game files (game.js, data.js, index.html, styles.css)
+
+**Deployment Workflow:**
+```
+Development → Test → Copy to outrank-deploy/ → Push to Production → Live Site
+    ↓                                              ↓
+development.git                               outrank.git → GitHub Pages
+```
+
+### File Organization Within Development Repository
 - **Clean repository** → Core game files in root, research archived (July 2025)
 - **Research archive** → All 270+ development/research files preserved in `research-archive/`
   - `data-extraction/` - Python scripts, CSV files, JSON datasets

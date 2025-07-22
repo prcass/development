@@ -17,6 +17,62 @@ When implementing features:
 3. **Code**: Follow vanilla JS patterns, use centralized state management
 4. **Test**: Use "Run Automated Test" button + manual browser testing
 
+## Repository Management
+
+### Development/Production Repository Separation
+
+**Two-Repository Setup:**
+
+🔧 **Development Repository:**
+- **Local**: `/home/randycass/projects/know-it-all/`
+- **GitHub**: `https://github.com/prcass/development.git`
+- **Purpose**: All development work, research, experiments
+- **Contains**: Source code, research-archive/, backups/, validation scripts, documentation
+
+🚀 **Production Repository:**
+- **Local**: `/home/randycass/projects/know-it-all/outrank-deploy/`
+- **GitHub**: `https://github.com/prcass/outrank.git`
+- **Purpose**: Clean production deployment only
+- **Auto-deploys to**: `https://prcass.github.io/outrank/` (GitHub Pages)
+- **Contains**: Only essential game files (game.js, data.js, index.html, styles.css)
+
+### Deployment Workflow Commands
+
+```bash
+# 1. Work in development repository
+cd /home/randycass/projects/know-it-all/
+# Make changes, test, commit to development.git
+
+# 2. Deploy to production
+cp game.js data.js index.html styles.css outrank-deploy/
+cd outrank-deploy/
+git add .
+git commit -m "Deploy version X.X with [changes]"
+git push origin main
+# → Automatically deploys to https://prcass.github.io/outrank/
+
+# 3. Tag production releases
+git tag -a outrank-vX.X -m "Version X.X: [description]"
+git push origin main --tags
+```
+
+### Repository Commands
+
+```bash
+# Check which repository you're in
+git remote -v
+
+# Development repository should show:
+# origin  https://github.com/prcass/development.git
+
+# Production repository should show:  
+# origin  https://github.com/prcass/outrank.git
+
+# Switch between repositories
+cd /home/randycass/projects/know-it-all/          # Development
+cd /home/randycass/projects/know-it-all/outrank-deploy/  # Production
+```
+
 ## Local Development Commands
 
 ### Starting the Game

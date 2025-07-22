@@ -1081,15 +1081,25 @@ var GameState = {
                     bidsSuccessful: 0,   // Number of successful rankings after winning bid
                     bidAttempts: 0,      // Total number of bid attempts made
                     bidsPassed: 0,       // Number of times passed on bidding
-                    blocksMade: 0,
+                    blocksMade: 0,       // Total blocks attempted
+                    blocksWon: 0,        // Blocks where bidder failed (blocker wins)
+                    blocksLost: 0,       // Blocks where bidder succeeded (blocker loses)
                     blockingPointsEarned: 0,
-                    tokensGained: 0,
+                    tokensGained: 0,     // Should equal blocksWon
                     tokensLost: 0,
                     cardsUsed: 0         // Total cards used in ranking attempts
                 };
                 safeConsoleLog('Player stats initialized for new player:', name);
             } else {
-                safeConsoleLog('Player stats preserved for existing player:', name, 'bidsWon:', this.data.players.stats[name].bidsWon);
+                // Ensure existing players have new stats fields
+                var existingStats = this.data.players.stats[name];
+                if (typeof existingStats.blocksWon === 'undefined') {
+                    existingStats.blocksWon = 0;
+                }
+                if (typeof existingStats.blocksLost === 'undefined') {
+                    existingStats.blocksLost = 0;
+                }
+                safeConsoleLog('Player stats preserved for existing player:', name, 'bidsWon:', existingStats.bidsWon, 'blocksWon:', existingStats.blocksWon, 'blocksLost:', existingStats.blocksLost);
             }
             
             safeConsoleLog('Player initialized:', name);
@@ -3879,22 +3889,66 @@ window.selectCardToBlock = function(cardId) {
         return;
     }
     
-    selectedCard = cardId;
-    
     var blockingOrder = GameState.get('blockingOrder');
     var blockingTurn = GameState.get('blockingTurn');
     var currentPlayer = blockingOrder[blockingTurn];
+    
+    // CRITICAL VALIDATION: Bidders cannot block!
+    var highestBidder = GameState.get('highestBidder');
+    if (currentPlayer === highestBidder) {
+        console.log('❌ BLOCKING PREVENTED: ' + currentPlayer + ' is the bidder and cannot block!');
+        if (!window.automatedTestState || !window.automatedTestState.isRunning) {
+            showNotification(currentPlayer + ' is the bidder and cannot block!', 'error');
+        }
+        return;
+    }
     var gameState = GameState.data;
     var currentCategory = gameState.currentCategory || 'countries';
     var categoryData = window.GAME_DATA.categories[currentCategory];
     var item = categoryData.items[cardId];
     
-    // Auto-confirm for automated testing
-    console.log('Confirmed: Block ' + item.name + ' with a ' + selectedToken + '-point token');
+    // CRITICAL VALIDATION: Check if player already owns this card
+    var ownedCards = GameState.get('players.ownedCards') || {};
+    if (ownedCards[currentPlayer] && ownedCards[currentPlayer][currentCategory]) {
+        if (ownedCards[currentPlayer][currentCategory].includes(cardId)) {
+            console.log('❌ BLOCKING PREVENTED: ' + currentPlayer + ' already owns ' + item.name + ' - cannot block owned cards!');
+            if (!window.automatedTestState || !window.automatedTestState.isRunning) {
+                showNotification(currentPlayer + ' already owns ' + item.name + ' - cannot block!', 'error');
+            }
+            return; // Prevent the block
+        }
+    }
+    
+    // Check if someone else already owns this card
+    if (ownedCards) {
+        for (var playerName in ownedCards) {
+            if (playerName !== currentPlayer && ownedCards[playerName][currentCategory]) {
+                if (ownedCards[playerName][currentCategory].includes(cardId)) {
+                    console.log('❌ BLOCKING PREVENTED: ' + playerName + ' already owns ' + item.name + ' - cannot block owned cards!');
+                    if (!window.automatedTestState || !window.automatedTestState.isRunning) {
+                        showNotification(playerName + ' already owns ' + item.name + ' - cannot block!', 'error');
+                    }
+                    return; // Prevent the block
+                }
+            }
+        }
+    }
+    
+    selectedCard = cardId;
+    
+    // Validation passed - proceed with block
+    console.log('✅ BLOCK VALIDATED: ' + currentPlayer + ' can block ' + item.name + ' with a ' + selectedToken + '-point token');
     blockCard(cardId, selectedToken, currentPlayer);
 };
 
 function blockCard(cardId, tokenValue, playerName) {
+    // CRITICAL VALIDATION: Bidders cannot block! (Second line of defense)
+    var highestBidder = GameState.get('highestBidder');
+    if (playerName === highestBidder) {
+        console.error('❌ CRITICAL ERROR: Bidder ' + playerName + ' attempted to block! This should not happen!');
+        return;
+    }
+    
     // Execution guard for automated testing
     if (window.automatedTestState && window.automatedTestState.isProcessingBlock) {
         console.log('⚠️ Block already in progress, skipping duplicate');
@@ -3921,6 +3975,15 @@ function blockCard(cardId, tokenValue, playerName) {
         cardId: cardId,
         tokenValue: tokenValue
     });
+    
+    // CRITICAL: Store the block in currentBlocks for scoring system
+    var currentBlocks = GameState.get('players.currentBlocks') || {};
+    currentBlocks[playerName] = {
+        cardId: cardId,
+        tokenValue: tokenValue
+    };
+    GameState.set('players.currentBlocks', currentBlocks);
+    console.log('📋 Stored block for', playerName, ':', currentBlocks[playerName]);
     
     // Track blocks made in player stats
     var currentStats = getPlayerStats(playerName);
@@ -4094,8 +4157,8 @@ function setupBlockingTokens() {
 
 // Card Selection Phase
 function showCardSelection() {
-    // Prevent execution if automated test has completed
-    if (window.automatedTestResults && window.automatedTestResults.endTime && !window.isAutomatedTestRunning) {
+    // Prevent execution if automated test has completed (but allow if completion is pending)
+    if (window.automatedTestResults && window.automatedTestResults.endTime && !window.isAutomatedTestRunning && !window.automatedTestResults.shouldComplete) {
         console.log('⚠️ Ignoring showCardSelection() call - automated test completed');
         return;
     }
@@ -4151,7 +4214,10 @@ function showCardSelection() {
     
     if (currentBid === 0) {
         console.error('❌ No bid amount set!');
-        showNotification('Error: No bid amount set', 'error');
+        // Don't show error notifications during automated tests to avoid spam
+        if (!window.isAutomatedTestRunning && (!window.automatedTestResults || !window.automatedTestResults.endTime)) {
+            showNotification('Error: No bid amount set', 'error');
+        }
         return;
     }
     
@@ -5103,6 +5169,14 @@ function calculateAndApplyScores() {
                 var tokenValue = blockData.tokenValue;
                 console.log('💰 Transferring', tokenValue, 'token from', playerName, 'to', highestBidder);
                 
+                // Track that this block was lost (bidder succeeded)
+                var currentStats = getPlayerStats(playerName);
+                if (currentStats) {
+                    currentStats.blocksLost = (currentStats.blocksLost || 0) + 1;
+                    GameState.set('players.stats.' + playerName, currentStats);
+                    console.log('📊 BLOCKS LOST: ' + playerName + ' total lost blocks: ' + currentStats.blocksLost);
+                }
+                
                 // Remove token from blocker (decrease count)
                 var currentBlockerTokens = getPlayerTokens(playerName);
                 console.log('🔍 Before transfer:', playerName, 'has', currentBlockerTokens[tokenValue], tokenValue + '-point tokens');
@@ -5151,36 +5225,60 @@ function calculateAndApplyScores() {
         var highestBidder = GameState.get('highestBidder');
         Object.keys(currentBlocks).forEach(function(playerName) {
             if (playerName !== highestBidder && currentBlocks[playerName]) {
-                var blockData = currentBlocks[playerName];
-                var tokenValue = blockData.tokenValue;
-                var blockedCardId = blockData.cardId;
-                var currentScore = GameState.get('players.scores.' + playerName) || 0;
-                GameState.set('players.scores.' + playerName, currentScore + tokenValue);
-                console.log(playerName + ' earned ' + tokenValue + ' points for successful block and keeps their token!');
+                var playerBlocks = currentBlocks[playerName];
                 
-                // Track blocking points earned for breakdown display
-                var currentStats = getPlayerStats(playerName);
-                if (currentStats) {
-                    if (!currentStats.blockingPointsEarned) {
-                        currentStats.blockingPointsEarned = 0;
-                    }
-                    currentStats.blockingPointsEarned += tokenValue;
-                    GameState.set('players.stats.' + playerName, currentStats);
-                    console.log('📊 Updated blocking points earned for ' + playerName + ': ' + currentStats.blockingPointsEarned);
+                // Handle both array and single block formats
+                if (!Array.isArray(playerBlocks)) {
+                    // Convert single block to array for consistent processing
+                    playerBlocks = [playerBlocks];
+                    console.log('🔄 Converting single block to array for', playerName);
                 }
                 
-                // TOKEN OWNERSHIP: Give blocked card to player if rule is enabled
-                if (ACTIVE_RULES.tokenOwnership && blockedCardId) {
-                    // Check if player should gain ownership (either no requirement, or block was successful)
-                    var shouldGainOwnership = !ACTIVE_RULES.requireSuccessfulBlock || true; // Block is successful since bidder failed
+                // Process each block for this player
+                playerBlocks.forEach(function(blockData) {
+                    var tokenValue = blockData.tokenValue;
+                    var blockedCardId = blockData.cardId;
+                    var currentScore = GameState.get('players.scores.' + playerName) || 0;
+                    GameState.set('players.scores.' + playerName, currentScore + tokenValue);
+                    console.log(playerName + ' earned ' + tokenValue + ' points for successful block and keeps their token!');
+                    
+                    // Track blocking points earned for breakdown display
+                    var currentStats = getPlayerStats(playerName);
+                    if (currentStats) {
+                        if (!currentStats.blockingPointsEarned) {
+                            currentStats.blockingPointsEarned = 0;
+                        }
+                        currentStats.blockingPointsEarned += tokenValue;
+                        
+                        // Track that this block was won (bidder failed)
+                        currentStats.blocksWon = (currentStats.blocksWon || 0) + 1;
+                        
+                        GameState.set('players.stats.' + playerName, currentStats);
+                        console.log('📊 Updated blocking points earned for ' + playerName + ': ' + currentStats.blockingPointsEarned);
+                        console.log('📊 BLOCKS WON: ' + playerName + ' total won blocks: ' + currentStats.blocksWon);
+                    }
+                    
+                    // TOKEN OWNERSHIP: Give blocked card to player if rule is enabled
+                    console.log('🔍 TOKEN OWNERSHIP CHECK for', playerName, '- Rule enabled:', ACTIVE_RULES.tokenOwnership, 'BlockedCardId:', blockedCardId);
+                    
+                    // Defensive check: ensure playerName is valid
+                    if (!playerName || playerName === 'undefined') {
+                        console.error('❌ Invalid playerName detected:', playerName, 'Skipping token ownership');
+                        return;
+                    }
+                    
+                    if (ACTIVE_RULES.tokenOwnership && blockedCardId) {
+                    // We're in the "bidder fails" branch, so blocks are always successful
+                    var shouldGainOwnership = true; // Block is successful since bidder failed
+                    console.log('🔍 Should gain ownership:', shouldGainOwnership, '(bidder failed, block successful)');
                     
                     if (shouldGainOwnership) {
-                        // Add card to player's owned collection
-                        if (!players.ownedCards) {
-                            players.ownedCards = {};
-                        }
-                        if (!players.ownedCards[playerName]) {
-                            players.ownedCards[playerName] = {
+                        console.log('🔍 PROCEEDING with token ownership for', playerName, 'card:', blockedCardId);
+                        
+                        // CRITICAL FIX: Use GameState for ownedCards instead of direct players object
+                        var ownedCards = GameState.get('players.ownedCards') || {};
+                        if (!ownedCards[playerName]) {
+                            ownedCards[playerName] = {
                                 countries: [],
                                 movies: [],
                                 sports: [],
@@ -5191,32 +5289,56 @@ function calculateAndApplyScores() {
                         // Get current category and card data
                         var gameState = GameState.data;
                         var currentCategory = gameState.currentCategory || 'countries';
+                        console.log('🔍 Current category:', currentCategory);
                         var categoryData = window.GAME_DATA.categories[currentCategory];
-                        var cardData = categoryData.items[blockedCardId];
+                        var cardData = categoryData ? categoryData.items[blockedCardId] : null;
+                        console.log('🔍 Card data lookup:', blockedCardId, '→', cardData ? cardData.name : 'NOT FOUND');
                         
                         // Ensure category array exists
-                        if (!players.ownedCards[playerName][currentCategory]) {
-                            players.ownedCards[playerName][currentCategory] = [];
+                        if (!ownedCards[playerName][currentCategory]) {
+                            ownedCards[playerName][currentCategory] = [];
+                            console.log('🔍 Created category array for', playerName, currentCategory);
                         }
                         
+                        console.log('🔍 Current owned cards for', playerName, ':', ownedCards[playerName][currentCategory]);
+                        console.log('🔍 Checking if', blockedCardId, 'is already owned...');
+                        
                         // Only add if not already owned in this category
-                        if (!players.ownedCards[playerName][currentCategory].includes(blockedCardId)) {
-                            players.ownedCards[playerName][currentCategory].push(blockedCardId);
-                            console.log('🏆 ' + playerName + ' now owns ' + cardData.name + ' (successful block)!');
-                            showNotification(playerName + ' now owns ' + cardData.name + '!', 'success');
+                        if (!ownedCards[playerName][currentCategory].includes(blockedCardId)) {
+                            console.log('🔍 ✅ Card not owned yet, adding to collection');
+                            ownedCards[playerName][currentCategory].push(blockedCardId);
+                            // CRITICAL FIX: Save the updated ownedCards back to GameState
+                            GameState.set('players.ownedCards', ownedCards);
+                            console.log('🔍 💾 Saved ownedCards to GameState');
+                            
+                            if (cardData) {
+                                console.log('🏆 ' + playerName + ' now owns ' + cardData.name + ' (successful block)!');
+                                showNotification(playerName + ' now owns ' + cardData.name + '!', 'success');
+                            } else {
+                                console.log('🏆 ' + playerName + ' now owns card ' + blockedCardId + ' (card data not found)!');
+                            }
                             
                             // Track token gained (card ownership) in statistics
                             var currentStats = getPlayerStats(playerName);
+                            console.log('🔍 Current stats for', playerName, ':', currentStats);
                             if (currentStats) {
-                                currentStats.tokensGained = (currentStats.tokensGained || 0) + 1;
+                                var oldTokensGained = currentStats.tokensGained || 0;
+                                currentStats.tokensGained = oldTokensGained + 1;
                                 GameState.set('players.stats.' + playerName, currentStats);
-                                console.log('📊 Token gained: ' + playerName + ' now has ' + currentStats.tokensGained + ' tokens total');
+                                console.log('📊 TOKEN GAINED: ' + playerName + ' went from ' + oldTokensGained + ' to ' + currentStats.tokensGained + ' tokens total');
+                            } else {
+                                console.error('❌ No stats found for player:', playerName);
                             }
+                        } else {
+                            console.log('🔍 ❌ DUPLICATE CARD: ' + playerName + ' already owns ' + blockedCardId + ' - no token gained');
                         }
                     }
-                }
+                    } else {
+                        console.log('🔍 ❌ NO TOKEN OWNERSHIP: Rule enabled=', ACTIVE_RULES.tokenOwnership, 'BlockedCardId=', blockedCardId);
+                    }
+                }); // End of playerBlocks.forEach
             }
-        });
+        }); // End of Object.keys(currentBlocks).forEach
     }
     
     console.log('💰 FINAL SCORES after calculation:', GameState.get('players.scores'));
@@ -5298,7 +5420,9 @@ function calculateAndApplyScores() {
         window.globalCardStats.totalCardsRanked += selectedCards.length;
         
         // Update test results card statistics
+        console.log('🔍 calculateAndApplyScores: checking automatedTestResults, value:', !!window.automatedTestResults, 'type:', typeof window.automatedTestResults);
         if (!window.automatedTestResults) {
+            console.log('🔍 RECREATING automatedTestResults in calculateAndApplyScores!');
             window.automatedTestResults = {
                 cardStats: {
                     totalCardsRanked: 0,
@@ -5612,6 +5736,7 @@ function updateInterimRoundSummary() {
 }
 
 window.continueToNextRound = function() {
+    console.log('🔄 continueToNextRound() called from:', new Error().stack.split('\n')[1].trim());
     console.log('🔄 ENTERED continueToNextRound()');
     
     // CRITICAL: Calculate scores before round tracking validation
@@ -5685,6 +5810,43 @@ window.nextRound = function() {
     // Reset phase for new round
     if (window.automatedTestState) {
         setPhase('idle', null);
+    }
+    
+    // Check if automated test should complete
+    if (window.isAutomatedTestRunning && window.automatedTestResults && !window.automatedTestResults.endTime) {
+        var currentRound = getCurrentRound();
+        console.log('🔍 Checking test completion: currentRound=' + currentRound + ', maxRounds=' + ACTIVE_RULES.maxRounds);
+        
+        if (currentRound >= ACTIVE_RULES.maxRounds) {
+            console.log('🏁 Automated test reached max rounds - marking for completion...');
+            
+            // Set a flag to indicate we should complete, but don't set endTime yet
+            window.automatedTestResults.shouldComplete = true;
+            
+            // Use setTimeout to complete after current operations finish
+            setTimeout(() => {
+                console.log('🏁 Completing automated test now...');
+                
+                // Set end time and generate results
+                window.automatedTestResults.endTime = new Date();
+                generateDetailedTestResults();
+                
+                // Run comprehensive analysis directly
+                console.log('\n🔍 RUNNING COMPREHENSIVE BLOCK/TOKEN ANALYSIS...');
+                analyzeAllPlayersBlocks();
+                
+                window.isAutomatedTestRunning = false;
+                
+                // Clear any remaining automated test state
+                if (window.automatedTestState) {
+                    window.automatedTestState = null;
+                }
+                
+                console.log('✅ Automated test completed successfully!');
+            }, 5000); // Give more time for current round to complete
+            
+            return; // Don't continue to next round
+        }
     }
     
     // For automated testing, continue automatically
@@ -5895,6 +6057,9 @@ function endGame() {
     // Apply country token bonuses
     applyCountryTokenBonuses();
     
+    // Don't handle completion in endGame() - let it happen naturally in continueToNextRound()
+    console.log('🔍 endGame() debug: isAutomatedTestRunning=' + window.isAutomatedTestRunning + ', automatedTestResults=' + !!window.automatedTestResults);
+    
     var winner = checkWinCondition();
     var finalScores = getFinalScores();
     
@@ -5941,6 +6106,12 @@ function endGame() {
     });
     
     console.log(message);
+    
+    // For automated tests, skip showing the normal game end screen
+    if (window.isAutomatedTestRunning || (window.automatedTestResults && window.automatedTestResults.startTime && !window.automatedTestResults.endTime)) {
+        console.log('🔍 Skipping normal game end screen for automated test');
+        return;
+    }
     
     // Update scores screen and show it (pass pre-calculated scores to avoid redundant calls)
     updateScoresDisplay(finalScores);
@@ -7030,22 +7201,39 @@ function automatedBlocking() {
                 var tokenValues = [2, 4, 6];
                 var randomToken = tokenValues[Math.floor(Math.random() * tokenValues.length)];
                 var currentDrawnCards = getDrawnCards();
-                var randomCardIndex = Math.floor(Math.random() * Math.min(currentDrawnCards.length, 3));
+                
+                // Filter out cards that are already owned by anyone
+                var gameState = GameState.data;
+                var currentCategory = gameState.currentCategory || 'countries';
+                var ownedCards = GameState.get('players.ownedCards') || {};
+                var blockableCards = currentDrawnCards.filter(function(cardId) {
+                    for (var playerName in ownedCards) {
+                        if (ownedCards[playerName][currentCategory] && 
+                            ownedCards[playerName][currentCategory].includes(cardId)) {
+                            return false; // Card is owned, cannot block
+                        }
+                    }
+                    return true; // Card is not owned, can block
+                });
+                
+                console.log('🔍 Drawn cards:', currentDrawnCards.length, 'Blockable cards:', blockableCards.length);
+                var randomCardIndex = Math.floor(Math.random() * Math.min(blockableCards.length, 3));
                 
                 setTimeout(() => {
                     console.log('🔘 ' + currentPlayer + ' selecting ' + randomToken + '-point token');
                     selectBlockingToken(randomToken, null);
                     
                     setTimeout(() => {
-                        console.log('🐛 DEBUG: drawnCards:', currentDrawnCards, 'length:', currentDrawnCards ? currentDrawnCards.length : 'undefined');
+                        console.log('🐛 DEBUG: blockableCards:', blockableCards, 'length:', blockableCards ? blockableCards.length : 'undefined');
                         console.log('🐛 DEBUG: randomCardIndex:', randomCardIndex);
-                        if (currentDrawnCards && currentDrawnCards.length > randomCardIndex) {
-                            var cardToBlock = currentDrawnCards[randomCardIndex];
-                            console.log('🚫 ' + currentPlayer + ' blocking card: ' + cardToBlock);
+                        if (blockableCards && blockableCards.length > 0 && blockableCards.length > randomCardIndex) {
+                            var cardToBlock = blockableCards[randomCardIndex];
+                            console.log('🚫 ' + currentPlayer + ' blocking card: ' + cardToBlock + ' (validated as blockable)');
                             selectCardToBlock(cardToBlock);
                         } else {
-                            console.log('⚠️ No valid card, skipping turn');
+                            console.log('⚠️ No blockable cards available, skipping turn');
                             console.log('   drawnCards:', currentDrawnCards);
+                            console.log('   blockableCards:', blockableCards);
                             console.log('   randomCardIndex:', randomCardIndex);
                             skipCurrentBlocker();
                         }
@@ -7098,8 +7286,8 @@ function skipCurrentBlocker() {
 }
 
 function automatedRanking() {
-    // Prevent execution if automated test has completed
-    if (!window.isAutomatedTestRunning || (window.automatedTestResults && window.automatedTestResults.endTime)) {
+    // Prevent execution if automated test has completed (but allow if completion is pending)
+    if (!window.isAutomatedTestRunning || (window.automatedTestResults && window.automatedTestResults.endTime && !window.automatedTestResults.shouldComplete)) {
         console.log('⚠️ Ignoring automatedRanking() call - test not running or completed');
         return;
     }
@@ -7518,6 +7706,129 @@ function automatedRevealNext() {
     }
 }
 
+// Comprehensive analysis of all players' block/token stats
+// Auto-runs at end of Fast Test for easy copy/paste
+function analyzeAllPlayersBlocks() {
+    try {
+        console.log('🔍 COMPREHENSIVE BLOCK/TOKEN ANALYSIS');
+        console.log('=====================================');
+        
+        const playersList = GameState.get('players.list') || [];
+        console.log('🔍 DEBUG: playersList:', playersList);
+    
+    // Game-wide stats
+    let totalSuccessfulRankings = 0;
+    let totalBlocksMade = 0;
+    let totalBlocksWon = 0;
+    let totalTokensGained = 0;
+    
+    console.log('\n📊 INDIVIDUAL PLAYER ANALYSIS:');
+    console.log('===============================');
+    
+    playersList.forEach(playerName => {
+        const stats = getPlayerStats(playerName);
+        
+        // Count owned cards
+        const ownedCards = GameState.get('players.ownedCards') || {};
+        let actualTokenCount = 0;
+        if (ownedCards[playerName]) {
+            Object.keys(ownedCards[playerName]).forEach(category => {
+                const cards = ownedCards[playerName][category] || [];
+                actualTokenCount += cards.length;
+            });
+        }
+        
+        // Analysis
+        const blockDiscrepancy = stats.blocksMade - stats.tokensGained;
+        const statsConsistent = stats.blocksWon === stats.tokensGained;
+        const tokensConsistent = stats.tokensGained === actualTokenCount;
+        
+        console.log(`\n👤 ${playerName}:`);
+        console.log(`  blocksMade: ${stats.blocksMade}`);
+        console.log(`  blocksWon: ${stats.blocksWon}`);
+        console.log(`  blocksLost: ${stats.blocksLost}`);
+        console.log(`  tokensGained: ${stats.tokensGained}`);
+        console.log(`  actualTokensOwned: ${actualTokenCount}`);
+        console.log(`  bidsWon: ${stats.bidsWon || 0}`);
+        console.log(`  bidsSuccessful: ${stats.bidsSuccessful || 0}`);
+        console.log(`  blockDiscrepancy: ${blockDiscrepancy} (blocksMade - tokensGained)`);
+        console.log(`  blocksWon = tokensGained? ${statsConsistent ? '✅' : '❌'}`);
+        console.log(`  tokensGained = actualOwned? ${tokensConsistent ? '✅' : '❌'}`);
+        
+        if (blockDiscrepancy > 0) {
+            const possibleSelfBlocks = stats.bidsWon || 0;
+            if (possibleSelfBlocks >= blockDiscrepancy) {
+                console.log(`  🤔 Likely explanation: ${blockDiscrepancy} self-blocks (bidder can't block)`);
+            } else {
+                console.log(`  ❌ Unknown issue: discrepancy can't be explained by self-blocks`);
+            }
+        }
+        
+        // Accumulate totals
+        totalSuccessfulRankings += stats.bidsSuccessful || 0;
+        totalBlocksMade += stats.blocksMade;
+        totalBlocksWon += stats.blocksWon;
+        totalTokensGained += stats.tokensGained;
+    });
+    
+    console.log('\n🎯 GAME-WIDE SUMMARY:');
+    console.log('=====================');
+    console.log(`Total successful rankings: ${totalSuccessfulRankings}`);
+    console.log(`Total blocks made: ${totalBlocksMade}`);
+    console.log(`Total blocks won: ${totalBlocksWon}`);
+    console.log(`Total tokens gained: ${totalTokensGained}`);
+    console.log(`blocksWon = tokensGained? ${totalBlocksWon === totalTokensGained ? '✅' : '❌'}`);
+    
+    if (totalSuccessfulRankings === 0) {
+        console.log('\n✅ No successful rankings - all blocks should result in tokens');
+        if (totalBlocksMade > totalTokensGained) {
+            console.log(`❌ Issue: ${totalBlocksMade - totalTokensGained} blocks didn't result in tokens`);
+        }
+    }
+    
+    console.log('\n📋 COPY/PASTE SUMMARY FOR DEBUGGING:');
+    console.log('====================================');
+    console.log('PLAYERS_STATS_SUMMARY:');
+    playersList.forEach(playerName => {
+        const stats = getPlayerStats(playerName);
+        const ownedCards = GameState.get('players.ownedCards') || {};
+        let actualTokenCount = 0;
+        if (ownedCards[playerName]) {
+            Object.keys(ownedCards[playerName]).forEach(category => {
+                actualTokenCount += (ownedCards[playerName][category] || []).length;
+            });
+        }
+        console.log(`${playerName}: blocksMade=${stats.blocksMade}, blocksWon=${stats.blocksWon}, tokensGained=${stats.tokensGained}, actualOwned=${actualTokenCount}, bidsWon=${stats.bidsWon || 0}, bidsSuccessful=${stats.bidsSuccessful || 0}`);
+    });
+    
+    return {
+        totalSuccessfulRankings,
+        totalBlocksMade,
+        totalBlocksWon,
+        totalTokensGained,
+        playersData: playersList.map(name => {
+            const stats = getPlayerStats(name);
+            const ownedCards = GameState.get('players.ownedCards') || {};
+            let actualTokenCount = 0;
+            if (ownedCards[name]) {
+                Object.keys(ownedCards[name]).forEach(category => {
+                    actualTokenCount += (ownedCards[name][category] || []).length;
+                });
+            }
+            return {
+                name,
+                ...stats,
+                actualTokenCount,
+                discrepancy: stats.blocksMade - stats.tokensGained
+            };
+        })
+    };
+    } catch (error) {
+        console.error('🔍 ERROR in analyzeAllPlayersBlocks:', error);
+        console.error('Stack trace:', error.stack);
+    }
+}
+
 // Validate statistics consistency
 function validateStatistics() {
     console.log('🔍 Validating statistics consistency...');
@@ -7625,6 +7936,10 @@ function generateDetailedTestResults() {
             console.log((index + 1) + '. ' + error);
         });
     }
+    
+    // Run comprehensive block/token analysis
+    console.log('\n🔍 RUNNING COMPREHENSIVE BLOCK/TOKEN ANALYSIS...');
+    analyzeAllPlayersBlocks();
     
     console.log('\n✨ Test completed successfully! All game mechanics working properly.');
     console.log('📊 Results stored in window.automatedTestResults for further analysis.');

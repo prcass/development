@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Block Tracking Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .info { background-color: #d1ecf1; color: #0c5460; }
+        button {
+            padding: 10px 20px;
+            margin: 10px 10px 10px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Block Tracking Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Controls</h2>
+        <button onclick="runBlockTrackingTest()">Run Block Tracking Test</button>
+        <button onclick="clearResults()">Clear Results</button>
+    </div>
+    
+    <div id="results"></div>
+    
+    <script>
+        const resultsDiv = document.getElementById('results');
+        
+        function log(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.innerHTML = message;
+            resultsDiv.appendChild(div);
+        }
+        
+        function clearResults() {
+            resultsDiv.innerHTML = '';
+        }
+        
+        async function runBlockTrackingTest() {
+            clearResults();
+            log('<h3>Starting Block Tracking Test...</h3>', 'info');
+            
+            try {
+                // Navigate to the game
+                log('Opening game...', 'info');
+                const gameWindow = window.open('http://localhost:8000', '_blank');
+                
+                // Wait for game to load
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Give instructions
+                log('<h3>Manual Test Instructions:</h3>', 'info');
+                log('1. Click "Run Automated Test" in the game window', 'info');
+                log('2. Wait for the test to complete', 'info');
+                log('3. Look for these key indicators in the console:', 'info');
+                log('   - When bidder FAILS: Check that blockers get points AND tokens', 'info');
+                log('   - Track "blocksMade" vs "tokensGained" statistics', 'info');
+                log('   - Verify token ownership transfers correctly', 'info');
+                log('4. Check the Test Results screen for statistics', 'info');
+                
+                log('<h3>Expected Results When Bidder Fails:</h3>', 'success');
+                log('✓ Each blocker should earn points equal to their token value', 'success');
+                log('✓ Each blocker should gain ownership of the blocked card', 'success');
+                log('✓ blocksMade should equal tokensGained for blockers', 'success');
+                log('✓ No console errors about array/object conversion', 'success');
+                
+                log('<h3>Key Console Messages to Look For:</h3>', 'info');
+                log('<pre>📊 BLOCK MADE: [player] total blocks: X\n📊 TOKEN GAINED: [player] total tokens: Y\n💰 BLOCK POINTS: [player] earned X points</pre>', 'info');
+                
+            } catch (error) {
+                log(`Error: ${error.message}`, 'error');
+            }
+        }
+        
+        // Auto-run on load
+        window.onload = function() {
+            log('<h2>Block Tracking Test Page Loaded</h2>', 'success');
+            log('Click "Run Block Tracking Test" to start', 'info');
+        };
+    </script>
+</body>
+</html>

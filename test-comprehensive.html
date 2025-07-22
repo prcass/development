@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comprehensive Automated Test Fixes Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .info { background-color: #d1ecf1; color: #0c5460; }
+        .warning { background-color: #fff3cd; color: #856404; }
+        button {
+            padding: 10px 20px;
+            margin: 10px 10px 10px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .test-item {
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+        .test-item h4 {
+            margin-top: 0;
+            color: #333;
+        }
+        .check-item {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+        .check-passed { color: #28a745; }
+        .check-failed { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Comprehensive Automated Test Fixes Validation</h1>
+    
+    <div class="test-section">
+        <h2>Test Overview</h2>
+        <p>This test validates all the fixes implemented for the automated testing issues:</p>
+        <ul>
+            <li>✅ Phase 1: Block format standardization (arrays)</li>
+            <li>✅ Phase 2: Ranking validation and bidderSuccess tracking</li>
+            <li>🔄 Phase 3: State management and synchronization</li>
+            <li>🔄 Phase 4: Race condition elimination</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Controls</h2>
+        <button onclick="runComprehensiveTest()">🚀 Run Comprehensive Test</button>
+        <button onclick="clearResults()">🗑️ Clear Results</button>
+        <button onclick="openGameWindow()">🎮 Open Game Window</button>
+    </div>
+    
+    <div id="results"></div>
+    
+    <div class="test-section" id="testChecklist" style="display:none;">
+        <h2>Test Validation Checklist</h2>
+        <div class="test-grid">
+            <div class="test-item">
+                <h4>Phase 1: Block Format</h4>
+                <div class="check-item">◯ Migration function exists</div>
+                <div class="check-item">◯ All blocks are arrays</div>
+                <div class="check-item">◯ No inline conversions</div>
+                <div class="check-item">◯ Centralized tracking works</div>
+            </div>
+            
+            <div class="test-item">
+                <h4>Phase 2: Ranking Validation</h4>
+                <div class="check-item">◯ No local bidderSuccess variable</div>
+                <div class="check-item">◯ Validation function exists</div>
+                <div class="check-item">◯ Correct rankings detected</div>
+                <div class="check-item">◯ Failed rankings detected</div>
+            </div>
+            
+            <div class="test-item">
+                <h4>Token Tracking</h4>
+                <div class="check-item">◯ blocksMade tracked correctly</div>
+                <div class="check-item">◯ tokensGained tracked correctly</div>
+                <div class="check-item">◯ When bidder fails: blocks = tokens</div>
+                <div class="check-item">◯ Token ownership transfers</div>
+            </div>
+            
+            <div class="test-item">
+                <h4>Console Cleanliness</h4>
+                <div class="check-item">◯ No array/object errors</div>
+                <div class="check-item">◯ No undefined errors</div>
+                <div class="check-item">◯ No race condition errors</div>
+                <div class="check-item">◯ Clean test completion</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const resultsDiv = document.getElementById('results');
+        let gameWindow = null;
+        
+        function log(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `status ${type}`;
+            div.innerHTML = message;
+            resultsDiv.appendChild(div);
+            
+            // Auto-scroll to bottom
+            resultsDiv.scrollTop = resultsDiv.scrollHeight;
+        }
+        
+        function clearResults() {
+            resultsDiv.innerHTML = '';
+            document.getElementById('testChecklist').style.display = 'none';
+        }
+        
+        function openGameWindow() {
+            gameWindow = window.open('http://localhost:8000', '_blank');
+            log('Game window opened', 'success');
+        }
+        
+        async function runComprehensiveTest() {
+            clearResults();
+            document.getElementById('testChecklist').style.display = 'block';
+            
+            log('<h3>🚀 Starting Comprehensive Test...</h3>', 'info');
+            
+            // Open game if not already open
+            if (!gameWindow || gameWindow.closed) {
+                openGameWindow();
+                log('Waiting for game to load...', 'info');
+                await new Promise(resolve => setTimeout(resolve, 3000));
+            }
+            
+            log('<h3>📋 Test Instructions:</h3>', 'info');
+            log('1. Click "Run Automated Test" in the game window', 'warning');
+            log('2. Monitor the browser console for errors', 'warning');
+            log('3. Watch for the following key behaviors:', 'info');
+            
+            log('<h4>🎯 Expected Behaviors:</h4>', 'info');
+            
+            log('<b>Block Tracking:</b>', 'success');
+            log('• When players block cards, you should see:', 'info');
+            log('  📊 BLOCK MADE: [player] total blocks: X', 'info');
+            log('  💰 BLOCK POINTS: [player] earned X points', 'info');
+            log('  📊 TOKEN GAINED: [player] total tokens: Y (when bidder fails)', 'info');
+            
+            log('<b>Ranking Validation:</b>', 'success');
+            log('• When ranking is submitted:', 'info');
+            log('  🎯 RANKING VALIDATION: {playerOrder: [...], correctOrder: [...], success: true/false}', 'info');
+            log('• No duplicate success/failure messages', 'info');
+            
+            log('<b>Statistics Consistency:</b>', 'success');
+            log('• When bidder FAILS:', 'info');
+            log('  - Each blocker\'s blocksMade = tokensGained', 'info');
+            log('  - Blockers receive points AND card ownership', 'info');
+            log('• When bidder SUCCEEDS:', 'info');
+            log('  - Blockers\' blocksMade > tokensGained', 'info');
+            log('  - Blockers lose chips, get no tokens', 'info');
+            
+            log('<h4>❌ Watch for these ERRORS:</h4>', 'error');
+            log('• "playerBlocks should be an array but got: [object]"', 'error');
+            log('• "Cannot read property \'cardId\' of undefined"', 'error');
+            log('• Any TypeError or ReferenceError', 'error');
+            log('• Mismatched token counts', 'error');
+            
+            // Provide console validation script
+            log('<h4>🔧 Console Validation Script:</h4>', 'info');
+            log('<pre>// Paste this in the console after the test completes:\n' +
+                'function validateTest() {\n' +
+                '  console.log("\\n🧪 VALIDATING TEST RESULTS...");\n' +
+                '  \n' +
+                '  // Check block format\n' +
+                '  const blocks = GameState.get("players.currentBlocks");\n' +
+                '  let allArrays = true;\n' +
+                '  Object.keys(blocks).forEach(p => {\n' +
+                '    if (blocks[p] && !Array.isArray(blocks[p])) {\n' +
+                '      console.error("❌ Non-array blocks for", p);\n' +
+                '      allArrays = false;\n' +
+                '    }\n' +
+                '  });\n' +
+                '  console.log(allArrays ? "✅ All blocks are arrays" : "❌ Block format issue");\n' +
+                '  \n' +
+                '  // Check statistics\n' +
+                '  const players = GameState.get("players.list");\n' +
+                '  players.forEach(p => {\n' +
+                '    const stats = getPlayerStats(p);\n' +
+                '    console.log(`\\n📊 ${p}:`);\n' +
+                '    console.log(`  Blocks made: ${stats.blocksMade || 0}`);\n' +
+                '    console.log(`  Tokens gained: ${stats.tokensGained || 0}`);\n' +
+                '    console.log(`  Points from blocks: ${stats.blockingPointsEarned || 0}`);\n' +
+                '  });\n' +
+                '  \n' +
+                '  // Check functions\n' +
+                '  console.log("\\n🔧 Function checks:");\n' +
+                '  console.log("migrateBlocksToArrayFormat:", typeof migrateBlocksToArrayFormat);\n' +
+                '  console.log("updatePlayerTokenTracking:", typeof updatePlayerTokenTracking);\n' +
+                '  console.log("validateRankingSuccess:", typeof validateRankingSuccess);\n' +
+                '}\n' +
+                'validateTest();</pre>', 'info');
+            
+            log('<h3>👀 Now run the automated test and observe the results!</h3>', 'warning');
+        }
+        
+        // Auto-open on load
+        window.onload = function() {
+            log('<h2>Test Page Ready</h2>', 'success');
+            log('Click "Run Comprehensive Test" to begin validation', 'info');
+        };
+    </script>
+</body>
+</html>
