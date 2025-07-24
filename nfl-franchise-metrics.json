@@ -1,0 +1,130 @@
+{
+  "Arizona Cardinals": {
+    "franchise_name_changes": 5,
+    "franchise_miles_moved": 1500
+  },
+  "Chicago Bears": {
+    "franchise_name_changes": 2,
+    "franchise_miles_moved": 180
+  },
+  "Cleveland Browns": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Detroit Lions": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 60
+  },
+  "Green Bay Packers": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Indianapolis Colts": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 650
+  },
+  "Kansas City Chiefs": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 500
+  },
+  "Las Vegas Raiders": {
+    "franchise_name_changes": 3,
+    "franchise_miles_moved": 1370
+  },
+  "Los Angeles Chargers": {
+    "franchise_name_changes": 2,
+    "franchise_miles_moved": 240
+  },
+  "Los Angeles Rams": {
+    "franchise_name_changes": 3,
+    "franchise_miles_moved": 6000
+  },
+  "New England Patriots": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 0
+  },
+  "New York Jets": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 0
+  },
+  "Philadelphia Eagles": {
+    "franchise_name_changes": 2,
+    "franchise_miles_moved": 0
+  },
+  "Pittsburgh Steelers": {
+    "franchise_name_changes": 4,
+    "franchise_miles_moved": 0
+  },
+  "Tennessee Titans": {
+    "franchise_name_changes": 2,
+    "franchise_miles_moved": 350
+  },
+  "Washington Commanders": {
+    "franchise_name_changes": 4,
+    "franchise_miles_moved": 440
+  },
+  "Atlanta Falcons": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Baltimore Ravens": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Buffalo Bills": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Carolina Panthers": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Cincinnati Bengals": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Dallas Cowboys": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Denver Broncos": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Houston Texans": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Jacksonville Jaguars": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Miami Dolphins": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Minnesota Vikings": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "New Orleans Saints": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "New York Giants": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "San Francisco 49ers": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Seattle Seahawks": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Tampa Bay Buccaneers": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  }
+}

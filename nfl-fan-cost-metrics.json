@@ -1,0 +1,290 @@
+{
+  "Las Vegas Raiders": {
+    "average_ticket_price": 168.83,
+    "premium_ticket_price": 370.28,
+    "beer_price": 10.99,
+    "soft_drink_price": 2.99,
+    "hot_dog_price": 2.99,
+    "parking_price": 30,
+    "fan_cost_index": 801.2
+  },
+  "San Francisco 49ers": {
+    "average_ticket_price": 161.33,
+    "premium_ticket_price": 491.68,
+    "beer_price": 12,
+    "soft_drink_price": 4.5,
+    "hot_dog_price": 6,
+    "parking_price": 48.33,
+    "fan_cost_index": 773.63
+  },
+  "Philadelphia Eagles": {
+    "average_ticket_price": 139.01,
+    "premium_ticket_price": 409.65,
+    "beer_price": 11.5,
+    "soft_drink_price": 6,
+    "hot_dog_price": 6.5,
+    "parking_price": 56.5,
+    "fan_cost_index": 737.52
+  },
+  "Green Bay Packers": {
+    "average_ticket_price": 141.48,
+    "premium_ticket_price": 354.57,
+    "beer_price": 10,
+    "soft_drink_price": 6.5,
+    "hot_dog_price": 6,
+    "parking_price": 36.67,
+    "fan_cost_index": 718.57
+  },
+  "New England Patriots": {
+    "average_ticket_price": 142.74,
+    "premium_ticket_price": 439.57,
+    "beer_price": 10.5,
+    "soft_drink_price": 5,
+    "hot_dog_price": 4.5,
+    "parking_price": 0,
+    "fan_cost_index": 681.94
+  },
+  "Chicago Bears": {
+    "average_ticket_price": 130.29,
+    "premium_ticket_price": 357.36,
+    "beer_price": 11,
+    "soft_drink_price": 7,
+    "hot_dog_price": 8,
+    "parking_price": 26.7,
+    "fan_cost_index": 681.84
+  },
+  "Kansas City Chiefs": {
+    "average_ticket_price": 131.81,
+    "premium_ticket_price": 290.06,
+    "beer_price": 9,
+    "soft_drink_price": 5,
+    "hot_dog_price": 5,
+    "parking_price": 38.74,
+    "fan_cost_index": 679.96
+  },
+  "Denver Broncos": {
+    "average_ticket_price": 131.91,
+    "premium_ticket_price": 488.56,
+    "beer_price": 8.5,
+    "soft_drink_price": 6,
+    "hot_dog_price": 6,
+    "parking_price": 29.1,
+    "fan_cost_index": 677.72
+  },
+  "Tampa Bay Buccaneers": {
+    "average_ticket_price": 124.43,
+    "premium_ticket_price": 294.34,
+    "beer_price": 7,
+    "soft_drink_price": 8,
+    "hot_dog_price": 8,
+    "parking_price": 41.4,
+    "fan_cost_index": 677.1
+  },
+  "Seattle Seahawks": {
+    "average_ticket_price": 127.71,
+    "premium_ticket_price": 297.81,
+    "beer_price": 10.99,
+    "soft_drink_price": 6.49,
+    "hot_dog_price": 7.99,
+    "parking_price": 27.85,
+    "fan_cost_index": 674.57
+  },
+  "Pittsburgh Steelers": {
+    "average_ticket_price": 127.04,
+    "premium_ticket_price": 295.93,
+    "beer_price": 9.55,
+    "soft_drink_price": 7.19,
+    "hot_dog_price": 6.79,
+    "parking_price": 34.12,
+    "fan_cost_index": 667.3
+  },
+  "Dallas Cowboys": {
+    "average_ticket_price": 116.69,
+    "premium_ticket_price": 408.93,
+    "beer_price": 10.5,
+    "soft_drink_price": 6.5,
+    "hot_dog_price": 6.75,
+    "parking_price": 52.84,
+    "fan_cost_index": 665.6
+  },
+  "Washington Commanders": {
+    "average_ticket_price": 124.8,
+    "premium_ticket_price": 396,
+    "beer_price": 7,
+    "soft_drink_price": 4.5,
+    "hot_dog_price": 6.5,
+    "parking_price": 47.33,
+    "fan_cost_index": 656.51
+  },
+  "New York Giants": {
+    "average_ticket_price": 126.74,
+    "premium_ticket_price": 459.08,
+    "beer_price": 5,
+    "soft_drink_price": 3,
+    "hot_dog_price": 7,
+    "parking_price": 38.1,
+    "fan_cost_index": 655.06
+  },
+  "Minnesota Vikings": {
+    "average_ticket_price": 123.37,
+    "premium_ticket_price": 367.08,
+    "beer_price": 10.5,
+    "soft_drink_price": 6,
+    "hot_dog_price": 6.75,
+    "parking_price": 22.07,
+    "fan_cost_index": 641.53
+  },
+  "Cleveland Browns": {
+    "average_ticket_price": 122.18,
+    "premium_ticket_price": 306.1,
+    "beer_price": 7.5,
+    "soft_drink_price": 5.75,
+    "hot_dog_price": 6.75,
+    "parking_price": 24.22,
+    "fan_cost_index": 627.92
+  },
+  "Los Angeles Chargers": {
+    "average_ticket_price": 106.23,
+    "premium_ticket_price": 368.58,
+    "beer_price": 11,
+    "soft_drink_price": 6,
+    "hot_dog_price": 8,
+    "parking_price": 58.4,
+    "fan_cost_index": 617.3
+  },
+  "Houston Texans": {
+    "average_ticket_price": 117.45,
+    "premium_ticket_price": 376.47,
+    "beer_price": 6,
+    "soft_drink_price": 6,
+    "hot_dog_price": 5.5,
+    "parking_price": 31.29,
+    "fan_cost_index": 611.07
+  },
+  "Los Angeles Rams": {
+    "average_ticket_price": 103.9,
+    "premium_ticket_price": 377,
+    "beer_price": 11,
+    "soft_drink_price": 6,
+    "hot_dog_price": 8,
+    "parking_price": 54.9,
+    "fan_cost_index": 604.48
+  },
+  "Baltimore Ravens": {
+    "average_ticket_price": 120.27,
+    "premium_ticket_price": 312.93,
+    "beer_price": 7.63,
+    "soft_drink_price": 4.24,
+    "hot_dog_price": 3.71,
+    "parking_price": 23.5,
+    "fan_cost_index": 602.52
+  },
+  "Carolina Panthers": {
+    "average_ticket_price": 115.45,
+    "premium_ticket_price": 353.05,
+    "beer_price": 10.49,
+    "soft_drink_price": 5.99,
+    "hot_dog_price": 5.99,
+    "parking_price": 21.75,
+    "fan_cost_index": 602.43
+  },
+  "New York Jets": {
+    "average_ticket_price": 112.56,
+    "premium_ticket_price": 393.09,
+    "beer_price": 5,
+    "soft_drink_price": 3,
+    "hot_dog_price": 7,
+    "parking_price": 37.8,
+    "fan_cost_index": 594.02
+  },
+  "New Orleans Saints": {
+    "average_ticket_price": 111.97,
+    "premium_ticket_price": 288.8,
+    "beer_price": 12,
+    "soft_drink_price": 6.5,
+    "hot_dog_price": 6.5,
+    "parking_price": 9.7,
+    "fan_cost_index": 585.56
+  },
+  "Jacksonville Jaguars": {
+    "average_ticket_price": 102.22,
+    "premium_ticket_price": 411.1,
+    "beer_price": 11.49,
+    "soft_drink_price": 6.99,
+    "hot_dog_price": 7.29,
+    "parking_price": 41.97,
+    "fan_cost_index": 584.93
+  },
+  "Tennessee Titans": {
+    "average_ticket_price": 107.37,
+    "premium_ticket_price": 250.11,
+    "beer_price": 11,
+    "soft_drink_price": 5.5,
+    "hot_dog_price": 6.5,
+    "parking_price": 19.48,
+    "fan_cost_index": 574.94
+  },
+  "Detroit Lions": {
+    "average_ticket_price": 107.31,
+    "premium_ticket_price": 256.85,
+    "beer_price": 5,
+    "soft_drink_price": 5.5,
+    "hot_dog_price": 6.5,
+    "parking_price": 19.94,
+    "fan_cost_index": 563.16
+  },
+  "Indianapolis Colts": {
+    "average_ticket_price": 107,
+    "premium_ticket_price": 333.98,
+    "beer_price": 9,
+    "soft_drink_price": 4.25,
+    "hot_dog_price": 6,
+    "parking_price": 26,
+    "fan_cost_index": 556.98
+  },
+  "Buffalo Bills": {
+    "average_ticket_price": 101.64,
+    "premium_ticket_price": 304.43,
+    "beer_price": 7.75,
+    "soft_drink_price": 6,
+    "hot_dog_price": 6,
+    "parking_price": 35,
+    "fan_cost_index": 555.06
+  },
+  "Cincinnati Bengals": {
+    "average_ticket_price": 101.78,
+    "premium_ticket_price": 238.81,
+    "beer_price": 6,
+    "soft_drink_price": 7,
+    "hot_dog_price": 6,
+    "parking_price": 17.3,
+    "fan_cost_index": 544.4
+  },
+  "Miami Dolphins": {
+    "average_ticket_price": 104.45,
+    "premium_ticket_price": 390.92,
+    "beer_price": 5,
+    "soft_drink_price": 4,
+    "hot_dog_price": 4,
+    "parking_price": 29,
+    "fan_cost_index": 542.78
+  },
+  "Atlanta Falcons": {
+    "average_ticket_price": 111.54,
+    "premium_ticket_price": 430.61,
+    "beer_price": 5,
+    "soft_drink_price": 2,
+    "hot_dog_price": 2,
+    "parking_price": 19.06,
+    "fan_cost_index": 541.2
+  },
+  "Arizona Cardinals": {
+    "average_ticket_price": 98.54,
+    "premium_ticket_price": 339.85,
+    "beer_price": 7,
+    "soft_drink_price": 5.5,
+    "hot_dog_price": 5,
+    "parking_price": 13.3,
+    "fan_cost_index": 513.44
+  }
+}

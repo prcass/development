@@ -1,0 +1,290 @@
+{
+  "Toronto Maple Leafs": {
+    "average_ticket_price": 159.33,
+    "premium_ticket_price": 289.27,
+    "beer_price": 10.37,
+    "soft_drink_price": 5.56,
+    "hot_dog_price": 5.56,
+    "parking_price": 12.46,
+    "fan_cost_index": 759.42
+  },
+  "Vegas Golden Knights": {
+    "average_ticket_price": 144.89,
+    "premium_ticket_price": 592.5,
+    "beer_price": 14,
+    "soft_drink_price": 7,
+    "hot_dog_price": 7.5,
+    "parking_price": 25,
+    "fan_cost_index": 742.54
+  },
+  "New York Rangers": {
+    "average_ticket_price": 131.31,
+    "premium_ticket_price": 731.38,
+    "beer_price": 15,
+    "soft_drink_price": 5.5,
+    "hot_dog_price": 5,
+    "parking_price": 30.94,
+    "fan_cost_index": 682.16
+  },
+  "Nashville Predators": {
+    "average_ticket_price": 130.88,
+    "premium_ticket_price": 319.85,
+    "beer_price": 10,
+    "soft_drink_price": 5,
+    "hot_dog_price": 5.5,
+    "parking_price": 14.76,
+    "fan_cost_index": 650.26
+  },
+  "Boston Bruins": {
+    "average_ticket_price": 118.12,
+    "premium_ticket_price": 344.41,
+    "beer_price": 12.5,
+    "soft_drink_price": 6.5,
+    "hot_dog_price": 7,
+    "parking_price": 22.6,
+    "fan_cost_index": 630.06
+  },
+  "Chicago Blackhawks": {
+    "average_ticket_price": 115,
+    "premium_ticket_price": 195.02,
+    "beer_price": 11,
+    "soft_drink_price": 7,
+    "hot_dog_price": 7,
+    "parking_price": 19.9,
+    "fan_cost_index": 607.88
+  },
+  "Seattle Kraken": {
+    "average_ticket_price": 110.69,
+    "premium_ticket_price": 363.39,
+    "beer_price": 9,
+    "soft_drink_price": 8,
+    "hot_dog_price": 8,
+    "parking_price": 19.77,
+    "fan_cost_index": 600.51
+  },
+  "Washington Capitals": {
+    "average_ticket_price": 109.64,
+    "premium_ticket_price": 400.78,
+    "beer_price": 11,
+    "soft_drink_price": 6,
+    "hot_dog_price": 7,
+    "parking_price": 16.1,
+    "fan_cost_index": 578.64
+  },
+  "Montreal Canadiens": {
+    "average_ticket_price": 105.3,
+    "premium_ticket_price": 190.03,
+    "beer_price": 8.89,
+    "soft_drink_price": 5.19,
+    "hot_dog_price": 5.19,
+    "parking_price": 12.74,
+    "fan_cost_index": 537.66
+  },
+  "Los Angeles Kings": {
+    "average_ticket_price": 93.43,
+    "premium_ticket_price": 463.77,
+    "beer_price": 8,
+    "soft_drink_price": 6,
+    "hot_dog_price": 7.5,
+    "parking_price": 12.6,
+    "fan_cost_index": 516.3
+  },
+  "Tampa Bay Lightning": {
+    "average_ticket_price": 89.92,
+    "premium_ticket_price": 236.35,
+    "beer_price": 8,
+    "soft_drink_price": 7,
+    "hot_dog_price": 6,
+    "parking_price": 21.56,
+    "fan_cost_index": 509.22
+  },
+  "Detroit Red Wings": {
+    "average_ticket_price": 91.65,
+    "premium_ticket_price": 202.31,
+    "beer_price": 10,
+    "soft_drink_price": 6,
+    "hot_dog_price": 6,
+    "parking_price": 13.56,
+    "fan_cost_index": 508.14
+  },
+  "Minnesota Wild": {
+    "average_ticket_price": 92.67,
+    "premium_ticket_price": 129.49,
+    "beer_price": 10,
+    "soft_drink_price": 6.5,
+    "hot_dog_price": 6,
+    "parking_price": 10.43,
+    "fan_cost_index": 507.09
+  },
+  "Pittsburgh Penguins": {
+    "average_ticket_price": 92.26,
+    "premium_ticket_price": 250,
+    "beer_price": 7,
+    "soft_drink_price": 5.5,
+    "hot_dog_price": 6.5,
+    "parking_price": 19.2,
+    "fan_cost_index": 506.22
+  },
+  "New York Islanders": {
+    "average_ticket_price": 76.6,
+    "premium_ticket_price": 290.14,
+    "beer_price": 12,
+    "soft_drink_price": 7,
+    "hot_dog_price": 7,
+    "parking_price": 37.67,
+    "fan_cost_index": 484.05
+  },
+  "Dallas Stars": {
+    "average_ticket_price": 83.48,
+    "premium_ticket_price": 158.99,
+    "beer_price": 10.5,
+    "soft_drink_price": 6.5,
+    "hot_dog_price": 6,
+    "parking_price": 8.84,
+    "fan_cost_index": 472.74
+  },
+  "Philadelphia Flyers": {
+    "average_ticket_price": 80.56,
+    "premium_ticket_price": 238.79,
+    "beer_price": 12,
+    "soft_drink_price": 6,
+    "hot_dog_price": 7,
+    "parking_price": 22.16,
+    "fan_cost_index": 472.38
+  },
+  "Edmonton Oilers": {
+    "average_ticket_price": 85.12,
+    "premium_ticket_price": 202.83,
+    "beer_price": 9.26,
+    "soft_drink_price": 5.37,
+    "hot_dog_price": 6.11,
+    "parking_price": 10.15,
+    "fan_cost_index": 459.49
+  },
+  "St. Louis Blues": {
+    "average_ticket_price": 77.42,
+    "premium_ticket_price": 235.76,
+    "beer_price": 10,
+    "soft_drink_price": 7,
+    "hot_dog_price": 7,
+    "parking_price": 18.84,
+    "fan_cost_index": 456.5
+  },
+  "New Jersey Devils": {
+    "average_ticket_price": 75.25,
+    "premium_ticket_price": 203.11,
+    "beer_price": 11,
+    "soft_drink_price": 6,
+    "hot_dog_price": 6.5,
+    "parking_price": 19.55,
+    "fan_cost_index": 452.53
+  },
+  "Colorado Avalanche": {
+    "average_ticket_price": 73.35,
+    "premium_ticket_price": 154.88,
+    "beer_price": 12,
+    "soft_drink_price": 7,
+    "hot_dog_price": 7,
+    "parking_price": 16.66,
+    "fan_cost_index": 450.04
+  },
+  "Winnipeg Jets": {
+    "average_ticket_price": 84.84,
+    "premium_ticket_price": 152.53,
+    "beer_price": 5.93,
+    "soft_drink_price": 2.96,
+    "hot_dog_price": 5.93,
+    "parking_price": 13.33,
+    "fan_cost_index": 441.57
+  },
+  "Vancouver Canucks": {
+    "average_ticket_price": 78.25,
+    "premium_ticket_price": 160.9,
+    "beer_price": 7.78,
+    "soft_drink_price": 4.81,
+    "hot_dog_price": 5.19,
+    "parking_price": 11.41,
+    "fan_cost_index": 424.39
+  },
+  "Carolina Hurricanes": {
+    "average_ticket_price": 67.6,
+    "premium_ticket_price": 137.93,
+    "beer_price": 10,
+    "soft_drink_price": 6,
+    "hot_dog_price": 6,
+    "parking_price": 20.5,
+    "fan_cost_index": 418.88
+  },
+  "Anaheim Ducks": {
+    "average_ticket_price": 62.73,
+    "premium_ticket_price": 155.35,
+    "beer_price": 12.5,
+    "soft_drink_price": 6.5,
+    "hot_dog_price": 6.5,
+    "parking_price": 21.25,
+    "fan_cost_index": 409.15
+  },
+  "Columbus Blue Jackets": {
+    "average_ticket_price": 63.48,
+    "premium_ticket_price": 128.34,
+    "beer_price": 10.5,
+    "soft_drink_price": 7,
+    "hot_dog_price": 6.5,
+    "parking_price": 11.9,
+    "fan_cost_index": 400.8
+  },
+  "San Jose Sharks": {
+    "average_ticket_price": 60.5,
+    "premium_ticket_price": 191.66,
+    "beer_price": 10,
+    "soft_drink_price": 6,
+    "hot_dog_price": 6.5,
+    "parking_price": 28.11,
+    "fan_cost_index": 400.09
+  },
+  "Calgary Flames": {
+    "average_ticket_price": 71.94,
+    "premium_ticket_price": 170.61,
+    "beer_price": 8.15,
+    "soft_drink_price": 4.63,
+    "hot_dog_price": 4.81,
+    "parking_price": 5.26,
+    "fan_cost_index": 391.5
+  },
+  "Buffalo Sabres": {
+    "average_ticket_price": 58.2,
+    "premium_ticket_price": 120.6,
+    "beer_price": 12,
+    "soft_drink_price": 6,
+    "hot_dog_price": 5.5,
+    "parking_price": 17.78,
+    "fan_cost_index": 380.56
+  },
+  "Florida Panthers": {
+    "average_ticket_price": 48.64,
+    "premium_ticket_price": 166.26,
+    "beer_price": 13,
+    "soft_drink_price": 7,
+    "hot_dog_price": 8,
+    "parking_price": 32.35,
+    "fan_cost_index": 372.89
+  },
+  "Ottawa Senators": {
+    "average_ticket_price": 59.38,
+    "premium_ticket_price": 214.14,
+    "beer_price": 8.89,
+    "soft_drink_price": 4.44,
+    "hot_dog_price": 4.81,
+    "parking_price": 23.46,
+    "fan_cost_index": 357.22
+  },
+  "Utah Hockey Club": {
+    "average_ticket_price": 50.59,
+    "premium_ticket_price": 171.64,
+    "beer_price": 12.5,
+    "soft_drink_price": 7,
+    "hot_dog_price": 6,
+    "parking_price": 20,
+    "fan_cost_index": 355.34
+  }
+}

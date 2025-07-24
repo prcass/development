@@ -1,0 +1,272 @@
+{
+  "Atlanta Hawks": {
+    "average_ticket_price": 75,
+    "season_ticket_price": 2500,
+    "preseason_ticket_price": 35,
+    "beer_price": 11,
+    "hot_dog_price": 6.25,
+    "parking_price": 30,
+    "fan_cost_index": 399
+  },
+  "Boston Celtics": {
+    "average_ticket_price": 100,
+    "season_ticket_price": 3500,
+    "preseason_ticket_price": 45,
+    "beer_price": 11.5,
+    "hot_dog_price": 6.75,
+    "parking_price": 40,
+    "fan_cost_index": 513
+  },
+  "Brooklyn Nets": {
+    "average_ticket_price": 115,
+    "season_ticket_price": 4000,
+    "preseason_ticket_price": 50,
+    "beer_price": 12,
+    "hot_dog_price": 7.25,
+    "parking_price": 45,
+    "fan_cost_index": 582
+  },
+  "Charlotte Hornets": {
+    "average_ticket_price": 50,
+    "season_ticket_price": 1500,
+    "preseason_ticket_price": 25,
+    "beer_price": 9.5,
+    "hot_dog_price": 5.75,
+    "parking_price": 23,
+    "fan_cost_index": 284
+  },
+  "Chicago Bulls": {
+    "average_ticket_price": 70,
+    "season_ticket_price": 3000,
+    "preseason_ticket_price": 40,
+    "beer_price": 11.75,
+    "hot_dog_price": 7,
+    "parking_price": 35,
+    "fan_cost_index": 390
+  },
+  "Cleveland Cavaliers": {
+    "average_ticket_price": 60,
+    "season_ticket_price": 2000,
+    "preseason_ticket_price": 30,
+    "beer_price": 11.25,
+    "hot_dog_price": 6.5,
+    "parking_price": 30,
+    "fan_cost_index": 341
+  },
+  "Dallas Mavericks": {
+    "average_ticket_price": 70,
+    "season_ticket_price": 2750,
+    "preseason_ticket_price": 40,
+    "beer_price": 11.5,
+    "hot_dog_price": 6.75,
+    "parking_price": 35,
+    "fan_cost_index": 388
+  },
+  "Denver Nuggets": {
+    "average_ticket_price": 65,
+    "season_ticket_price": 2250,
+    "preseason_ticket_price": 35,
+    "beer_price": 10,
+    "hot_dog_price": 6.25,
+    "parking_price": 30,
+    "fan_cost_index": 355
+  },
+  "Detroit Pistons": {
+    "average_ticket_price": 55,
+    "season_ticket_price": 1750,
+    "preseason_ticket_price": 30,
+    "beer_price": 11.25,
+    "hot_dog_price": 6.25,
+    "parking_price": 35,
+    "fan_cost_index": 325
+  },
+  "Golden State Warriors": {
+    "average_ticket_price": 215,
+    "season_ticket_price": 7500,
+    "preseason_ticket_price": 65,
+    "beer_price": 17.5,
+    "hot_dog_price": 7.5,
+    "parking_price": 45,
+    "fan_cost_index": 1005
+  },
+  "Houston Rockets": {
+    "average_ticket_price": 40,
+    "season_ticket_price": 1250,
+    "preseason_ticket_price": 20,
+    "beer_price": 10.75,
+    "hot_dog_price": 6.25,
+    "parking_price": 30,
+    "fan_cost_index": 258
+  },
+  "Indiana Pacers": {
+    "average_ticket_price": 50,
+    "season_ticket_price": 1500,
+    "preseason_ticket_price": 30,
+    "beer_price": 11.25,
+    "hot_dog_price": 6.25,
+    "parking_price": 35,
+    "fan_cost_index": 305
+  },
+  "Los Angeles Clippers": {
+    "average_ticket_price": 130,
+    "season_ticket_price": 4500,
+    "preseason_ticket_price": 55,
+    "beer_price": 14.75,
+    "hot_dog_price": 7.75,
+    "parking_price": 45,
+    "fan_cost_index": 655
+  },
+  "Los Angeles Lakers": {
+    "average_ticket_price": 145,
+    "season_ticket_price": 5000,
+    "preseason_ticket_price": 60,
+    "beer_price": 14.75,
+    "hot_dog_price": 7.75,
+    "parking_price": 45,
+    "fan_cost_index": 715
+  },
+  "Memphis Grizzlies": {
+    "average_ticket_price": 60,
+    "season_ticket_price": 2000,
+    "preseason_ticket_price": 30,
+    "beer_price": 8.95,
+    "hot_dog_price": 6.25,
+    "parking_price": 25,
+    "fan_cost_index": 325.8
+  },
+  "Miami Heat": {
+    "average_ticket_price": 90,
+    "season_ticket_price": 3250,
+    "preseason_ticket_price": 45,
+    "beer_price": 12,
+    "hot_dog_price": 7.25,
+    "parking_price": 40,
+    "fan_cost_index": 477
+  },
+  "Milwaukee Bucks": {
+    "average_ticket_price": 100,
+    "season_ticket_price": 3500,
+    "preseason_ticket_price": 45,
+    "beer_price": 11.5,
+    "hot_dog_price": 6.75,
+    "parking_price": 35,
+    "fan_cost_index": 508
+  },
+  "Minnesota Timberwolves": {
+    "average_ticket_price": 65,
+    "season_ticket_price": 2250,
+    "preseason_ticket_price": 35,
+    "beer_price": 11.5,
+    "hot_dog_price": 6.75,
+    "parking_price": 30,
+    "fan_cost_index": 363
+  },
+  "New Orleans Pelicans": {
+    "average_ticket_price": 55,
+    "season_ticket_price": 1750,
+    "preseason_ticket_price": 30,
+    "beer_price": 10.75,
+    "hot_dog_price": 6.25,
+    "parking_price": 30,
+    "fan_cost_index": 318
+  },
+  "New York Knicks": {
+    "average_ticket_price": 160,
+    "season_ticket_price": 5500,
+    "preseason_ticket_price": 60,
+    "beer_price": 13.75,
+    "hot_dog_price": 8.25,
+    "parking_price": 55,
+    "fan_cost_index": 783
+  },
+  "Oklahoma City Thunder": {
+    "average_ticket_price": 35,
+    "season_ticket_price": 1000,
+    "preseason_ticket_price": 20,
+    "beer_price": 10.75,
+    "hot_dog_price": 6.25,
+    "parking_price": 25,
+    "fan_cost_index": 233
+  },
+  "Orlando Magic": {
+    "average_ticket_price": 50,
+    "season_ticket_price": 1575,
+    "preseason_ticket_price": 30,
+    "beer_price": 9.45,
+    "hot_dog_price": 6.25,
+    "parking_price": 30,
+    "fan_cost_index": 292.8
+  },
+  "Philadelphia 76ers": {
+    "average_ticket_price": 105,
+    "season_ticket_price": 3750,
+    "preseason_ticket_price": 45,
+    "beer_price": 12.95,
+    "hot_dog_price": 7.25,
+    "parking_price": 40,
+    "fan_cost_index": 540.8
+  },
+  "Phoenix Suns": {
+    "average_ticket_price": 85,
+    "season_ticket_price": 3000,
+    "preseason_ticket_price": 45,
+    "beer_price": 12,
+    "hot_dog_price": 7.25,
+    "parking_price": 40,
+    "fan_cost_index": 457
+  },
+  "Portland Trail Blazers": {
+    "average_ticket_price": 75,
+    "season_ticket_price": 2500,
+    "preseason_ticket_price": 35,
+    "beer_price": 11,
+    "hot_dog_price": 6.75,
+    "parking_price": 35,
+    "fan_cost_index": 406
+  },
+  "Sacramento Kings": {
+    "average_ticket_price": 55,
+    "season_ticket_price": 1750,
+    "preseason_ticket_price": 30,
+    "beer_price": 8.95,
+    "hot_dog_price": 6.25,
+    "parking_price": 30,
+    "fan_cost_index": 310.8
+  },
+  "San Antonio Spurs": {
+    "average_ticket_price": 50,
+    "season_ticket_price": 1500,
+    "preseason_ticket_price": 25,
+    "beer_price": 8,
+    "hot_dog_price": 6.25,
+    "parking_price": 25,
+    "fan_cost_index": 282
+  },
+  "Toronto Raptors": {
+    "average_ticket_price": 90,
+    "season_ticket_price": 3250,
+    "preseason_ticket_price": 45,
+    "beer_price": 9.45,
+    "hot_dog_price": 7.25,
+    "parking_price": 45,
+    "fan_cost_index": 471.8
+  },
+  "Utah Jazz": {
+    "average_ticket_price": 75,
+    "season_ticket_price": 2500,
+    "preseason_ticket_price": 35,
+    "beer_price": 11.25,
+    "hot_dog_price": 6.75,
+    "parking_price": 35,
+    "fan_cost_index": 407
+  },
+  "Washington Wizards": {
+    "average_ticket_price": 85,
+    "season_ticket_price": 3000,
+    "preseason_ticket_price": 40,
+    "beer_price": 12,
+    "hot_dog_price": 7.25,
+    "parking_price": 40,
+    "fan_cost_index": 457
+  }
+}

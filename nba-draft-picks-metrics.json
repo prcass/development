@@ -1,0 +1,92 @@
+{
+  "Cleveland Cavaliers": {
+    "nba_first_overall_picks": 4
+  },
+  "Philadelphia 76ers": {
+    "nba_first_overall_picks": 4
+  },
+  "Orlando Magic": {
+    "nba_first_overall_picks": 3
+  },
+  "Portland Trail Blazers": {
+    "nba_first_overall_picks": 3
+  },
+  "Houston Rockets": {
+    "nba_first_overall_picks": 3
+  },
+  "Los Angeles Clippers": {
+    "nba_first_overall_picks": 3
+  },
+  "Milwaukee Bucks": {
+    "nba_first_overall_picks": 3
+  },
+  "New York Knicks": {
+    "nba_first_overall_picks": 3
+  },
+  "Detroit Pistons": {
+    "nba_first_overall_picks": 3
+  },
+  "San Antonio Spurs": {
+    "nba_first_overall_picks": 3
+  },
+  "Los Angeles Lakers": {
+    "nba_first_overall_picks": 2
+  },
+  "Washington Wizards": {
+    "nba_first_overall_picks": 2
+  },
+  "Minnesota Timberwolves": {
+    "nba_first_overall_picks": 2
+  },
+  "New Orleans Pelicans": {
+    "nba_first_overall_picks": 2
+  },
+  "Brooklyn Nets": {
+    "nba_first_overall_picks": 2
+  },
+  "Atlanta Hawks": {
+    "nba_first_overall_picks": 2
+  },
+  "Golden State Warriors": {
+    "nba_first_overall_picks": 2
+  },
+  "Dallas Mavericks": {
+    "nba_first_overall_picks": 2
+  },
+  "Chicago Bulls": {
+    "nba_first_overall_picks": 1
+  },
+  "Sacramento Kings": {
+    "nba_first_overall_picks": 1
+  },
+  "Charlotte Hornets": {
+    "nba_first_overall_picks": 1
+  },
+  "Toronto Raptors": {
+    "nba_first_overall_picks": 1
+  },
+  "Phoenix Suns": {
+    "nba_first_overall_picks": 1
+  },
+  "Boston Celtics": {
+    "nba_first_overall_picks": 1
+  },
+  "Miami Heat": {
+    "nba_first_overall_picks": 0
+  },
+  "Indiana Pacers": {
+    "nba_first_overall_picks": 0
+  },
+  "Utah Jazz": {
+    "nba_first_overall_picks": 0
+  },
+  "Denver Nuggets": {
+    "nba_first_overall_picks": 0
+  },
+  "Memphis Grizzlies": {
+    "nba_first_overall_picks": 0
+  },
+  "Oklahoma City Thunder": {
+    "nba_first_overall_picks": 0
+  }
+}

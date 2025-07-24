@@ -1,0 +1,130 @@
+{
+  "Anaheim Ducks": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 0
+  },
+  "Boston Bruins": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Buffalo Sabres": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Calgary Flames": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 2200
+  },
+  "Carolina Hurricanes": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 650
+  },
+  "Chicago Blackhawks": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 0
+  },
+  "Colorado Avalanche": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 2000
+  },
+  "Columbus Blue Jackets": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Dallas Stars": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 950
+  },
+  "Detroit Red Wings": {
+    "franchise_name_changes": 2,
+    "franchise_miles_moved": 0
+  },
+  "Edmonton Oilers": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Florida Panthers": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Los Angeles Kings": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Minnesota Wild": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Montreal Canadiens": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Nashville Predators": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "New Jersey Devils": {
+    "franchise_name_changes": 2,
+    "franchise_miles_moved": 2400
+  },
+  "New York Islanders": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "New York Rangers": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Ottawa Senators": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Philadelphia Flyers": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Pittsburgh Penguins": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "San Jose Sharks": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Seattle Kraken": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "St. Louis Blues": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Tampa Bay Lightning": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Toronto Maple Leafs": {
+    "franchise_name_changes": 2,
+    "franchise_miles_moved": 0
+  },
+  "Utah Hockey Club": {
+    "franchise_name_changes": 3,
+    "franchise_miles_moved": 2300
+  },
+  "Vancouver Canucks": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Vegas Golden Knights": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Washington Capitals": {
+    "franchise_name_changes": 0,
+    "franchise_miles_moved": 0
+  },
+  "Winnipeg Jets": {
+    "franchise_name_changes": 1,
+    "franchise_miles_moved": 1100
+  }
+}
