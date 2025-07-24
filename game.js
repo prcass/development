@@ -3041,12 +3041,14 @@ function showBiddingScreen() {
         console.log('🐛 DEBUG: drawnCards after drawing:', drawnCards.length, drawnCards);
         
         // Track token changes for token replacement screen (category-specific)
+        var removedTokens = [];
+        var addedTokens = [];
+        
         if (getCurrentRound() > 1) {
             var previousCategoryCards = window.previousRoundCardsByCategory && window.previousRoundCardsByCategory[currentCategory] || [];
             
             if (previousCategoryCards.length > 0) {
                 // Build removed tokens list from category-specific tracking
-                var removedTokens = [];
                 
                 // Initialize category-specific tracking if it doesn't exist
                 if (!window.categoryRemovedCards) {
@@ -3095,12 +3097,11 @@ function showBiddingScreen() {
                 console.log('🎯 DEBUG: lastRoundSelectedCards type:', typeof lastRoundSelectedCards);
                 console.log('🎯 DEBUG: lastRoundSelectedCards length:', lastRoundSelectedCards ? lastRoundSelectedCards.length : 'null/undefined');
                 console.log('🎯 DEBUG: window.lastRoundSelectedCards:', window.lastRoundSelectedCards);
-                console.log('🛡️ Cards blocked and owned:', blockedCardsFromPreviousRound);
+                console.log('🛡️ Cards blocked and owned:', blockedCardsThisCategory);
                 console.log('📋 Total removed cards (gameplay only):', removedTokens);
                 
                 // Calculate tokens that were added to replace the gameplay-removed cards
                 // Only show replacements for cards that were actually used/blocked
-                var addedTokens = [];
                 var allPoolChanges = drawnCards.filter(function(cardId) {
                     return previousCategoryCards.indexOf(cardId) === -1;
                 });
@@ -3226,8 +3227,8 @@ function showBiddingScreen() {
                 console.log('  Automated test running:', window.isAutomatedTestRunning);
                 
                 // Use the properly calculated token replacements from the category selection
-                var removedCards = window.removedReplacementCards || [];
-                var addedCards = window.newReplacementCards || [];
+                var removedCards = removedTokens || window.removedReplacementCards || [];
+                var addedCards = addedTokens || window.newReplacementCards || [];
                 
                 // Check if this category was used before (in any previous round)
                 var previousCategoryCards = window.previousRoundCardsByCategory && window.previousRoundCardsByCategory[currentCategory] || [];
@@ -5869,8 +5870,13 @@ function updateResultsDisplay() {
 function getBlockingResults() {
     var results = [];
     
+    // Get necessary data from GameState
+    var highestBidder = GameState.get('lastRoundData.highestBidder') || GameState.get('currentBid.bidder');
+    var bidderSuccess = GameState.get('lastRoundData.bidderSuccess');
+    var playersData = GameState.get('players') || {};
+    
     // Use saved blocking data from before it was cleared
-    var blocksToCheck = window.lastRoundBlocks || players.currentBlocks;
+    var blocksToCheck = window.lastRoundBlocks || playersData.currentBlocks || {};
     
     Object.keys(blocksToCheck).forEach(function(playerName) {
         if (playerName !== highestBidder && blocksToCheck[playerName]) {

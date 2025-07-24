@@ -29,11 +29,11 @@ window.GAME_DATA = {
                 },
                 {
                     "challenge": "health_expenditure_pct_gdp",
-                    "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Which Country Really Cares About Its People?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Health Expenditure as % of GDP</div><div style='font-size: 0.85em; color: #666'>(World Bank 2021)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+                    "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Where Can You Get Sick?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Health Expenditure as % of GDP</div><div style='font-size: 0.85em; color: #666'>(World Bank 2021)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
                 },
                 {
                     "challenge": "healthy_diet_cost_ppp",
-                    "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Where Can You Afford To Be Virtuous?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Cost of Healthy Diet in PPP Dollars</div><div style='font-size: 0.85em; color: #666'>(FAO 2021)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank lowest to highest</div></div>"
+                    "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Where Can You Afford To Be Virtuous?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Cost of Healthy Diet</div><div style='font-size: 0.85em; color: #666'>(FAO 2021)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank lowest to highest</div></div>"
                 },
                 {
                     "challenge": "patent_applications",
@@ -49,7 +49,7 @@ window.GAME_DATA = {
                 },
                 {
                     "challenge": "population_0_14_pct",
-                    "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Where Are There Tiny Humans Everywhere?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Population Ages 0-14 Percentage</div><div style='font-size: 0.85em; color: #666'>(World Bank 2023)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+                    "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Where Are There Tiny Humans Everywhere?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Population Ages 0-14 %</div><div style='font-size: 0.85em; color: #666'>(World Bank 2023)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
                 },
                 {
                     "challenge": "population_65_plus_pct",
@@ -69,7 +69,7 @@ window.GAME_DATA = {
                 },
                 {
                     "challenge": "broadband_per_100",
-                    "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Where's Everyone Binge-Watching From Home?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Fixed Broadband Subscriptions per 100 People</div><div style='font-size: 0.85em; color: #666'>(World Bank 2022)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+                    "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Where's Everyone Binge-Watching?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Fixed Broadband Subscriptions per 100 People</div><div style='font-size: 0.85em; color: #666'>(World Bank 2022)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
                 },
                 {
                     "challenge": "mobile_per_100",
@@ -81,7 +81,7 @@ window.GAME_DATA = {
                 },
                 {
                     "challenge": "forest_area_pct",
-                    "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Which Country Is Basically Mother Nature's Favorite?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Forest Area Percentage of Land</div><div style='font-size: 0.85em; color: #666'>(World Bank 2021)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+                    "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Which Country Is Basically Mother Nature's Favorite?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Forest Area % of Land</div><div style='font-size: 0.85em; color: #666'>(World Bank 2021)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
                 },
                 {
                     "challenge": "renewable_energy_pct",
@@ -10037,7 +10037,7 @@ window.GAME_DATA = {
         },
         {
             "challenge": "health_expenditure_pct_gdp",
-            "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Which Country Really Cares About Its People?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Health Expenditure as % of GDP</div><div style='font-size: 0.85em; color: #666'>(World Bank 2021)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+            "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Where Can You Get Sick?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Health Expenditure as % of GDP</div><div style='font-size: 0.85em; color: #666'>(World Bank 2021)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
         },
         {
             "challenge": "healthy_diet_cost_ppp",
@@ -10057,7 +10057,7 @@ window.GAME_DATA = {
         },
         {
             "challenge": "population_0_14_pct",
-            "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Where Are There Tiny Humans Everywhere?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Population Ages 0-14 Percentage</div><div style='font-size: 0.85em; color: #666'>(World Bank 2023)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+            "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Where Are There Tiny Humans Everywhere?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Population Ages 0-14 %</div><div style='font-size: 0.85em; color: #666'>(World Bank 2023)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
         },
         {
             "challenge": "population_65_plus_pct",
@@ -10089,7 +10089,7 @@ window.GAME_DATA = {
         },
         {
             "challenge": "forest_area_pct",
-            "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Which Country Is Basically Mother Nature's Favorite?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Forest Area Percentage of Land</div><div style='font-size: 0.85em; color: #666'>(World Bank 2021)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+            "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Which Country Is Basically Mother Nature's Favorite?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Forest Area % of Land</div><div style='font-size: 0.85em; color: #666'>(World Bank 2021)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
         },
         {
             "challenge": "renewable_energy_pct",
@@ -10152,6 +10152,55 @@ window.GAME_DATA = {
             "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Where Are People Living Their Best Life?</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Life Evaluation Score (0-10)</div><div style='font-size: 0.85em; color: #666'>(World Happiness Report 2024)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
         }
     ]
+};
+
+// Add missing functions to GAME_DATA
+window.GAME_DATA.getRandomChallenge = function(categoryName) {
+    if (!categoryName) {
+        // If no category specified, pick from all categories
+        const categories = ['countries', 'movies', 'sports', 'companies'];
+        categoryName = categories[Math.floor(Math.random() * categories.length)];
+    }
+    
+    const category = this.categories[categoryName];
+    if (!category || !category.prompts || category.prompts.length === 0) {
+        throw new Error('Category not found or has no prompts: ' + categoryName);
+    }
+    
+    const randomIndex = Math.floor(Math.random() * category.prompts.length);
+    return category.prompts[randomIndex];
+};
+
+window.GAME_DATA.getRandomCountries = function(count) {
+    return this.getRandomItems('countries', count);
+};
+
+window.GAME_DATA.getRandomMovies = function(count) {
+    return this.getRandomItems('movies', count);
+};
+
+window.GAME_DATA.getRandomSports = function(count) {
+    return this.getRandomItems('sports', count);
+};
+
+window.GAME_DATA.getRandomCompanies = function(count) {
+    return this.getRandomItems('companies', count);
+};
+
+window.GAME_DATA.getRandomItems = function(categoryName, count) {
+    const category = this.categories[categoryName];
+    if (!category || !category.items) {
+        throw new Error('Category not found: ' + categoryName);
+    }
+    
+    const items = Object.values(category.items);
+    if (items.length < count) {
+        throw new Error('Not enough items in category ' + categoryName + ': requested ' + count + ', available ' + items.length);
+    }
+    
+    // Shuffle and return requested count
+    const shuffled = items.slice().sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
 };
 
 // Console output for verification
