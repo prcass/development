@@ -668,6 +668,7 @@
             <button class="nav-button" onclick="showSection('blocking')">Blocking Tokens</button>
             <button class="nav-button" onclick="showSection('board')">Game Board</button>
             <button class="nav-button" onclick="showSection('aids')">Player Aids</button>
+            <button class="nav-button" onclick="showSection('validation')">🎯 Live Game Validation</button>
         </div>
 
         <div class="content">
@@ -890,6 +891,49 @@
                 <div class="output" id="aidsOutput">
                     <p style="text-align: center; color: #666; font-style: italic;">
                         Select options and click "Generate Player Aids" to create printable aids
+                    </p>
+                </div>
+            </div>
+
+            <!-- Live Game Validation Section -->
+            <div class="component-section" id="validation">
+                <h2 class="section-title">🎯 Live Game Validation</h2>
+                
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="validationCategory">Category:</label>
+                        <select id="validationCategory">
+                            <option value="">Select Category</option>
+                            <option value="countries">Countries</option>
+                            <option value="movies">Movies</option>
+                            <option value="sports">Sports</option>
+                            <option value="companies">Companies</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="challengeNumber">Challenge Number:</label>
+                        <input type="text" id="challengeNumber" placeholder="e.g., 001, 017" maxlength="3">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="bidAmount">Winning Bid:</label>
+                        <input type="number" id="bidAmount" min="1" max="10" placeholder="1-10">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="bidderName">Bidder Name:</label>
+                        <input type="text" id="bidderName" placeholder="Player name">
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="generate-btn" onclick="setupValidation()">🎲 Start Validation</button>
+                </div>
+
+                <div class="output" id="validationOutput">
+                    <p style="text-align: center; color: #666; font-style: italic;">
+                        Select category and challenge to start live game validation
                     </p>
                 </div>
             </div>
@@ -2055,6 +2099,241 @@
                     `;
                 }
             }
+        }
+
+        // Live Game Validation Functions
+        let currentValidation = null;
+        let currentChallenge = null;
+        let playerRanking = [];
+        let currentStep = 0;
+
+        function setupValidation() {
+            const category = document.getElementById('validationCategory').value;
+            const challengeNum = document.getElementById('challengeNumber').value;
+            const bidAmount = parseInt(document.getElementById('bidAmount').value);
+            const bidderName = document.getElementById('bidderName').value;
+
+            if (!category || !challengeNum || !bidAmount || !bidderName) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Find the challenge
+            if (!window.GAME_DATA || !window.GAME_DATA.categories[category]) {
+                alert('Game data not loaded or category not found');
+                return;
+            }
+
+            const challenges = window.GAME_DATA.categories[category].prompts;
+            const challengeIndex = parseInt(challengeNum) - 1;
+            
+            if (challengeIndex < 0 || challengeIndex >= challenges.length) {
+                alert(`Challenge ${challengeNum} not found in ${category}`);
+                return;
+            }
+
+            currentChallenge = challenges[challengeIndex];
+            currentValidation = {
+                category,
+                challengeNum,
+                bidAmount,
+                bidderName,
+                challengeData: currentChallenge
+            };
+
+            showRankingInput();
+        }
+
+        function showRankingInput() {
+            const output = document.getElementById('validationOutput');
+            const categoryItems = window.GAME_DATA.categories[currentValidation.category].items;
+            
+            // Get available tokens for this category
+            const tokens = Object.keys(categoryItems).map(code => ({
+                code: code,
+                name: categoryItems[code].name
+            }));
+
+            let html = `
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                    <h3 style="color: #333; margin-bottom: 15px;">📋 Challenge Setup</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div><strong>Category:</strong> ${currentValidation.category.charAt(0).toUpperCase() + currentValidation.category.slice(1)}</div>
+                        <div><strong>Challenge:</strong> #${currentValidation.challengeNum}</div>
+                        <div><strong>Bid Amount:</strong> ${currentValidation.bidAmount} tokens</div>
+                        <div><strong>Bidder:</strong> ${currentValidation.bidderName}</div>
+                    </div>
+                </div>
+
+                <div style="background: #e3f2fd; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                    <h4 style="color: #1976d2; margin-bottom: 15px;">🎯 Challenge: ${extractChallengeTitle(currentChallenge.label)}</h4>
+                    <p style="color: #666; margin-bottom: 15px;">Enter the ${currentValidation.bidAmount} tokens in the order the bidder ranked them:</p>
+                    
+                    <div id="rankingInputs" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-bottom: 20px;">
+            `;
+
+            // Create input fields for each ranking position
+            for (let i = 0; i < currentValidation.bidAmount; i++) {
+                html += `
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-weight: bold; width: 60px;">Position ${i + 1}:</span>
+                        <select id="ranking_${i}" style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                            <option value="">Select token...</option>
+                            ${tokens.map(token => 
+                                `<option value="${token.code}">${token.code} - ${token.name}</option>`
+                            ).join('')}
+                        </select>
+                    </div>
+                `;
+            }
+
+            html += `
+                    </div>
+                    <button class="generate-btn" onclick="startValidation()" style="width: 100%;">🚀 Start Live Validation</button>
+                </div>
+            `;
+
+            output.innerHTML = html;
+        }
+
+        function extractChallengeTitle(htmlLabel) {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = htmlLabel;
+            const titleDiv = tempDiv.querySelector('div[style*="font-weight: bold"]');
+            return titleDiv ? titleDiv.textContent : 'Challenge';
+        }
+
+        function startValidation() {
+            // Collect the ranking
+            playerRanking = [];
+            for (let i = 0; i < currentValidation.bidAmount; i++) {
+                const value = document.getElementById(`ranking_${i}`).value;
+                if (!value) {
+                    alert(`Please select a token for position ${i + 1}`);
+                    return;
+                }
+                if (playerRanking.includes(value)) {
+                    alert(`Token ${value} is already used. Each token can only be used once.`);
+                    return;
+                }
+                playerRanking.push(value);
+            }
+
+            currentStep = 0;
+            showLiveValidation();
+        }
+
+        function showLiveValidation() {
+            const output = document.getElementById('validationOutput');
+            const correctOrder = getCorrectOrder();
+            
+            let html = `
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                    <h3 style="color: #333; margin-bottom: 15px;">🎯 Live Validation Results</h3>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Bidder:</strong> ${currentValidation.bidderName} | 
+                        <strong>Bid:</strong> ${currentValidation.bidAmount} tokens
+                    </div>
+                </div>
+
+                <div style="background: white; padding: 20px; border-radius: 10px; border: 2px solid #e0e0e0;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            `;
+
+            // Show each position with validation
+            for (let i = 0; i < currentValidation.bidAmount; i++) {
+                const playerToken = playerRanking[i];
+                const correctToken = correctOrder[i];
+                const isCorrect = playerToken === correctToken;
+                const categoryItems = window.GAME_DATA.categories[currentValidation.category].items;
+
+                html += `
+                    <div style="padding: 15px; border-radius: 8px; border: 2px solid ${isCorrect ? '#4caf50' : '#f44336'}; background: ${isCorrect ? '#e8f5e8' : '#ffebee'};">
+                        <div style="font-weight: bold; margin-bottom: 10px; color: #333;">Position ${i + 1}</div>
+                        <div style="margin-bottom: 8px;">
+                            <strong>Player ranked:</strong><br>
+                            ${playerToken} - ${categoryItems[playerToken].name}
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <strong>Correct answer:</strong><br>
+                            ${correctToken} - ${categoryItems[correctToken].name}
+                        </div>
+                        <div style="font-weight: bold; color: ${isCorrect ? '#4caf50' : '#f44336'};">
+                            ${isCorrect ? '✅ CORRECT' : '❌ INCORRECT'}
+                        </div>
+                    </div>
+                `;
+            }
+
+            const correctCount = playerRanking.filter((token, i) => token === correctOrder[i]).length;
+            const bidSuccessful = correctCount === currentValidation.bidAmount;
+
+            html += `
+                    </div>
+
+                    <div style="margin-top: 30px; padding: 20px; border-radius: 10px; background: ${bidSuccessful ? '#e8f5e8' : '#ffebee'}; border: 2px solid ${bidSuccessful ? '#4caf50' : '#f44336'};">
+                        <h2 style="text-align: center; margin-bottom: 15px; color: ${bidSuccessful ? '#4caf50' : '#f44336'};">
+                            ${bidSuccessful ? '🎉 BID SUCCESSFUL!' : '💥 BID FAILED!'}
+                        </h2>
+                        <div style="text-align: center; font-size: 1.1em;">
+                            <strong>${currentValidation.bidderName}</strong> got <strong>${correctCount}/${currentValidation.bidAmount}</strong> correct
+                        </div>
+                        ${!bidSuccessful ? `<div style="text-align: center; margin-top: 10px; color: #666;">Needed all ${currentValidation.bidAmount} correct to succeed</div>` : ''}
+                    </div>
+
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button class="generate-btn" onclick="resetValidation()">🔄 New Validation</button>
+                    </div>
+                </div>
+            `;
+
+            output.innerHTML = html;
+        }
+
+        function getCorrectOrder() {
+            // Get the correct ranking data for this challenge
+            const challengeKey = currentChallenge.challenge;
+            const categoryItems = window.GAME_DATA.categories[currentValidation.category].items;
+            
+            // Extract all items with their values for this challenge
+            const itemsWithValues = Object.keys(categoryItems).map(code => ({
+                code: code,
+                value: categoryItems[code][challengeKey]
+            })).filter(item => item.value !== undefined);
+
+            // Sort based on challenge type (some are highest to lowest, others are lowest to highest)
+            const challengeLabel = currentChallenge.label.toLowerCase();
+            const isAscending = challengeLabel.includes('lowest to highest');
+            
+            itemsWithValues.sort((a, b) => {
+                if (isAscending) {
+                    return a.value - b.value;
+                } else {
+                    return b.value - a.value;
+                }
+            });
+
+            return itemsWithValues.map(item => item.code);
+        }
+
+        function resetValidation() {
+            currentValidation = null;
+            currentChallenge = null;
+            playerRanking = [];
+            currentStep = 0;
+            
+            // Clear form
+            document.getElementById('validationCategory').value = '';
+            document.getElementById('challengeNumber').value = '';
+            document.getElementById('bidAmount').value = '';
+            document.getElementById('bidderName').value = '';
+            
+            // Reset output
+            document.getElementById('validationOutput').innerHTML = `
+                <p style="text-align: center; color: #666; font-style: italic;">
+                    Select category and challenge to start live game validation
+                </p>
+            `;
         }
     </script>
 </body>

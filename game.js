@@ -9271,3 +9271,520 @@ function captureTestData() {
     
     return window.capturedTestData;
 }
+
+// Live Game Validation Functions
+let liveValidationState = {
+    currentValidation: null,
+    currentChallenge: null,
+    playerRanking: [],
+    currentStep: 0
+};
+
+function setupLiveValidation() {
+    const category = document.getElementById('liveValidationCategory').value;
+    const challengeNum = document.getElementById('liveChalllengeNumber').value;
+    const bidAmount = parseInt(document.getElementById('liveBidAmount').value);
+    const bidderName = document.getElementById('liveBidderName').value;
+
+    if (!category || !challengeNum || !bidAmount || !bidderName) {
+        alert('Please fill in all fields');
+        return;
+    }
+
+    // Find the challenge
+    if (!window.GAME_DATA || !window.GAME_DATA.categories[category]) {
+        alert('Game data not loaded or category not found');
+        return;
+    }
+
+    const challenges = window.GAME_DATA.categories[category].prompts;
+    const challengeIndex = parseInt(challengeNum) - 1;
+    
+    if (challengeIndex < 0 || challengeIndex >= challenges.length) {
+        alert(`Challenge ${challengeNum} not found in ${category}`);
+        return;
+    }
+
+    liveValidationState.currentChallenge = challenges[challengeIndex];
+    liveValidationState.currentValidation = {
+        category,
+        challengeNum,
+        bidAmount,
+        bidderName,
+        challengeData: liveValidationState.currentChallenge
+    };
+
+    showLiveRankingInput();
+}
+
+function showLiveRankingInput() {
+    const output = document.getElementById('liveValidationResults');
+    const categoryItems = window.GAME_DATA.categories[liveValidationState.currentValidation.category].items;
+    
+    // Get available tokens for this category
+    const tokens = Object.keys(categoryItems).map(code => ({
+        code: code,
+        name: categoryItems[code].name
+    }));
+
+    let html = `
+        <div class="info-card" style="background: #f8f9fa; margin-bottom: 20px;">
+            <div class="card-title">📋 Challenge Confirmed</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 15px;">
+                <div><strong>Category:</strong> ${liveValidationState.currentValidation.category.charAt(0).toUpperCase() + liveValidationState.currentValidation.category.slice(1)}</div>
+                <div><strong>Challenge:</strong> #${liveValidationState.currentValidation.challengeNum}</div>
+                <div><strong>Bid Amount:</strong> ${liveValidationState.currentValidation.bidAmount} tokens</div>
+                <div><strong>Bidder:</strong> ${liveValidationState.currentValidation.bidderName}</div>
+            </div>
+        </div>
+
+        <div class="info-card" style="background: #e3f2fd; margin-bottom: 20px;">
+            <div class="card-title">🎯 Challenge: ${extractLiveChallengeTitle(liveValidationState.currentChallenge.label)}</div>
+            <div class="card-description">Enter the ${liveValidationState.currentValidation.bidAmount} tokens in the order the bidder ranked them:</div>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 15px;">
+    `;
+
+    // Create input fields for each ranking position
+    for (let i = 0; i < liveValidationState.currentValidation.bidAmount; i++) {
+        html += `
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-weight: bold; width: 80px;">Position ${i + 1}:</span>
+                <select id="liveRanking_${i}" style="flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    <option value="">Select token...</option>
+                    ${tokens.map(token => 
+                        `<option value="${token.code}">${token.code} - ${token.name}</option>`
+                    ).join('')}
+                </select>
+            </div>
+        `;
+    }
+
+    html += `
+            </div>
+            <button class="btn primary" onclick="startLiveValidation()" style="width: 100%; margin-top: 15px;">
+                🚀 Validate Ranking
+            </button>
+        </div>
+    `;
+
+    output.innerHTML = html;
+}
+
+function extractLiveChallengeTitle(htmlLabel) {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlLabel;
+    const titleDiv = tempDiv.querySelector('div[style*="font-weight: bold"]');
+    return titleDiv ? titleDiv.textContent : 'Challenge';
+}
+
+function startLiveValidation() {
+    // Collect the ranking
+    liveValidationState.playerRanking = [];
+    for (let i = 0; i < liveValidationState.currentValidation.bidAmount; i++) {
+        const value = document.getElementById(`liveRanking_${i}`).value;
+        if (!value) {
+            alert(`Please select a token for position ${i + 1}`);
+            return;
+        }
+        if (liveValidationState.playerRanking.includes(value)) {
+            alert(`Token ${value} is already used. Each token can only be used once.`);
+            return;
+        }
+        liveValidationState.playerRanking.push(value);
+    }
+
+    liveValidationState.currentStep = 0;
+    startDramaticReveal();
+}
+
+function startDramaticReveal() {
+    const output = document.getElementById('liveValidationResults');
+    const challenge = liveValidationState.currentChallenge;
+    const correctOrder = getLiveCorrectOrder();
+    const isAscending = challenge.direction === 'asc';
+    
+    let html = `
+        <div class="live-validation-reveal">
+            <h3>🎯 Live Validation: ${liveValidationState.currentValidation.bidderName}</h3>
+            <p><strong>Challenge:</strong> ${extractLiveChallengeTitle(challenge.label)}</p>
+            <p><strong>Direction:</strong> ${isAscending ? 'Lowest to Highest' : 'Highest to Lowest'}</p>
+            <p><strong>Cards to validate:</strong> ${liveValidationState.playerRanking.length}</p>
+            
+            <div class="reveal-container">
+                <div class="ranking-list" id="liveRevealList"></div>
+                
+                <div class="reveal-controls">
+                    <button class="btn primary" id="revealNextBtn" onclick="revealNextLiveCard()">
+                        🎲 Reveal Card ${liveValidationState.currentStep + 1}
+                    </button>
+                </div>
+                
+                <div class="validation-status" id="liveValidationStatus"></div>
+            </div>
+        </div>
+    `;
+    
+    output.innerHTML = html;
+    updateLiveRevealDisplay();
+}
+
+function revealNextLiveCard() {
+    const currentStep = liveValidationState.currentStep;
+    const playerRanking = liveValidationState.playerRanking;
+    const challenge = liveValidationState.currentChallenge;
+    const correctOrder = getLiveCorrectOrder();
+    const isAscending = challenge.direction === 'asc';
+    
+    // Check if we're done
+    if (currentStep >= playerRanking.length) {
+        showLiveValidationComplete(true);
+        return;
+    }
+    
+    // Reveal the next card
+    liveValidationState.currentStep++;
+    updateLiveRevealDisplay();
+    
+    // Check sequential ordering if we have at least 2 cards revealed
+    if (liveValidationState.currentStep >= 2) {
+        const currentCardId = playerRanking[currentStep];
+        const previousCardId = playerRanking[currentStep - 1];
+        
+        // Get actual values for comparison
+        const categoryItems = window.GAME_DATA.categories[liveValidationState.currentValidation.category].items;
+        const currentValue = categoryItems[currentCardId][challenge.challenge];
+        const previousValue = categoryItems[previousCardId][challenge.challenge];
+        
+        // Check if sequence is correct based on direction
+        let sequenceValid;
+        if (isAscending) {
+            sequenceValid = currentValue >= previousValue;
+        } else {
+            sequenceValid = currentValue <= previousValue;
+        }
+        
+        if (!sequenceValid) {
+            // Mark current card as incorrect with red X
+            markLiveCardStatus(currentStep, false);
+            // Sequence broken! Show failure
+            setTimeout(() => {
+                showLiveValidationComplete(false, currentStep + 1, currentValue, previousValue);
+            }, 1000);
+            return;
+        } else {
+            // Mark current card as correct with green checkmark
+            markLiveCardStatus(currentStep, true);
+        }
+        
+        // Mark first card as correct if this is the second card and sequence is valid
+        if (liveValidationState.currentStep === 2) {
+            markLiveCardStatus(0, true);
+        }
+    }
+    
+    // Update button text or show completion
+    const revealBtn = document.getElementById('revealNextBtn');
+    if (liveValidationState.currentStep >= playerRanking.length) {
+        setTimeout(() => {
+            showLiveValidationComplete(true);
+        }, 1000);
+    } else {
+        revealBtn.textContent = `🎲 Reveal Card ${liveValidationState.currentStep + 1}`;
+    }
+}
+
+function updateLiveRevealDisplay() {
+    const revealList = document.getElementById('liveRevealList');
+    if (!revealList) return;
+    
+    const playerRanking = liveValidationState.playerRanking;
+    const currentStep = liveValidationState.currentStep;
+    const categoryItems = window.GAME_DATA.categories[liveValidationState.currentValidation.category].items;
+    const challenge = liveValidationState.currentChallenge;
+    
+    let html = '';
+    
+    for (let i = 0; i < playerRanking.length; i++) {
+        const cardId = playerRanking[i];
+        const item = categoryItems[cardId];
+        const isRevealed = i < currentStep;
+        const isCurrent = i === currentStep - 1;
+        
+        let statusClass = '';
+        if (isRevealed) {
+            statusClass = isCurrent ? 'current-reveal' : 'revealed';
+        } else {
+            statusClass = 'hidden';
+        }
+        
+        const value = isRevealed ? item[challenge.challenge] : '???';
+        const displayName = isRevealed ? item.name : '???';
+        
+        html += `
+            <div class="reveal-card live-card ${statusClass}" id="liveCard_${i}">
+                <span class="rank-number">${i + 1}</span>
+                <span class="country-info">
+                    <span class="country-name">${displayName}<br><small>${isRevealed ? cardId : '???'}</small></span>
+                    <span class="country-value">${value}</span>
+                </span>
+                <span class="status-icon" id="statusIcon_${i}"></span>
+            </div>
+        `;
+    }
+    
+    revealList.innerHTML = html;
+}
+
+function markLiveCardStatus(cardIndex, isCorrect) {
+    const card = document.getElementById(`liveCard_${cardIndex}`);
+    const statusIcon = document.getElementById(`statusIcon_${cardIndex}`);
+    
+    if (!card || !statusIcon) return;
+    
+    if (isCorrect) {
+        card.classList.add('correct');
+        statusIcon.innerHTML = '✅';
+        statusIcon.style.color = '#4caf50';
+    } else {
+        card.classList.add('wrong');
+        statusIcon.innerHTML = '❌';
+        statusIcon.style.color = '#f44336';
+    }
+}
+
+function showFireworks() {
+    // Create fireworks container
+    const fireworksContainer = document.createElement('div');
+    fireworksContainer.id = 'fireworks-container';
+    fireworksContainer.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10000;
+    `;
+    document.body.appendChild(fireworksContainer);
+    
+    // Create multiple firework bursts
+    for (let i = 0; i < 6; i++) {
+        setTimeout(() => {
+            createFireworkBurst(fireworksContainer);
+        }, i * 300);
+    }
+    
+    // Remove fireworks after animation
+    setTimeout(() => {
+        if (fireworksContainer.parentNode) {
+            fireworksContainer.parentNode.removeChild(fireworksContainer);
+        }
+    }, 3000);
+}
+
+function createFireworkBurst(container) {
+    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7', '#dda0dd', '#98d8c8'];
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * (window.innerHeight * 0.6) + (window.innerHeight * 0.2);
+    
+    // Create 12 particles per burst
+    for (let i = 0; i < 12; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: ${colors[Math.floor(Math.random() * colors.length)]};
+            border-radius: 50%;
+            left: ${x}px;
+            top: ${y}px;
+        `;
+        
+        container.appendChild(particle);
+        
+        // Animate particle
+        const angle = (i / 12) * Math.PI * 2;
+        const velocity = 100 + Math.random() * 100;
+        const deltaX = Math.cos(angle) * velocity;
+        const deltaY = Math.sin(angle) * velocity;
+        
+        particle.animate([
+            { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+            { transform: `translate(${deltaX}px, ${deltaY}px) scale(0)`, opacity: 0 }
+        ], {
+            duration: 1000 + Math.random() * 500,
+            easing: 'ease-out'
+        }).onfinish = () => {
+            if (particle.parentNode) {
+                particle.parentNode.removeChild(particle);
+            }
+        };
+    }
+}
+
+function showLiveValidationComplete(success, failedAtStep = null, currentValue = null, previousValue = null) {
+    const statusDiv = document.getElementById('liveValidationStatus');
+    const revealBtn = document.getElementById('revealNextBtn');
+    const challenge = liveValidationState.currentChallenge;
+    const isAscending = challenge.direction === 'asc';
+    
+    if (success) {
+        // Mark the final card as correct if we have multiple cards
+        if (liveValidationState.playerRanking.length > 1) {
+            markLiveCardStatus(liveValidationState.playerRanking.length - 1, true);
+        }
+        // Mark the first card as correct for single card case
+        if (liveValidationState.playerRanking.length === 1) {
+            markLiveCardStatus(0, true);
+        }
+        
+        statusDiv.innerHTML = `
+            <div class="validation-success">
+                <h3>🎉 SUCCESS!</h3>
+                <p><strong>${liveValidationState.currentValidation.bidderName}</strong> successfully ranked all ${liveValidationState.playerRanking.length} cards in correct sequential order!</p>
+                <p>The ranking follows the proper ${isAscending ? 'ascending' : 'descending'} sequence for this challenge.</p>
+            </div>
+        `;
+        revealBtn.style.display = 'none';
+        
+        // Show fireworks celebration!
+        setTimeout(() => {
+            showFireworks();
+        }, 500);
+    } else {
+        const direction = isAscending ? 'higher' : 'lower';
+        statusDiv.innerHTML = `
+            <div class="validation-failure">
+                <h3>💥 SEQUENCE BROKEN!</h3>
+                <p><strong>${liveValidationState.currentValidation.bidderName}</strong> fails at card ${failedAtStep}!</p>
+                <p>Card ${failedAtStep} (${currentValue}) should be ${direction} than Card ${failedAtStep - 1} (${previousValue}) for this challenge.</p>
+                <p><strong>Result:</strong> Ranking attempt unsuccessful.</p>
+            </div>
+        `;
+        revealBtn.style.display = 'none';
+    }
+    
+    // Add return button
+    setTimeout(() => {
+        statusDiv.innerHTML += `
+            <button class="btn secondary" onclick="showScreen('liveValidationScreen')" style="margin-top: 15px;">
+                🔄 Start New Validation
+            </button>
+        `;
+    }, 2000);
+}
+
+function showLiveValidationResults() {
+    const output = document.getElementById('liveValidationResults');
+    const correctOrder = getLiveCorrectOrder();
+    
+    let html = `
+        <div class="info-card" style="background: #f8f9fa; margin-bottom: 20px;">
+            <div class="card-title">🎯 Live Validation Results</div>
+            <div style="margin-top: 10px;">
+                <strong>Bidder:</strong> ${liveValidationState.currentValidation.bidderName} | 
+                <strong>Bid:</strong> ${liveValidationState.currentValidation.bidAmount} tokens
+            </div>
+        </div>
+
+        <div style="background: white; padding: 20px; border-radius: 10px; border: 2px solid #e0e0e0; margin-bottom: 20px;">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+    `;
+
+    // Show each position with validation
+    for (let i = 0; i < liveValidationState.currentValidation.bidAmount; i++) {
+        const playerToken = liveValidationState.playerRanking[i];
+        const correctToken = correctOrder[i];
+        const isCorrect = playerToken === correctToken;
+        const categoryItems = window.GAME_DATA.categories[liveValidationState.currentValidation.category].items;
+
+        html += `
+            <div style="padding: 15px; border-radius: 8px; border: 2px solid ${isCorrect ? '#4caf50' : '#f44336'}; background: ${isCorrect ? '#e8f5e8' : '#ffebee'};">
+                <div style="display: grid; grid-template-columns: auto 1fr 1fr auto; gap: 15px; align-items: center;">
+                    <div style="font-weight: bold; color: #333;">Position ${i + 1}</div>
+                    <div>
+                        <div style="font-size: 12px; color: #666; margin-bottom: 2px;">Player ranked:</div>
+                        <div><strong>${playerToken} - ${categoryItems[playerToken].name}</strong></div>
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; color: #666; margin-bottom: 2px;">Correct answer:</div>
+                        <div><strong>${correctToken} - ${categoryItems[correctToken].name}</strong></div>
+                    </div>
+                    <div style="font-weight: bold; font-size: 18px; color: ${isCorrect ? '#4caf50' : '#f44336'};">
+                        ${isCorrect ? '✅' : '❌'}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    const correctCount = liveValidationState.playerRanking.filter((token, i) => token === correctOrder[i]).length;
+    const bidSuccessful = correctCount === liveValidationState.currentValidation.bidAmount;
+
+    html += `
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; border-radius: 10px; background: ${bidSuccessful ? '#e8f5e8' : '#ffebee'}; border: 2px solid ${bidSuccessful ? '#4caf50' : '#f44336'};">
+                <h2 style="text-align: center; margin-bottom: 15px; color: ${bidSuccessful ? '#4caf50' : '#f44336'}; font-size: 24px;">
+                    ${bidSuccessful ? '🎉 BID SUCCESSFUL!' : '💥 BID FAILED!'}
+                </h2>
+                <div style="text-align: center; font-size: 18px;">
+                    <strong>${liveValidationState.currentValidation.bidderName}</strong> got <strong>${correctCount}/${liveValidationState.currentValidation.bidAmount}</strong> correct
+                </div>
+                ${!bidSuccessful ? `<div style="text-align: center; margin-top: 10px; color: #666;">Needed all ${liveValidationState.currentValidation.bidAmount} correct to succeed</div>` : ''}
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn primary" onclick="resetLiveValidation()" style="margin-right: 10px;">🔄 New Validation</button>
+                <button class="btn secondary" onclick="showScreen('titleScreen')">🏠 Back to Home</button>
+            </div>
+        </div>
+    `;
+
+    output.innerHTML = html;
+}
+
+function getLiveCorrectOrder() {
+    // Get the correct ranking data for this challenge
+    const challengeKey = liveValidationState.currentChallenge.challenge;
+    const categoryItems = window.GAME_DATA.categories[liveValidationState.currentValidation.category].items;
+    
+    // Extract all items with their values for this challenge
+    const itemsWithValues = Object.keys(categoryItems).map(code => ({
+        code: code,
+        value: categoryItems[code][challengeKey]
+    })).filter(item => item.value !== undefined);
+
+    // Sort based on challenge type (some are highest to lowest, others are lowest to highest)
+    const challengeLabel = liveValidationState.currentChallenge.label.toLowerCase();
+    const isAscending = challengeLabel.includes('lowest to highest');
+    
+    itemsWithValues.sort((a, b) => {
+        if (isAscending) {
+            return a.value - b.value;
+        } else {
+            return b.value - a.value;
+        }
+    });
+
+    return itemsWithValues.map(item => item.code);
+}
+
+function resetLiveValidation() {
+    liveValidationState = {
+        currentValidation: null,
+        currentChallenge: null,
+        playerRanking: [],
+        currentStep: 0
+    };
+    
+    // Clear form
+    document.getElementById('liveValidationCategory').value = '';
+    document.getElementById('liveChalllengeNumber').value = '';
+    document.getElementById('liveBidAmount').value = '';
+    document.getElementById('liveBidderName').value = '';
+    
+    // Reset output
+    document.getElementById('liveValidationResults').innerHTML = '';
+}
