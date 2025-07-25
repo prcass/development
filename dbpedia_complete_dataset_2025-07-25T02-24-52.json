@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "source": "DBpedia SPARQL (no truncation limits)",
+    "created": "2025-07-25T02:24:52.813Z",
+    "endpoint": "https://dbpedia.org/sparql",
+    "totalCountries": 1,
+    "rankings": {}
+  },
+  "countries": {
+    "Norway": {
+      "name": "Norway",
+      "dbpediaUri": "http://dbpedia.org/resource/Norway",
+      "data": {
+        "population": 5421241,
+        "area": 385207000,
+        "gdp": 482175000000,
+        "gdpPerCapita": 89090,
+        "hdi": 0.957,
+        "lifeExpectancy": 82.3
+      }
+    }
+  },
+  "completenessReport": {
+    "population": {
+      "countriesWithData": 1,
+      "completeness": "100.0%"
+    },
+    "area": {
+      "countriesWithData": 1,
+      "completeness": "100.0%"
+    },
+    "gdp": {
+      "countriesWithData": 1,
+      "completeness": "100.0%"
+    },
+    "gdpPerCapita": {
+      "countriesWithData": 1,
+      "completeness": "100.0%"
+    },
+    "hdi": {
+      "countriesWithData": 1,
+      "completeness": "100.0%"
+    },
+    "lifeExpectancy": {
+      "countriesWithData": 1,
+      "completeness": "100.0%"
+    }
+  }
+}

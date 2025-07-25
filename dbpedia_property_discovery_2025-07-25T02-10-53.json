@@ -1,0 +1,647 @@
+{
+  "metadata": {
+    "source": "DBpedia",
+    "created": "2025-07-25T02:10:53.839Z",
+    "endpoint": "https://dbpedia.org/sparql"
+  },
+  "summary": {
+    "totalPropertiesFound": 29,
+    "categorizedProperties": {
+      "demographic": 6,
+      "geographic": 3,
+      "economic": 9,
+      "other": 4,
+      "social": 2,
+      "infrastructure": 1,
+      "environmental": 2,
+      "cultural": 2
+    },
+    "topRankingCandidates": [
+      {
+        "uri": "http://dbpedia.org/ontology/populationTotal",
+        "name": "populationtotal",
+        "label": null,
+        "category": "demographic",
+        "isGoodCandidate": true,
+        "usage": 195,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/areaTotal",
+        "name": "areatotal",
+        "label": null,
+        "category": "geographic",
+        "isGoodCandidate": true,
+        "usage": 195,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/gdpNominalPerCapita",
+        "name": "gdpnominalpercapita",
+        "label": null,
+        "category": "economic",
+        "isGoodCandidate": true,
+        "usage": 175,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/humanDevelopmentIndex",
+        "name": "humandevelopmentindex",
+        "label": null,
+        "category": "other",
+        "isGoodCandidate": true,
+        "usage": 170,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/gdpPppPerCapita",
+        "name": "gdpppppercapita",
+        "label": null,
+        "category": "economic",
+        "isGoodCandidate": true,
+        "usage": 155,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/literacyRate",
+        "name": "literacyrate",
+        "label": null,
+        "category": "social",
+        "isGoodCandidate": true,
+        "usage": 130,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/pressFreedomIndex",
+        "name": "pressfreedomindex",
+        "label": null,
+        "category": "social",
+        "isGoodCandidate": true,
+        "usage": 60,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/populationTotal",
+        "name": "populationtotal",
+        "label": "Total Population",
+        "category": "demographic",
+        "isGoodCandidate": true,
+        "usage": 195,
+        "queryType": "ontologyProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/areaTotal",
+        "name": "areatotal",
+        "label": "Total Area",
+        "category": "geographic",
+        "isGoodCandidate": true,
+        "usage": 195,
+        "queryType": "ontologyProperties"
+      }
+    ]
+  },
+  "properties": {
+    "byCategory": {
+      "demographic": [
+        {
+          "uri": "http://dbpedia.org/ontology/populationTotal",
+          "name": "populationtotal",
+          "label": null,
+          "category": "demographic",
+          "isGoodCandidate": true,
+          "usage": 195,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/ontology/populationDensity",
+          "name": "populationdensity",
+          "label": null,
+          "category": "demographic",
+          "isGoodCandidate": false,
+          "usage": 190,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/lifeExpectancy",
+          "name": "lifeexpectancy",
+          "label": null,
+          "category": "demographic",
+          "isGoodCandidate": false,
+          "usage": 150,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/worldHeritageSites",
+          "name": "worldheritagesites",
+          "label": null,
+          "category": "demographic",
+          "isGoodCandidate": false,
+          "usage": 65,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/ontology/populationTotal",
+          "name": "populationtotal",
+          "label": "Total Population",
+          "category": "demographic",
+          "isGoodCandidate": true,
+          "usage": 195,
+          "queryType": "ontologyProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/ontology/populationDensity",
+          "name": "populationdensity",
+          "label": "Population Density",
+          "category": "demographic",
+          "isGoodCandidate": false,
+          "usage": 190,
+          "queryType": "ontologyProperties"
+        }
+      ],
+      "geographic": [
+        {
+          "uri": "http://dbpedia.org/ontology/areaTotal",
+          "name": "areatotal",
+          "label": null,
+          "category": "geographic",
+          "isGoodCandidate": true,
+          "usage": 195,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/forestArea",
+          "name": "forestarea",
+          "label": null,
+          "category": "geographic",
+          "isGoodCandidate": false,
+          "usage": 95,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/ontology/areaTotal",
+          "name": "areatotal",
+          "label": "Total Area",
+          "category": "geographic",
+          "isGoodCandidate": true,
+          "usage": 195,
+          "queryType": "ontologyProperties"
+        }
+      ],
+      "economic": [
+        {
+          "uri": "http://dbpedia.org/ontology/gdpNominal",
+          "name": "gdpnominal",
+          "label": null,
+          "category": "economic",
+          "isGoodCandidate": false,
+          "usage": 180,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/ontology/gdpNominalPerCapita",
+          "name": "gdpnominalpercapita",
+          "label": null,
+          "category": "economic",
+          "isGoodCandidate": true,
+          "usage": 175,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/gdpPpp",
+          "name": "gdpppp",
+          "label": null,
+          "category": "economic",
+          "isGoodCandidate": false,
+          "usage": 160,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/gdpPppPerCapita",
+          "name": "gdpppppercapita",
+          "label": null,
+          "category": "economic",
+          "isGoodCandidate": true,
+          "usage": 155,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/militaryBudget",
+          "name": "militarybudget",
+          "label": null,
+          "category": "economic",
+          "isGoodCandidate": false,
+          "usage": 120,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/exports",
+          "name": "exports",
+          "label": null,
+          "category": "economic",
+          "isGoodCandidate": false,
+          "usage": 110,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/imports",
+          "name": "imports",
+          "label": null,
+          "category": "economic",
+          "isGoodCandidate": false,
+          "usage": 110,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/publicDebt",
+          "name": "publicdebt",
+          "label": null,
+          "category": "economic",
+          "isGoodCandidate": false,
+          "usage": 100,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/ontology/gdpNominal",
+          "name": "gdpnominal",
+          "label": "GDP Nominal",
+          "category": "economic",
+          "isGoodCandidate": false,
+          "usage": 180,
+          "queryType": "ontologyProperties"
+        }
+      ],
+      "other": [
+        {
+          "uri": "http://dbpedia.org/ontology/humanDevelopmentIndex",
+          "name": "humandevelopmentindex",
+          "label": null,
+          "category": "other",
+          "isGoodCandidate": true,
+          "usage": 170,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/gini",
+          "name": "gini",
+          "label": null,
+          "category": "other",
+          "isGoodCandidate": false,
+          "usage": 140,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/hdi",
+          "name": "hdi",
+          "label": null,
+          "category": "other",
+          "isGoodCandidate": false,
+          "usage": 165,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/touristArrivals",
+          "name": "touristarrivals",
+          "label": null,
+          "category": "other",
+          "isGoodCandidate": false,
+          "usage": 80,
+          "queryType": "numericProperties"
+        }
+      ],
+      "social": [
+        {
+          "uri": "http://dbpedia.org/property/literacyRate",
+          "name": "literacyrate",
+          "label": null,
+          "category": "social",
+          "isGoodCandidate": true,
+          "usage": 130,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/pressFreedomIndex",
+          "name": "pressfreedomindex",
+          "label": null,
+          "category": "social",
+          "isGoodCandidate": true,
+          "usage": 60,
+          "queryType": "numericProperties"
+        }
+      ],
+      "infrastructure": [
+        {
+          "uri": "http://dbpedia.org/property/internetUsers",
+          "name": "internetusers",
+          "label": null,
+          "category": "infrastructure",
+          "isGoodCandidate": false,
+          "usage": 125,
+          "queryType": "numericProperties"
+        }
+      ],
+      "environmental": [
+        {
+          "uri": "http://dbpedia.org/property/renewableEnergy",
+          "name": "renewableenergy",
+          "label": null,
+          "category": "environmental",
+          "isGoodCandidate": false,
+          "usage": 90,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/co2Emissions",
+          "name": "co2emissions",
+          "label": null,
+          "category": "environmental",
+          "isGoodCandidate": false,
+          "usage": 85,
+          "queryType": "numericProperties"
+        }
+      ],
+      "cultural": [
+        {
+          "uri": "http://dbpedia.org/property/olympicGolds",
+          "name": "olympicgolds",
+          "label": null,
+          "category": "cultural",
+          "isGoodCandidate": false,
+          "usage": 75,
+          "queryType": "numericProperties"
+        },
+        {
+          "uri": "http://dbpedia.org/property/nobelLaureates",
+          "name": "nobellaureates",
+          "label": null,
+          "category": "cultural",
+          "isGoodCandidate": false,
+          "usage": 70,
+          "queryType": "numericProperties"
+        }
+      ]
+    },
+    "all": [
+      {
+        "uri": "http://dbpedia.org/ontology/populationTotal",
+        "name": "populationtotal",
+        "label": null,
+        "category": "demographic",
+        "isGoodCandidate": true,
+        "usage": 195,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/areaTotal",
+        "name": "areatotal",
+        "label": null,
+        "category": "geographic",
+        "isGoodCandidate": true,
+        "usage": 195,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/gdpNominal",
+        "name": "gdpnominal",
+        "label": null,
+        "category": "economic",
+        "isGoodCandidate": false,
+        "usage": 180,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/gdpNominalPerCapita",
+        "name": "gdpnominalpercapita",
+        "label": null,
+        "category": "economic",
+        "isGoodCandidate": true,
+        "usage": 175,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/humanDevelopmentIndex",
+        "name": "humandevelopmentindex",
+        "label": null,
+        "category": "other",
+        "isGoodCandidate": true,
+        "usage": 170,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/populationDensity",
+        "name": "populationdensity",
+        "label": null,
+        "category": "demographic",
+        "isGoodCandidate": false,
+        "usage": 190,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/gdpPpp",
+        "name": "gdpppp",
+        "label": null,
+        "category": "economic",
+        "isGoodCandidate": false,
+        "usage": 160,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/gdpPppPerCapita",
+        "name": "gdpppppercapita",
+        "label": null,
+        "category": "economic",
+        "isGoodCandidate": true,
+        "usage": 155,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/gini",
+        "name": "gini",
+        "label": null,
+        "category": "other",
+        "isGoodCandidate": false,
+        "usage": 140,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/hdi",
+        "name": "hdi",
+        "label": null,
+        "category": "other",
+        "isGoodCandidate": false,
+        "usage": 165,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/lifeExpectancy",
+        "name": "lifeexpectancy",
+        "label": null,
+        "category": "demographic",
+        "isGoodCandidate": false,
+        "usage": 150,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/literacyRate",
+        "name": "literacyrate",
+        "label": null,
+        "category": "social",
+        "isGoodCandidate": true,
+        "usage": 130,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/militaryBudget",
+        "name": "militarybudget",
+        "label": null,
+        "category": "economic",
+        "isGoodCandidate": false,
+        "usage": 120,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/internetUsers",
+        "name": "internetusers",
+        "label": null,
+        "category": "infrastructure",
+        "isGoodCandidate": false,
+        "usage": 125,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/exports",
+        "name": "exports",
+        "label": null,
+        "category": "economic",
+        "isGoodCandidate": false,
+        "usage": 110,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/imports",
+        "name": "imports",
+        "label": null,
+        "category": "economic",
+        "isGoodCandidate": false,
+        "usage": 110,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/publicDebt",
+        "name": "publicdebt",
+        "label": null,
+        "category": "economic",
+        "isGoodCandidate": false,
+        "usage": 100,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/forestArea",
+        "name": "forestarea",
+        "label": null,
+        "category": "geographic",
+        "isGoodCandidate": false,
+        "usage": 95,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/renewableEnergy",
+        "name": "renewableenergy",
+        "label": null,
+        "category": "environmental",
+        "isGoodCandidate": false,
+        "usage": 90,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/co2Emissions",
+        "name": "co2emissions",
+        "label": null,
+        "category": "environmental",
+        "isGoodCandidate": false,
+        "usage": 85,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/touristArrivals",
+        "name": "touristarrivals",
+        "label": null,
+        "category": "other",
+        "isGoodCandidate": false,
+        "usage": 80,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/olympicGolds",
+        "name": "olympicgolds",
+        "label": null,
+        "category": "cultural",
+        "isGoodCandidate": false,
+        "usage": 75,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/nobelLaureates",
+        "name": "nobellaureates",
+        "label": null,
+        "category": "cultural",
+        "isGoodCandidate": false,
+        "usage": 70,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/worldHeritageSites",
+        "name": "worldheritagesites",
+        "label": null,
+        "category": "demographic",
+        "isGoodCandidate": false,
+        "usage": 65,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/property/pressFreedomIndex",
+        "name": "pressfreedomindex",
+        "label": null,
+        "category": "social",
+        "isGoodCandidate": true,
+        "usage": 60,
+        "queryType": "numericProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/populationTotal",
+        "name": "populationtotal",
+        "label": "Total Population",
+        "category": "demographic",
+        "isGoodCandidate": true,
+        "usage": 195,
+        "queryType": "ontologyProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/areaTotal",
+        "name": "areatotal",
+        "label": "Total Area",
+        "category": "geographic",
+        "isGoodCandidate": true,
+        "usage": 195,
+        "queryType": "ontologyProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/gdpNominal",
+        "name": "gdpnominal",
+        "label": "GDP Nominal",
+        "category": "economic",
+        "isGoodCandidate": false,
+        "usage": 180,
+        "queryType": "ontologyProperties"
+      },
+      {
+        "uri": "http://dbpedia.org/ontology/populationDensity",
+        "name": "populationdensity",
+        "label": "Population Density",
+        "category": "demographic",
+        "isGoodCandidate": false,
+        "usage": 190,
+        "queryType": "ontologyProperties"
+      }
+    ]
+  }
+}

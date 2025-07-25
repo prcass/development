@@ -1,0 +1,316 @@
+{
+  "newCountriesData": {
+    "USA": {
+      "name": "United States",
+      "code": "USA",
+      "gdp_nominal": 30507217,
+      "human_development_index": 0.938,
+      "population": 340.1,
+      "co2_emissions": 4682.04
+    },
+    "CHN": {
+      "name": "China",
+      "code": "CHN",
+      "gdp_nominal": 19231705,
+      "population": 1408.3,
+      "co2_emissions": 13259.64
+    },
+    "001": {
+      "name": "Germany",
+      "code": "001",
+      "gdp_nominal": 4744804,
+      "human_development_index": 0.959,
+      "population": 83.6,
+      "co2_emissions": 582.95
+    },
+    "IND": {
+      "name": "India",
+      "code": "IND",
+      "gdp_nominal": 4187017,
+      "population": 1417.5,
+      "co2_emissions": 2955.18
+    },
+    "JPN": {
+      "name": "Japan",
+      "code": "JPN",
+      "gdp_nominal": 4186431,
+      "human_development_index": 0.925,
+      "population": 123.4,
+      "life_expectancy": 84.71,
+      "co2_emissions": 944.76
+    },
+    "GBR": {
+      "name": "United Kingdom",
+      "code": "GBR",
+      "gdp_nominal": 3839180,
+      "human_development_index": 0.946,
+      "population": 68.3,
+      "co2_emissions": 302.1
+    },
+    "FRA": {
+      "name": "France",
+      "code": "FRA",
+      "gdp_nominal": 3211292,
+      "human_development_index": 0.92,
+      "population": 68.6,
+      "life_expectancy": 83.33,
+      "co2_emissions": 282.43
+    },
+    "ITA": {
+      "name": "Italy",
+      "code": "ITA",
+      "gdp_nominal": 2422855,
+      "human_development_index": 0.915,
+      "population": 58.9,
+      "life_expectancy": 83.72,
+      "co2_emissions": 305.49
+    },
+    "CAN": {
+      "name": "Canada",
+      "code": "CAN",
+      "gdp_nominal": 2225341,
+      "human_development_index": 0.939,
+      "life_expectancy": 82.63,
+      "co2_emissions": 575.01
+    },
+    "BRA": {
+      "name": "Brazil",
+      "code": "BRA",
+      "gdp_nominal": 2125958,
+      "population": 212.6,
+      "co2_emissions": 479.5
+    },
+    "RUS": {
+      "name": "Russia",
+      "code": "RUS",
+      "gdp_nominal": 2076396,
+      "population": 146,
+      "co2_emissions": 2069.5
+    },
+    "ESP": {
+      "name": "Spain",
+      "code": "ESP",
+      "gdp_nominal": 1799511,
+      "human_development_index": 0.918,
+      "life_expectancy": 83.67,
+      "co2_emissions": 217.26
+    },
+    "KOR": {
+      "name": "South Korea",
+      "code": "KOR",
+      "gdp_nominal": 1790322,
+      "human_development_index": 0.937,
+      "population": 51.2,
+      "life_expectancy": 84.33,
+      "co2_emissions": 573.54
+    },
+    "AUS": {
+      "name": "Australia",
+      "code": "AUS",
+      "gdp_nominal": 1771681,
+      "human_development_index": 0.958,
+      "life_expectancy": 83.92,
+      "co2_emissions": 373.62
+    },
+    "MEX": {
+      "name": "Mexico",
+      "code": "MEX",
+      "gdp_nominal": 1692640,
+      "population": 130.4,
+      "co2_emissions": 487.09
+    },
+    "TUR": {
+      "name": "Turkey",
+      "code": "TUR",
+      "gdp_nominal": 1437406,
+      "population": 85.7,
+      "co2_emissions": 438.32
+    },
+    "IDN": {
+      "name": "Indonesia",
+      "code": "IDN",
+      "gdp_nominal": 1429743,
+      "population": 284.4,
+      "co2_emissions": 674.54
+    },
+    "NLD": {
+      "name": "Netherlands",
+      "code": "NLD",
+      "gdp_nominal": 1272011,
+      "human_development_index": 0.955,
+      "life_expectancy": 82.16
+    },
+    "SAU": {
+      "name": "Saudi Arabia",
+      "code": "SAU",
+      "gdp_nominal": 1083749,
+      "co2_emissions": 622.91
+    },
+    "POL": {
+      "name": "Poland",
+      "code": "POL",
+      "gdp_nominal": 979960,
+      "co2_emissions": 286.91
+    },
+    "CHE": {
+      "name": "Switzerland",
+      "code": "CHE",
+      "gdp_nominal": 947125,
+      "human_development_index": 0.97,
+      "life_expectancy": 83.95
+    },
+    "BEL": {
+      "name": "Belgium",
+      "code": "BEL",
+      "gdp_nominal": 684864,
+      "human_development_index": 0.951,
+      "life_expectancy": 82.11
+    },
+    "SWE": {
+      "name": "Sweden",
+      "code": "SWE",
+      "gdp_nominal": 620297,
+      "human_development_index": 0.959,
+      "life_expectancy": 83.26
+    },
+    "IRL": {
+      "name": "Ireland",
+      "code": "IRL",
+      "gdp_nominal": 598840,
+      "human_development_index": 0.949,
+      "life_expectancy": 82.41
+    },
+    "ISR": {
+      "name": "Israel",
+      "code": "ISR",
+      "gdp_nominal": 583361,
+      "human_development_index": 0.919,
+      "life_expectancy": 82.41
+    },
+    "SGP": {
+      "name": "Singapore",
+      "code": "SGP",
+      "gdp_nominal": 564774,
+      "human_development_index": 0.946,
+      "life_expectancy": 83.74
+    },
+    "ARE": {
+      "name": "UAE",
+      "code": "ARE",
+      "gdp_nominal": 548598,
+      "human_development_index": 0.94,
+      "life_expectancy": 82.91
+    },
+    "THA": {
+      "name": "Thailand",
+      "code": "THA",
+      "gdp_nominal": 546224,
+      "population": 65.9,
+      "co2_emissions": 274.16
+    },
+    "NOR": {
+      "name": "Norway",
+      "code": "NOR",
+      "human_development_index": 0.97,
+      "life_expectancy": 83.31
+    },
+    "DNK": {
+      "name": "Denmark",
+      "code": "DNK",
+      "human_development_index": 0.962
+    },
+    "HKG": {
+      "name": "Hong Kong",
+      "code": "HKG",
+      "human_development_index": 0.955,
+      "life_expectancy": 85.51
+    },
+    "NZL": {
+      "name": "New Zealand",
+      "code": "NZL",
+      "human_development_index": 0.938,
+      "life_expectancy": 82.09
+    },
+    "AUT": {
+      "name": "Austria",
+      "code": "AUT",
+      "human_development_index": 0.93
+    },
+    "PAK": {
+      "name": "Pakistan",
+      "code": "PAK",
+      "population": 241.5
+    },
+    "NGA": {
+      "name": "Nigeria",
+      "code": "NGA",
+      "population": 223.8
+    },
+    "BGD": {
+      "name": "Bangladesh",
+      "code": "BGD",
+      "population": 169.8
+    },
+    "PHL": {
+      "name": "Philippines",
+      "code": "PHL",
+      "population": 114.1
+    },
+    "EGY": {
+      "name": "Egypt",
+      "code": "EGY",
+      "population": 107.3,
+      "co2_emissions": 249.33
+    },
+    "VNM": {
+      "name": "Vietnam",
+      "code": "VNM",
+      "population": 101.3,
+      "co2_emissions": 372.95
+    },
+    "IRN": {
+      "name": "Iran",
+      "code": "IRN",
+      "population": 86,
+      "co2_emissions": 778.8
+    },
+    "ZAF": {
+      "name": "South Africa",
+      "code": "ZAF",
+      "population": 63,
+      "co2_emissions": 397.37
+    },
+    "MYS": {
+      "name": "Malaysia",
+      "code": "MYS",
+      "co2_emissions": 283.32
+    }
+  },
+  "newChallenges": [
+    {
+      "challenge": "gdp_nominal",
+      "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>GDP Nominal (Wikipedia)</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Million USD</div><div style='font-size: 0.85em; color: #666'>(Wikipedia 2024)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+    },
+    {
+      "challenge": "population",
+      "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Population (Wikipedia)</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Millions</div><div style='font-size: 0.85em; color: #666'>(Wikipedia 2024)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+    },
+    {
+      "challenge": "life_expectancy",
+      "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Life Expectancy (Wikipedia)</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Years</div><div style='font-size: 0.85em; color: #666'>(Wikipedia 2024)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+    },
+    {
+      "challenge": "co2_emissions",
+      "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>CO2 Emissions (Wikipedia)</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Million Tons</div><div style='font-size: 0.85em; color: #666'>(Wikipedia 2024)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+    },
+    {
+      "challenge": "human_development_index",
+      "label": "<div style='text-align: center'><div style='font-size: 1.1em; font-weight: bold; margin-bottom: 8px'>Human Development Index (Wikipedia)</div><div style='font-size: 0.9em; margin-bottom: 6px; color: #009688'>Index (0-1)</div><div style='font-size: 0.85em; color: #666'>(Wikipedia 2024)</div><div style='font-size: 0.9em; margin-top: 8px; font-style: italic'>Rank highest to lowest</div></div>"
+    }
+  ],
+  "summary": {
+    "countriesProcessed": 42,
+    "newProperties": 117,
+    "challengesCreated": 5
+  }
+}

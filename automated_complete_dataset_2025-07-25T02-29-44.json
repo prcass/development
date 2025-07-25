@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "source": "DBpedia SPARQL (automated HTTP requests)",
+    "created": "2025-07-25T02:29:30.529Z",
+    "endpoint": "https://dbpedia.org/sparql",
+    "fetchDuration": "14.20s",
+    "totalCountries": 0,
+    "queriesExecuted": 0
+  },
+  "countries": {},
+  "rawResults": {
+    "lifeExpectancy": {
+      "totalResults": 0,
+      "countries": {}
+    },
+    "population": {
+      "totalResults": 0,
+      "countries": {}
+    },
+    "area": {
+      "totalResults": 0,
+      "countries": {}
+    },
+    "gdpNominal": {
+      "totalResults": 0,
+      "countries": {}
+    },
+    "gdpPerCapita": {
+      "totalResults": 0,
+      "countries": {}
+    },
+    "hdi": {
+      "totalResults": 0,
+      "countries": {}
+    }
+  },
+  "completenessReport": {
+    "population": {
+      "countriesWithData": 0,
+      "totalCountries": 0,
+      "completeness": "0%"
+    },
+    "area": {
+      "countriesWithData": 0,
+      "totalCountries": 0,
+      "completeness": "0%"
+    },
+    "gdp": {
+      "countriesWithData": 0,
+      "totalCountries": 0,
+      "completeness": "0%"
+    },
+    "gdpPerCapita": {
+      "countriesWithData": 0,
+      "totalCountries": 0,
+      "completeness": "0%"
+    },
+    "hdi": {
+      "countriesWithData": 0,
+      "totalCountries": 0,
+      "completeness": "0%"
+    },
+    "lifeExpectancy": {
+      "countriesWithData": 0,
+      "totalCountries": 0,
+      "completeness": "0%"
+    }
+  },
+  "queriesExecuted": null
+}

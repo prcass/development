@@ -1,0 +1,24 @@
+
+DBpedia Automated Fetch Summary
+===============================
+Fetch Date: 2025-07-25T02:29:30.529Z
+Duration: 14.20s
+Queries Executed: 0
+Total Countries: 0
+
+Data Completeness:
+  population: 0 countries (0%)
+  area: 0 countries (0%)
+  gdp: 0 countries (0%)
+  gdpPerCapita: 0 countries (0%)
+  hdi: 0 countries (0%)
+  lifeExpectancy: 0 countries (0%)
+
+Key Improvements over WebFetch:
+  Life Expectancy: 0 vs 79 (+-79)
+  GDP: 0 vs 22 (+-22)
+  HDI: 0 vs 20 (+-20)
+
+Sample Countries Retrieved:
+
+

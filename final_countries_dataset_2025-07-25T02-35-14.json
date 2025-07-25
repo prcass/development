@@ -1,0 +1,1603 @@
+{
+  "metadata": {
+    "source": "DBpedia SPARQL (optimized for reliability)",
+    "created": "2025-07-25T02:35:03.887Z",
+    "endpoint": "https://dbpedia.org/sparql",
+    "totalCountries": 236,
+    "queriesExecuted": 0,
+    "fetchDuration": "10.50s"
+  },
+  "countries": {
+    "Georgia (country)": {
+      "name": "Georgia (country)",
+      "data": {
+        "population": 36886474012104,
+        "hdi": 0.8019999861717224
+      }
+    },
+    "China": {
+      "name": "China",
+      "data": {
+        "population": 1410539758,
+        "hdi": 0.7680000066757202
+      }
+    },
+    "India": {
+      "name": "India",
+      "data": {
+        "population": 1375586000,
+        "hdi": 0.6330000162124634
+      }
+    },
+    "Passports in Europe": {
+      "name": "Passports in Europe",
+      "data": {
+        "population": 447206135
+      }
+    },
+    "United States": {
+      "name": "United States",
+      "data": {
+        "population": 331893745,
+        "hdi": 0.9210000038146973
+      }
+    },
+    "Indonesia": {
+      "name": "Indonesia",
+      "data": {
+        "population": 275773800,
+        "hdi": 0.7049999833106995
+      }
+    },
+    "Pakistan": {
+      "name": "Pakistan",
+      "data": {
+        "population": 242923845,
+        "hdi": 0.5440000295639038
+      }
+    },
+    "Nigeria": {
+      "name": "Nigeria",
+      "data": {
+        "population": 225082083,
+        "hdi": 0.5389999747276306
+      }
+    },
+    "Brazil": {
+      "name": "Brazil",
+      "data": {
+        "population": 217240060,
+        "hdi": 0.7540000081062317
+      }
+    },
+    "History of Brazil (1985–present)": {
+      "name": "History of Brazil (1985–present)",
+      "data": {
+        "population": 214047375,
+        "hdi": 0.7649999856948853
+      }
+    },
+    "Russia": {
+      "name": "Russia",
+      "data": {
+        "population": 147182123,
+        "hdi": 0.8240000009536743
+      }
+    },
+    "History of Russia (1991–present)": {
+      "name": "History of Russia (1991–present)",
+      "data": {
+        "population": 145478097,
+        "hdi": 0.8240000009536743
+      }
+    },
+    "Mexico": {
+      "name": "Mexico",
+      "data": {
+        "population": 129150971,
+        "hdi": 0.7580000162124634
+      }
+    },
+    "Japan": {
+      "name": "Japan",
+      "data": {
+        "population": 124214766,
+        "hdi": 0.925000011920929
+      }
+    },
+    "Ethiopia": {
+      "name": "Ethiopia",
+      "data": {
+        "population": 113656596,
+        "hdi": 0.4850000143051147
+      }
+    },
+    "Democratic Republic of the Congo": {
+      "name": "Democratic Republic of the Congo",
+      "data": {
+        "population": 108407721,
+        "hdi": 0.4790000021457672
+      }
+    },
+    "Egypt": {
+      "name": "Egypt",
+      "data": {
+        "population": 107770524,
+        "hdi": 0.7310000061988831
+      }
+    },
+    "Vietnam": {
+      "name": "Vietnam",
+      "data": {
+        "population": 103808319,
+        "hdi": 0.7039999961853027
+      }
+    },
+    "Iran": {
+      "name": "Iran",
+      "data": {
+        "population": 86758304,
+        "hdi": 0.7739999890327454
+      }
+    },
+    "Turkey": {
+      "name": "Turkey",
+      "data": {
+        "population": 84680273,
+        "hdi": 0.8379999995231628
+      }
+    },
+    "Germany": {
+      "name": "Germany",
+      "data": {
+        "population": 83695430,
+        "hdi": 0.9419999718666077
+      }
+    },
+    "History of Germany (1990–present)": {
+      "name": "History of Germany (1990–present)",
+      "data": {
+        "population": 83190556,
+        "hdi": 0.9470000267028809
+      }
+    },
+    "History of the Islamic Republic of Iran": {
+      "name": "History of the Islamic Republic of Iran",
+      "data": {
+        "population": 83183741,
+        "hdi": 0.7829999923706055
+      }
+    },
+    "Korea": {
+      "name": "Korea",
+      "data": {
+        "population": 77000000
+      }
+    },
+    "Thailand": {
+      "name": "Thailand",
+      "data": {
+        "population": 69648117,
+        "hdi": 0.800000011920929
+      }
+    },
+    "France": {
+      "name": "France",
+      "data": {
+        "population": 67897000,
+        "hdi": 0.902999997138977
+      }
+    },
+    "United Kingdom": {
+      "name": "United Kingdom",
+      "data": {
+        "population": 67791400,
+        "hdi": 0.9290000200271606
+      }
+    },
+    "Metropolitan France": {
+      "name": "Metropolitan France",
+      "data": {
+        "population": 65250000
+      }
+    },
+    "Italy": {
+      "name": "Italy",
+      "data": {
+        "population": 61095551,
+        "hdi": 0.8949999809265137
+      }
+    },
+    "South Africa": {
+      "name": "South Africa",
+      "data": {
+        "population": 60604992,
+        "hdi": 0.7129999995231628
+      }
+    },
+    "Myanmar": {
+      "name": "Myanmar",
+      "data": {
+        "population": 57526449,
+        "hdi": 0.5849999785423279
+      }
+    },
+    "Kenya": {
+      "name": "Kenya",
+      "data": {
+        "population": 55864655,
+        "hdi": 0.574999988079071
+      }
+    },
+    "Colombia": {
+      "name": "Colombia",
+      "data": {
+        "population": 52156254,
+        "hdi": 0.7519999742507935
+      }
+    },
+    "South Korea": {
+      "name": "South Korea",
+      "data": {
+        "population": 51844834,
+        "hdi": 0.925000011920929
+      }
+    },
+    "Sudan": {
+      "name": "Sudan",
+      "data": {
+        "population": 47958856,
+        "hdi": 0.5080000162124634
+      }
+    },
+    "Spain": {
+      "name": "Spain",
+      "data": {
+        "population": 47163418,
+        "hdi": 0.9049999713897705
+      }
+    },
+    "Algeria": {
+      "name": "Algeria",
+      "data": {
+        "population": 44700000,
+        "hdi": 0.7450000047683716
+      }
+    },
+    "Ukraine": {
+      "name": "Ukraine",
+      "data": {
+        "population": 41167336,
+        "hdi": 0.7730000019073486
+      }
+    },
+    "Iraq": {
+      "name": "Iraq",
+      "data": {
+        "population": 40462701,
+        "hdi": 0.6859999895095825
+      }
+    },
+    "Canada": {
+      "name": "Canada",
+      "data": {
+        "population": 38929902,
+        "hdi": 0.9359999895095825
+      }
+    },
+    "Afghanistan": {
+      "name": "Afghanistan",
+      "data": {
+        "population": 38346720,
+        "hdi": 0.4779999852180481
+      }
+    },
+    "Polish People's Republic": {
+      "name": "Polish People's Republic",
+      "data": {
+        "population": 37970155,
+        "hdi": 0.9100000262260437
+      }
+    },
+    "Morocco": {
+      "name": "Morocco",
+      "data": {
+        "population": 36767655,
+        "hdi": 0.6830000281333923
+      }
+    },
+    "Uzbekistan": {
+      "name": "Uzbekistan",
+      "data": {
+        "population": 35955400,
+        "hdi": 0.7269999980926514
+      }
+    },
+    "Angola": {
+      "name": "Angola",
+      "data": {
+        "population": 34795287,
+        "hdi": 0.5809999704360962
+      }
+    },
+    "Malaysia": {
+      "name": "Malaysia",
+      "data": {
+        "population": 33871431,
+        "hdi": 0.8029999732971191
+      }
+    },
+    "Peru": {
+      "name": "Peru",
+      "data": {
+        "population": 32275736,
+        "hdi": 0.7620000243186951
+      }
+    },
+    "Ghana": {
+      "name": "Ghana",
+      "data": {
+        "population": 32103042,
+        "hdi": 0.6320000290870667
+      }
+    },
+    "Mozambique": {
+      "name": "Mozambique",
+      "data": {
+        "population": 31693239,
+        "hdi": 0.4460000097751617
+      }
+    },
+    "Yemen": {
+      "name": "Yemen",
+      "data": {
+        "population": 30984689,
+        "hdi": 0.4550000131130219
+      }
+    },
+    "Nepal": {
+      "name": "Nepal",
+      "data": {
+        "population": 30666598,
+        "hdi": 0.6019999980926514
+      }
+    },
+    "Venezuela": {
+      "name": "Venezuela",
+      "data": {
+        "population": 29789730,
+        "hdi": 0.6909999847412109
+      }
+    },
+    "Cameroon": {
+      "name": "Cameroon",
+      "data": {
+        "population": 29321637,
+        "hdi": 0.5759999752044678
+      }
+    },
+    "Madagascar": {
+      "name": "Madagascar",
+      "data": {
+        "population": 28172462,
+        "hdi": 0.5009999871253967
+      }
+    },
+    "North Korea": {
+      "name": "North Korea",
+      "data": {
+        "population": 25955138
+      }
+    },
+    "Niger": {
+      "name": "Niger",
+      "data": {
+        "population": 24484587,
+        "hdi": 0.4000000059604645
+      }
+    },
+    "Taiwan": {
+      "name": "Taiwan",
+      "data": {
+        "population": 23894394,
+        "hdi": 0.9259999990463257
+      }
+    },
+    "Crime in Ivory Coast": {
+      "name": "Crime in Ivory Coast",
+      "data": {
+        "population": 23740424
+      }
+    },
+    "Sri Lanka": {
+      "name": "Sri Lanka",
+      "data": {
+        "population": 22156000,
+        "hdi": 0.7820000052452087
+      }
+    },
+    "Syria": {
+      "name": "Syria",
+      "data": {
+        "population": 21563800,
+        "hdi": 0.5770000219345093
+      }
+    },
+    "Mali": {
+      "name": "Mali",
+      "data": {
+        "population": 21473764,
+        "hdi": 0.4280000030994415
+      }
+    },
+    "Malawi": {
+      "name": "Malawi",
+      "data": {
+        "population": 20091635,
+        "hdi": 0.5120000243186951
+      }
+    },
+    "Zambia": {
+      "name": "Zambia",
+      "data": {
+        "population": 19642123,
+        "hdi": 0.5649999976158142
+      }
+    },
+    "Kazakhstan": {
+      "name": "Kazakhstan",
+      "data": {
+        "population": 19398331,
+        "hdi": 0.824999988079071
+      }
+    },
+    "Romania": {
+      "name": "Romania",
+      "data": {
+        "population": 19038098,
+        "hdi": 0.8209999799728394
+      }
+    },
+    "Chile": {
+      "name": "Chile",
+      "data": {
+        "population": 18430408,
+        "hdi": 0.8550000190734863
+      }
+    },
+    "Chad": {
+      "name": "Chad",
+      "data": {
+        "population": 17963211,
+        "hdi": 0.3939999938011169
+      }
+    },
+    "Kingdom of the Netherlands": {
+      "name": "Kingdom of the Netherlands",
+      "data": {
+        "population": 17749262
+      }
+    },
+    "Guatemala": {
+      "name": "Guatemala",
+      "data": {
+        "population": 17703190,
+        "hdi": 0.6269999742507935
+      }
+    },
+    "Ecuador": {
+      "name": "Ecuador",
+      "data": {
+        "population": 17289554,
+        "hdi": 0.7400000095367432
+      }
+    },
+    "Senegal": {
+      "name": "Senegal",
+      "data": {
+        "population": 17196308,
+        "hdi": 0.5109999775886536
+      }
+    },
+    "Somalia": {
+      "name": "Somalia",
+      "data": {
+        "population": 17066000,
+        "hdi": 0.4309999942779541
+      }
+    },
+    "Cambodia": {
+      "name": "Cambodia",
+      "data": {
+        "population": 16713015,
+        "hdi": 0.5929999947547913
+      }
+    },
+    "Zimbabwe": {
+      "name": "Zimbabwe",
+      "data": {
+        "population": 15121004,
+        "hdi": 0.5929999947547913
+      }
+    },
+    "Benin": {
+      "name": "Benin",
+      "data": {
+        "population": 13754688,
+        "hdi": 0.5450000166893005
+      }
+    },
+    "Guinea": {
+      "name": "Guinea",
+      "data": {
+        "population": 13237832,
+        "hdi": 0.4650000035762787
+      }
+    },
+    "Rwanda": {
+      "name": "Rwanda",
+      "data": {
+        "population": 12955736,
+        "hdi": 0.5339999794960022
+      }
+    },
+    "Bolivia": {
+      "name": "Bolivia",
+      "data": {
+        "population": 12054379,
+        "hdi": 0.6919999718666077
+      }
+    },
+    "Burundi": {
+      "name": "Burundi",
+      "data": {
+        "population": 11865821,
+        "hdi": 0.4259999990463257
+      }
+    },
+    "Tunisia": {
+      "name": "Tunisia",
+      "data": {
+        "population": 11708370,
+        "hdi": 0.7400000095367432
+      }
+    },
+    "Belgium": {
+      "name": "Belgium",
+      "data": {
+        "population": 11584008,
+        "hdi": 0.9309999942779541
+      }
+    },
+    "South Sudan": {
+      "name": "South Sudan",
+      "data": {
+        "population": 11544905,
+        "hdi": 0.3849999904632568
+      }
+    },
+    "Haiti": {
+      "name": "Haiti",
+      "data": {
+        "population": 11334637,
+        "hdi": 0.5350000262260437
+      }
+    },
+    "Jordan": {
+      "name": "Jordan",
+      "data": {
+        "population": 11042719,
+        "hdi": 0.7200000286102295
+      }
+    },
+    "Cuba": {
+      "name": "Cuba",
+      "data": {
+        "population": 11008112,
+        "hdi": 0.7639999985694885
+      }
+    },
+    "Third Hellenic Republic": {
+      "name": "Third Hellenic Republic",
+      "data": {
+        "population": 10768477,
+        "hdi": 0.8880000114440918
+      }
+    },
+    "Dominican Republic": {
+      "name": "Dominican Republic",
+      "data": {
+        "population": 10694700,
+        "hdi": 0.7670000195503235
+      }
+    },
+    "Czech Republic": {
+      "name": "Czech Republic",
+      "data": {
+        "population": 10516707,
+        "hdi": 0.8889999985694885
+      }
+    },
+    "Sweden": {
+      "name": "Sweden",
+      "data": {
+        "population": 10481937,
+        "hdi": 0.9470000267028809
+      }
+    },
+    "Azerbaijan": {
+      "name": "Azerbaijan",
+      "data": {
+        "population": 10353296,
+        "hdi": 0.7559999823570251
+      }
+    },
+    "Portugal": {
+      "name": "Portugal",
+      "data": {
+        "population": 10352042,
+        "hdi": 0.8659999966621399
+      }
+    },
+    "Third Portuguese Republic": {
+      "name": "Third Portuguese Republic",
+      "data": {
+        "population": 10341330,
+        "hdi": 0.8429999947547913
+      }
+    },
+    "Hungary": {
+      "name": "Hungary",
+      "data": {
+        "population": 9749763,
+        "hdi": 0.8460000157356262
+      }
+    },
+    "Honduras": {
+      "name": "Honduras",
+      "data": {
+        "population": 9459440,
+        "hdi": 0.6209999918937683
+      }
+    },
+    "Belarus": {
+      "name": "Belarus",
+      "data": {
+        "population": 9413505,
+        "hdi": 0.8080000281333923
+      }
+    },
+    "United Arab Emirates": {
+      "name": "United Arab Emirates",
+      "data": {
+        "population": 9282410,
+        "hdi": 0.9110000133514404
+      }
+    },
+    "Congo Free State": {
+      "name": "Congo Free State",
+      "data": {
+        "population": 9130000
+      }
+    },
+    "Tajikistan": {
+      "name": "Tajikistan",
+      "data": {
+        "population": 9119347,
+        "hdi": 0.6850000023841858
+      }
+    },
+    "Austria": {
+      "name": "Austria",
+      "data": {
+        "population": 9027999,
+        "hdi": 0.9160000085830688
+      }
+    },
+    "Papua New Guinea": {
+      "name": "Papua New Guinea",
+      "data": {
+        "population": 8935000,
+        "hdi": 0.5580000281333923
+      }
+    },
+    "Sierra Leone": {
+      "name": "Sierra Leone",
+      "data": {
+        "population": 8692606,
+        "hdi": 0.4769999980926514
+      }
+    },
+    "Switzerland": {
+      "name": "Switzerland",
+      "data": {
+        "population": 8636896,
+        "hdi": 0.9620000123977661
+      }
+    },
+    "Togo": {
+      "name": "Togo",
+      "data": {
+        "population": 8492333,
+        "hdi": 0.5149999856948853
+      }
+    },
+    "Laos": {
+      "name": "Laos",
+      "data": {
+        "population": 7749595,
+        "hdi": 0.6069999933242798
+      }
+    },
+    "Republic of the Rif": {
+      "name": "Republic of the Rif",
+      "data": {
+        "population": 7500000
+      }
+    },
+    "Paraguay": {
+      "name": "Paraguay",
+      "data": {
+        "population": 7356409,
+        "hdi": 0.7279999852180481
+      }
+    },
+    "Libya": {
+      "name": "Libya",
+      "data": {
+        "population": 7054493,
+        "hdi": 0.7179999947547913
+      }
+    },
+    "Kyrgyzstan": {
+      "name": "Kyrgyzstan",
+      "data": {
+        "population": 7000000,
+        "hdi": 0.6919999718666077
+      }
+    },
+    "Second East Turkestan Republic": {
+      "name": "Second East Turkestan Republic",
+      "data": {
+        "population": 7000000
+      }
+    },
+    "Paraguayan architecture": {
+      "name": "Paraguayan architecture",
+      "data": {
+        "population": 6802000
+      }
+    },
+    "Serbia": {
+      "name": "Serbia",
+      "data": {
+        "population": 6797105,
+        "hdi": 0.8019999861717224
+      }
+    },
+    "El Salvador": {
+      "name": "El Salvador",
+      "data": {
+        "population": 6568745,
+        "hdi": 0.675000011920929
+      }
+    },
+    "Bulgaria": {
+      "name": "Bulgaria",
+      "data": {
+        "population": 6520314,
+        "hdi": 0.7960000038146973
+      }
+    },
+    "Nicaragua": {
+      "name": "Nicaragua",
+      "data": {
+        "population": 6301880,
+        "hdi": 0.6669999957084656
+      }
+    },
+    "Eritrea": {
+      "name": "Eritrea",
+      "data": {
+        "population": 6209262,
+        "hdi": 0.4589999914169312
+      }
+    },
+    "State of Slovenes, Croats and Serbs": {
+      "name": "State of Slovenes, Croats and Serbs",
+      "data": {
+        "population": 6000000
+      }
+    },
+    "Afsharid Iran": {
+      "name": "Afsharid Iran",
+      "data": {
+        "population": 6000000
+      }
+    },
+    "Danish Realm": {
+      "name": "Danish Realm",
+      "data": {
+        "population": 5958380
+      }
+    },
+    "Somaliland": {
+      "name": "Somaliland",
+      "data": {
+        "population": 5741086
+      }
+    },
+    "Singapore": {
+      "name": "Singapore",
+      "data": {
+        "population": 5637000,
+        "hdi": 0.9390000104904175
+      }
+    },
+    "Turkmenistan": {
+      "name": "Turkmenistan",
+      "data": {
+        "population": 5636011,
+        "hdi": 0.7450000047683716
+      }
+    },
+    "Finland": {
+      "name": "Finland",
+      "data": {
+        "population": 5553000,
+        "hdi": 0.9399999976158142
+      }
+    },
+    "Republic of the Congo": {
+      "name": "Republic of the Congo",
+      "data": {
+        "population": 5546307,
+        "hdi": 0.5709999799728394
+      }
+    },
+    "Central African Republic": {
+      "name": "Central African Republic",
+      "data": {
+        "population": 5454533,
+        "hdi": 0.4040000140666962
+      }
+    },
+    "Norway": {
+      "name": "Norway",
+      "data": {
+        "population": 5425270,
+        "hdi": 0.9610000252723694
+      }
+    },
+    "Liberia": {
+      "name": "Liberia",
+      "data": {
+        "population": 5358483,
+        "hdi": 0.4810000061988831
+      }
+    },
+    "Lebanon": {
+      "name": "Lebanon",
+      "data": {
+        "population": 5296814,
+        "hdi": 0.7059999704360962
+      }
+    },
+    "Costa Rica": {
+      "name": "Costa Rica",
+      "data": {
+        "population": 5204411,
+        "hdi": 0.8090000152587891
+      }
+    },
+    "Kingdom of Dagbon": {
+      "name": "Kingdom of Dagbon",
+      "data": {
+        "population": 5197937
+      }
+    },
+    "State of Palestine": {
+      "name": "State of Palestine",
+      "data": {
+        "population": 5159076,
+        "hdi": 0.7080000042915344
+      }
+    },
+    "Republic of Ireland": {
+      "name": "Republic of Ireland",
+      "data": {
+        "population": 5123536,
+        "hdi": 0.9449999928474426
+      }
+    },
+    "Azerbaijan Democratic Republic": {
+      "name": "Azerbaijan Democratic Republic",
+      "data": {
+        "population": 4617671
+      }
+    },
+    "Kuwait": {
+      "name": "Kuwait",
+      "data": {
+        "population": 4460000,
+        "hdi": 0.8410000205039978
+      }
+    },
+    "Panama": {
+      "name": "Panama",
+      "data": {
+        "population": 4337768,
+        "hdi": 0.8149999976158142
+      }
+    },
+    "Puntland": {
+      "name": "Puntland",
+      "data": {
+        "population": 4334633
+      }
+    },
+    "Hirshabelle State": {
+      "name": "Hirshabelle State",
+      "data": {
+        "population": 3771638,
+        "hdi": 0.300000011920929
+      }
+    },
+    "Ambazonia": {
+      "name": "Ambazonia",
+      "data": {
+        "population": 3521900
+      }
+    },
+    "Bosnia and Herzegovina": {
+      "name": "Bosnia and Herzegovina",
+      "data": {
+        "population": 3475000,
+        "hdi": 0.7799999713897705
+      }
+    },
+    "Uruguay": {
+      "name": "Uruguay",
+      "data": {
+        "population": 3407213,
+        "hdi": 0.8090000152587891
+      }
+    },
+    "Mongolia": {
+      "name": "Mongolia",
+      "data": {
+        "population": 3227863,
+        "hdi": 0.7369999885559082
+      }
+    },
+    "Armenia": {
+      "name": "Armenia",
+      "data": {
+        "population": 3000756,
+        "hdi": 0.7590000033378601
+      }
+    },
+    "Lithuania": {
+      "name": "Lithuania",
+      "data": {
+        "population": 2835988,
+        "hdi": 0.875
+      }
+    },
+    "Jamaica": {
+      "name": "Jamaica",
+      "data": {
+        "population": 2818596,
+        "hdi": 0.7089999914169312
+      }
+    },
+    "Qatar": {
+      "name": "Qatar",
+      "data": {
+        "population": 2795484,
+        "hdi": 0.8550000190734863
+      }
+    },
+    "Albania": {
+      "name": "Albania",
+      "data": {
+        "population": 2793592,
+        "hdi": 0.7960000038146973
+      }
+    },
+    "Overseas France": {
+      "name": "Overseas France",
+      "data": {
+        "population": 2785000
+      }
+    },
+    "Moldova": {
+      "name": "Moldova",
+      "data": {
+        "population": 2603813,
+        "hdi": 0.7670000195503235
+      }
+    },
+    "Namibia": {
+      "name": "Namibia",
+      "data": {
+        "population": 2550226,
+        "hdi": 0.6150000095367432
+      }
+    },
+    "The Gambia": {
+      "name": "The Gambia",
+      "data": {
+        "population": 2413403,
+        "hdi": 0.4959999918937683
+      }
+    },
+    "Botswana": {
+      "name": "Botswana",
+      "data": {
+        "population": 2384246,
+        "hdi": 0.7300000190734863
+      }
+    },
+    "Gabon": {
+      "name": "Gabon",
+      "data": {
+        "population": 2340613,
+        "hdi": 0.7059999704360962
+      }
+    },
+    "Galmudug": {
+      "name": "Galmudug",
+      "data": {
+        "population": 2320000
+      }
+    },
+    "South West State of Somalia": {
+      "name": "South West State of Somalia",
+      "data": {
+        "population": 2268245,
+        "hdi": 0.2000000029802322
+      }
+    },
+    "Slovenia": {
+      "name": "Slovenia",
+      "data": {
+        "population": 2108708,
+        "hdi": 0.9179999828338623
+      }
+    },
+    "Gaza Strip": {
+      "name": "Gaza Strip",
+      "data": {
+        "population": 2047969
+      }
+    },
+    "Guinea-Bissau": {
+      "name": "Guinea-Bissau",
+      "data": {
+        "population": 2026778,
+        "hdi": 0.4799999892711639
+      }
+    },
+    "Autonomous Administration of North and East Syria": {
+      "name": "Autonomous Administration of North and East Syria",
+      "data": {
+        "population": 2000000
+      }
+    },
+    "Karakalpakstan": {
+      "name": "Karakalpakstan",
+      "data": {
+        "population": 1948488
+      }
+    },
+    "European Collectivity of Alsace": {
+      "name": "European Collectivity of Alsace",
+      "data": {
+        "population": 1895811
+      }
+    },
+    "Latvia": {
+      "name": "Latvia",
+      "data": {
+        "population": 1842226,
+        "hdi": 0.8659999966621399
+      }
+    },
+    "Tyrol": {
+      "name": "Tyrol",
+      "data": {
+        "population": 1813400
+      }
+    },
+    "Kosovo": {
+      "name": "Kosovo",
+      "data": {
+        "population": 1806279,
+        "hdi": 0.7419999837875366
+      }
+    },
+    "State of Katanga": {
+      "name": "State of Katanga",
+      "data": {
+        "population": 1700000
+      }
+    },
+    "Equatorial Guinea": {
+      "name": "Equatorial Guinea",
+      "data": {
+        "population": 1679172,
+        "hdi": 0.5960000157356262
+      }
+    },
+    "Volkstaat": {
+      "name": "Volkstaat",
+      "data": {
+        "population": 1500000
+      }
+    },
+    "Trinidad and Tobago": {
+      "name": "Trinidad and Tobago",
+      "data": {
+        "population": 1405646,
+        "hdi": 0.8100000023841858
+      }
+    },
+    "Bunyoro": {
+      "name": "Bunyoro",
+      "data": {
+        "population": 1400000
+      }
+    },
+    "Military General Governorate of Serbia": {
+      "name": "Military General Governorate of Serbia",
+      "data": {
+        "population": 1373511
+      }
+    },
+    "Jubaland": {
+      "name": "Jubaland",
+      "data": {
+        "population": 1360633
+      }
+    },
+    "East Timor": {
+      "name": "East Timor",
+      "data": {
+        "population": 1340513,
+        "hdi": 0.6060000061988831
+      }
+    },
+    "Estonia": {
+      "name": "Estonia",
+      "data": {
+        "population": 1331796,
+        "hdi": 0.8899999856948853
+      }
+    },
+    "Mauritius": {
+      "name": "Mauritius",
+      "data": {
+        "population": 1265475,
+        "hdi": 0.8019999861717224
+      }
+    },
+    "Savoy": {
+      "name": "Savoy",
+      "data": {
+        "population": 1262528
+      }
+    },
+    "Eswatini": {
+      "name": "Eswatini",
+      "data": {
+        "population": 1160164,
+        "hdi": 0.597000002861023
+      }
+    },
+    "Lokot Autonomy": {
+      "name": "Lokot Autonomy",
+      "data": {
+        "population": 1000000
+      }
+    },
+    "Djibouti": {
+      "name": "Djibouti",
+      "data": {
+        "population": 957273,
+        "hdi": 0.5239999890327454
+      }
+    },
+    "Fiji": {
+      "name": "Fiji",
+      "data": {
+        "population": 926276,
+        "hdi": 0.7429999709129333
+      }
+    },
+    "Rwenzururu": {
+      "name": "Rwenzururu",
+      "data": {
+        "population": 900000
+      }
+    },
+    "Comoros": {
+      "name": "Comoros",
+      "data": {
+        "population": 850886,
+        "hdi": 0.5540000200271606
+      }
+    },
+    "Himan and Heeb": {
+      "name": "Himan and Heeb",
+      "data": {
+        "population": 811918
+      }
+    },
+    "Guyana": {
+      "name": "Guyana",
+      "data": {
+        "population": 795408,
+        "hdi": 0.7139999866485596
+      }
+    },
+    "Duchy of Milan": {
+      "name": "Duchy of Milan",
+      "data": {
+        "population": 750000
+      }
+    },
+    "Luxembourg": {
+      "name": "Luxembourg",
+      "data": {
+        "population": 645397,
+        "hdi": 0.9300000071525574
+      }
+    },
+    "Suriname": {
+      "name": "Suriname",
+      "data": {
+        "population": 632638,
+        "hdi": 0.7379999756813049
+      }
+    },
+    "Twente": {
+      "name": "Twente",
+      "data": {
+        "population": 626586
+      }
+    },
+    "Montenegro": {
+      "name": "Montenegro",
+      "data": {
+        "population": 620739,
+        "hdi": 0.8320000171661377
+      }
+    },
+    "Sahrawi Arab Democratic Republic": {
+      "name": "Sahrawi Arab Democratic Republic",
+      "data": {
+        "population": 612000
+      }
+    },
+    "Duchy of Modena and Reggio": {
+      "name": "Duchy of Modena and Reggio",
+      "data": {
+        "population": 605000
+      }
+    },
+    "Maldives": {
+      "name": "Maldives",
+      "data": {
+        "population": 579330,
+        "hdi": 0.7400000095367432
+      }
+    },
+    "Malta": {
+      "name": "Malta",
+      "data": {
+        "population": 519562,
+        "hdi": 0.9179999828338623
+      }
+    },
+    "Administrative-Territorial Units of the Left Bank of the Dniester": {
+      "name": "Administrative-Territorial Units of the Left Bank of the Dniester",
+      "data": {
+        "population": 505153
+      }
+    },
+    "Duchy of Parma and Piacenza": {
+      "name": "Duchy of Parma and Piacenza",
+      "data": {
+        "population": 501000
+      }
+    },
+    "Brunei": {
+      "name": "Brunei",
+      "data": {
+        "population": 460345,
+        "hdi": 0.8379999995231628
+      }
+    },
+    "Belize": {
+      "name": "Belize",
+      "data": {
+        "population": 412387,
+        "hdi": 0.6830000281333923
+      }
+    },
+    "The Bahamas": {
+      "name": "The Bahamas",
+      "data": {
+        "population": 400516,
+        "hdi": 0.8140000104904175
+      }
+    },
+    "Northern Cyprus": {
+      "name": "Northern Cyprus",
+      "data": {
+        "population": 382836
+      }
+    },
+    "Iceland": {
+      "name": "Iceland",
+      "data": {
+        "population": 376248,
+        "hdi": 0.9589999914169312
+      }
+    },
+    "Kingdom of Soissons": {
+      "name": "Kingdom of Soissons",
+      "data": {
+        "population": 360000
+      }
+    },
+    "Republic of Pisa": {
+      "name": "Republic of Pisa",
+      "data": {
+        "population": 350000
+      }
+    },
+    "Omani Empire": {
+      "name": "Omani Empire",
+      "data": {
+        "population": 347400
+      }
+    },
+    "Transnistria": {
+      "name": "Transnistria",
+      "data": {
+        "population": 347251
+      }
+    },
+    "Vanuatu": {
+      "name": "Vanuatu",
+      "data": {
+        "population": 307815,
+        "hdi": 0.6069999933242798
+      }
+    },
+    "Barbados": {
+      "name": "Barbados",
+      "data": {
+        "population": 287025,
+        "hdi": 0.7900000214576721
+      }
+    },
+    "Autonomous Region of Bougainville": {
+      "name": "Autonomous Region of Bougainville",
+      "data": {
+        "population": 249358,
+        "hdi": 0.5950000286102295
+      }
+    },
+    "Abkhazia": {
+      "name": "Abkhazia",
+      "data": {
+        "population": 244926
+      }
+    },
+    "Autonomous Republic of Northern Epirus": {
+      "name": "Autonomous Republic of Northern Epirus",
+      "data": {
+        "population": 223000
+      }
+    },
+    "Mwene Mbonwean Sultanate of Ujiji": {
+      "name": "Mwene Mbonwean Sultanate of Ujiji",
+      "data": {
+        "population": 200000
+      }
+    },
+    "Saint Lucia": {
+      "name": "Saint Lucia",
+      "data": {
+        "population": 184961,
+        "hdi": 0.7149999737739563
+      }
+    },
+    "Tenochtitlan": {
+      "name": "Tenochtitlan",
+      "data": {
+        "population": 140000
+      }
+    },
+    "Kiribati": {
+      "name": "Kiribati",
+      "data": {
+        "population": 121388,
+        "hdi": 0.6240000128746033
+      }
+    },
+    "Republic of Artsakh": {
+      "name": "Republic of Artsakh",
+      "data": {
+        "population": 120000
+      }
+    },
+    "Federated States of Micronesia": {
+      "name": "Federated States of Micronesia",
+      "data": {
+        "population": 104468,
+        "hdi": 0.628000020980835
+      }
+    },
+    "Antigua and Barbuda": {
+      "name": "Antigua and Barbuda",
+      "data": {
+        "population": 100772,
+        "hdi": 0.777999997138977
+      }
+    },
+    "Seychelles": {
+      "name": "Seychelles",
+      "data": {
+        "population": 100447,
+        "hdi": 0.7850000262260437
+      }
+    },
+    "Republic of Lucca": {
+      "name": "Republic of Lucca",
+      "data": {
+        "population": 100000
+      }
+    },
+    "Republic of Ragusa": {
+      "name": "Republic of Ragusa",
+      "data": {
+        "population": 90000
+      }
+    },
+    "Andorra": {
+      "name": "Andorra",
+      "data": {
+        "population": 77543,
+        "hdi": 0.8579999804496765
+      }
+    },
+    "Associated State of Antigua": {
+      "name": "Associated State of Antigua",
+      "data": {
+        "population": 70000
+      }
+    },
+    "Marshall Islands": {
+      "name": "Marshall Islands",
+      "data": {
+        "population": 61988,
+        "hdi": 0.6389999985694885
+      }
+    },
+    "South Ossetia": {
+      "name": "South Ossetia",
+      "data": {
+        "population": 56520
+      }
+    },
+    "Republic of Siena": {
+      "name": "Republic of Siena",
+      "data": {
+        "population": 50000
+      }
+    },
+    "Liechtenstein": {
+      "name": "Liechtenstein",
+      "data": {
+        "population": 38387,
+        "hdi": 0.9350000023841858
+      }
+    },
+    "Monaco": {
+      "name": "Monaco",
+      "data": {
+        "population": 38300
+      }
+    },
+    "San Marino": {
+      "name": "San Marino",
+      "data": {
+        "population": 33600,
+        "hdi": 0.8529999852180481
+      }
+    },
+    "Red Republic of Caulonia": {
+      "name": "Red Republic of Caulonia",
+      "data": {
+        "population": 12500
+      }
+    },
+    "Tuvalu": {
+      "name": "Tuvalu",
+      "data": {
+        "population": 11900,
+        "hdi": 0.640999972820282
+      }
+    },
+    "Nauru": {
+      "name": "Nauru",
+      "data": {
+        "population": 10834
+      }
+    },
+    "Comrat Republic": {
+      "name": "Comrat Republic",
+      "data": {
+        "population": 10000
+      }
+    },
+    "Republic of Baja California": {
+      "name": "Republic of Baja California",
+      "data": {
+        "population": 8000
+      }
+    },
+    "Seneca Nation of New York": {
+      "name": "Seneca Nation of New York",
+      "data": {
+        "population": 8000
+      }
+    },
+    "Upper Mustang": {
+      "name": "Upper Mustang",
+      "data": {
+        "population": 7000
+      }
+    },
+    "Carriacou and Petite Martinique": {
+      "name": "Carriacou and Petite Martinique",
+      "data": {
+        "population": 6081
+      }
+    },
+    "Republic of Saugeais": {
+      "name": "Republic of Saugeais",
+      "data": {
+        "population": 5029
+      }
+    },
+    "Monastic community of Mount Athos": {
+      "name": "Monastic community of Mount Athos",
+      "data": {
+        "population": 2416
+      }
+    },
+    "Mohegan Tribe": {
+      "name": "Mohegan Tribe",
+      "data": {
+        "population": 1920
+      }
+    },
+    "Republic of Noli": {
+      "name": "Republic of Noli",
+      "data": {
+        "population": 1500
+      }
+    }
+  },
+  "statistics": {
+    "population": 236,
+    "area": 0,
+    "hdi": 169
+  },
+  "queriesExecuted": null
+}

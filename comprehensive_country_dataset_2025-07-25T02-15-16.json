@@ -1,0 +1,661 @@
+{
+  "metadata": {
+    "created": "2025-07-25T02:15:16.783Z",
+    "sources": [
+      "Wikipedia population rankings",
+      "Wikipedia GDP rankings",
+      "Wikipedia HDI rankings",
+      "Wikipedia area rankings",
+      "DBpedia structured data"
+    ],
+    "totalCountries": 97,
+    "totalProperties": 5,
+    "lastUpdated": "2025-07-25T02:15:16.783Z"
+  },
+  "countries": {
+    "India": {
+      "name": "India",
+      "properties": {
+        "population": 1417492000,
+        "gdp_nominal": 4187017
+      }
+    },
+    "China": {
+      "name": "China",
+      "properties": {
+        "population": 1408280000,
+        "gdp_nominal": 19231705
+      }
+    },
+    "United States": {
+      "name": "United States",
+      "properties": {
+        "population": 340110988,
+        "gdp_nominal": 30507217
+      }
+    },
+    "Indonesia": {
+      "name": "Indonesia",
+      "properties": {
+        "population": 284438782,
+        "gdp_nominal": 1429743
+      }
+    },
+    "Pakistan": {
+      "name": "Pakistan",
+      "properties": {
+        "population": 241499431
+      }
+    },
+    "Nigeria": {
+      "name": "Nigeria",
+      "properties": {
+        "population": 223800000
+      }
+    },
+    "Brazil": {
+      "name": "Brazil",
+      "properties": {
+        "population": 212583750,
+        "gdp_nominal": 2125958
+      }
+    },
+    "Bangladesh": {
+      "name": "Bangladesh",
+      "properties": {
+        "population": 169828911
+      }
+    },
+    "Russia": {
+      "name": "Russia",
+      "properties": {
+        "population": 146028325,
+        "gdp_nominal": 2076396
+      }
+    },
+    "Mexico": {
+      "name": "Mexico",
+      "properties": {
+        "population": 130417144,
+        "gdp_nominal": 1692640
+      }
+    },
+    "Japan": {
+      "name": "Japan",
+      "properties": {
+        "population": 123360000,
+        "gdp_nominal": 4186431
+      }
+    },
+    "Philippines": {
+      "name": "Philippines",
+      "properties": {
+        "population": 114123600
+      }
+    },
+    "Democratic Republic of the Congo": {
+      "name": "Democratic Republic of the Congo",
+      "properties": {
+        "population": 112832000
+      }
+    },
+    "Ethiopia": {
+      "name": "Ethiopia",
+      "properties": {
+        "population": 111652998
+      }
+    },
+    "Egypt": {
+      "name": "Egypt",
+      "properties": {
+        "population": 107271260
+      }
+    },
+    "Vietnam": {
+      "name": "Vietnam",
+      "properties": {
+        "population": 101343800
+      }
+    },
+    "Iran": {
+      "name": "Iran",
+      "properties": {
+        "population": 85961000
+      }
+    },
+    "Turkey": {
+      "name": "Turkey",
+      "properties": {
+        "population": 85664944,
+        "gdp_nominal": 1437406
+      }
+    },
+    "Germany": {
+      "name": "Germany",
+      "properties": {
+        "population": 83577140,
+        "gdp_nominal": 4744804
+      }
+    },
+    "France": {
+      "name": "France",
+      "properties": {
+        "population": 68649000,
+        "gdp_nominal": 3211292
+      }
+    },
+    "United Kingdom": {
+      "name": "United Kingdom",
+      "properties": {
+        "population": 68265209,
+        "gdp_nominal": 3839180
+      }
+    },
+    "Tanzania": {
+      "name": "Tanzania",
+      "properties": {
+        "population": 68153004
+      }
+    },
+    "Thailand": {
+      "name": "Thailand",
+      "properties": {
+        "population": 65870610
+      }
+    },
+    "South Africa": {
+      "name": "South Africa",
+      "properties": {
+        "population": 63015904
+      }
+    },
+    "Italy": {
+      "name": "Italy",
+      "properties": {
+        "population": 58918231,
+        "gdp_nominal": 2422855
+      }
+    },
+    "Kenya": {
+      "name": "Kenya",
+      "properties": {
+        "population": 53330978
+      }
+    },
+    "Colombia": {
+      "name": "Colombia",
+      "properties": {
+        "population": 52695952
+      }
+    },
+    "Sudan": {
+      "name": "Sudan",
+      "properties": {
+        "population": 51662000
+      }
+    },
+    "Myanmar": {
+      "name": "Myanmar",
+      "properties": {
+        "population": 51316756
+      }
+    },
+    "South Korea": {
+      "name": "South Korea",
+      "properties": {
+        "population": 51164582,
+        "gdp_nominal": 1790322
+      }
+    },
+    "Uganda": {
+      "name": "Uganda",
+      "properties": {
+        "population": 49924868
+      }
+    },
+    "Spain": {
+      "name": "Spain",
+      "properties": {
+        "population": 48059777,
+        "gdp_nominal": 1799511
+      }
+    },
+    "Iraq": {
+      "name": "Iraq",
+      "properties": {
+        "population": 44414800
+      }
+    },
+    "Algeria": {
+      "name": "Algeria",
+      "properties": {
+        "population": 44758398
+      }
+    },
+    "Argentina": {
+      "name": "Argentina",
+      "properties": {
+        "population": 47327407
+      }
+    },
+    "Poland": {
+      "name": "Poland",
+      "properties": {
+        "population": 37840000,
+        "gdp_nominal": 979960
+      }
+    },
+    "Canada": {
+      "name": "Canada",
+      "properties": {
+        "population": 39858480,
+        "gdp_nominal": 2225341
+      }
+    },
+    "Morocco": {
+      "name": "Morocco",
+      "properties": {
+        "population": 38081173
+      }
+    },
+    "Saudi Arabia": {
+      "name": "Saudi Arabia",
+      "properties": {
+        "population": 35844909,
+        "gdp_nominal": 1083749
+      }
+    },
+    "Ukraine": {
+      "name": "Ukraine",
+      "properties": {
+        "population": 36000000
+      }
+    },
+    "Angola": {
+      "name": "Angola",
+      "properties": {
+        "population": 35027343
+      }
+    },
+    "Uzbekistan": {
+      "name": "Uzbekistan",
+      "properties": {
+        "population": 34915100
+      }
+    },
+    "Peru": {
+      "name": "Peru",
+      "properties": {
+        "population": 34234630
+      }
+    },
+    "Malaysia": {
+      "name": "Malaysia",
+      "properties": {
+        "population": 33938221
+      }
+    },
+    "Afghanistan": {
+      "name": "Afghanistan",
+      "properties": {
+        "population": 34262840
+      }
+    },
+    "Venezuela": {
+      "name": "Venezuela",
+      "properties": {
+        "population": 33098422
+      }
+    },
+    "Ghana": {
+      "name": "Ghana",
+      "properties": {
+        "population": 33475870
+      }
+    },
+    "Yemen": {
+      "name": "Yemen",
+      "properties": {
+        "population": 33696614
+      }
+    },
+    "Nepal": {
+      "name": "Nepal",
+      "properties": {
+        "population": 30327877
+      }
+    },
+    "Mozambique": {
+      "name": "Mozambique",
+      "properties": {
+        "population": 33089461
+      }
+    },
+    "Syria": {
+      "name": "Syria",
+      "properties": {
+        "population": 25620000
+      }
+    },
+    "Burkina Faso": {
+      "name": "Burkina Faso",
+      "properties": {
+        "population": 24070553
+      }
+    },
+    "Taiwan": {
+      "name": "Taiwan",
+      "properties": {
+        "population": 23346741,
+        "gdp_nominal": 804889
+      }
+    },
+    "Mali": {
+      "name": "Mali",
+      "properties": {
+        "population": 22395489
+      }
+    },
+    "Sri Lanka": {
+      "name": "Sri Lanka",
+      "properties": {
+        "population": 21763170
+      }
+    },
+    "Malawi": {
+      "name": "Malawi",
+      "properties": {
+        "population": 20734262
+      }
+    },
+    "Kazakhstan": {
+      "name": "Kazakhstan",
+      "properties": {
+        "population": 20370672
+      }
+    },
+    "Chile": {
+      "name": "Chile",
+      "properties": {
+        "population": 20206953
+      }
+    },
+    "Zambia": {
+      "name": "Zambia",
+      "properties": {
+        "population": 19693423
+      }
+    },
+    "Somalia": {
+      "name": "Somalia",
+      "properties": {
+        "population": 19655000
+      }
+    },
+    "Chad": {
+      "name": "Chad",
+      "properties": {
+        "population": 19340757
+      }
+    },
+    "Romania": {
+      "name": "Romania",
+      "properties": {
+        "population": 19064409
+      }
+    },
+    "Senegal": {
+      "name": "Senegal",
+      "properties": {
+        "population": 18126390
+      }
+    },
+    "Guatemala": {
+      "name": "Guatemala",
+      "properties": {
+        "population": 18079810
+      }
+    },
+    "Netherlands": {
+      "name": "Netherlands",
+      "properties": {
+        "population": 18077662,
+        "gdp_nominal": 1272011
+      }
+    },
+    "Cambodia": {
+      "name": "Cambodia",
+      "properties": {
+        "population": 17577760
+      }
+    },
+    "Zimbabwe": {
+      "name": "Zimbabwe",
+      "properties": {
+        "population": 17073087
+      }
+    },
+    "Ecuador": {
+      "name": "Ecuador",
+      "properties": {
+        "population": 16938986
+      }
+    },
+    "South Sudan": {
+      "name": "South Sudan",
+      "properties": {
+        "population": 15786898
+      }
+    },
+    "Guinea": {
+      "name": "Guinea",
+      "properties": {
+        "population": 14363931
+      }
+    },
+    "Rwanda": {
+      "name": "Rwanda",
+      "properties": {
+        "population": 14104969
+      }
+    },
+    "Benin": {
+      "name": "Benin",
+      "properties": {
+        "population": 13224860
+      }
+    },
+    "Burundi": {
+      "name": "Burundi",
+      "properties": {
+        "population": 12332788
+      }
+    },
+    "Tunisia": {
+      "name": "Tunisia",
+      "properties": {
+        "population": 11972169
+      }
+    },
+    "Haiti": {
+      "name": "Haiti",
+      "properties": {
+        "population": 11867032
+      }
+    },
+    "Belgium": {
+      "name": "Belgium",
+      "properties": {
+        "population": 11825551
+      }
+    },
+    "Papua New Guinea": {
+      "name": "Papua New Guinea",
+      "properties": {
+        "population": 11781559
+      }
+    },
+    "Jordan": {
+      "name": "Jordan",
+      "properties": {
+        "population": 11734000
+      }
+    },
+    "Bolivia": {
+      "name": "Bolivia",
+      "properties": {
+        "population": 11312620
+      }
+    },
+    "Czech Republic": {
+      "name": "Czech Republic",
+      "properties": {
+        "population": 10876875
+      }
+    },
+    "Dominican Republic": {
+      "name": "Dominican Republic",
+      "properties": {
+        "population": 10771504
+      }
+    },
+    "Portugal": {
+      "name": "Portugal",
+      "properties": {
+        "population": 10749635
+      }
+    },
+    "United Arab Emirates": {
+      "name": "United Arab Emirates",
+      "properties": {
+        "population": 10678556
+      }
+    },
+    "Sweden": {
+      "name": "Sweden",
+      "properties": {
+        "population": 10591058
+      }
+    },
+    "Tajikistan": {
+      "name": "Tajikistan",
+      "properties": {
+        "population": 10499000
+      }
+    },
+    "Greece": {
+      "name": "Greece",
+      "properties": {
+        "population": 10400720
+      }
+    },
+    "Azerbaijan": {
+      "name": "Azerbaijan",
+      "properties": {
+        "population": 10236227
+      }
+    },
+    "Israel": {
+      "name": "Israel",
+      "properties": {
+        "population": 10098200
+      }
+    },
+    "Honduras": {
+      "name": "Honduras",
+      "properties": {
+        "population": 9892632
+      }
+    },
+    "Cuba": {
+      "name": "Cuba",
+      "properties": {
+        "population": 9748007
+      }
+    },
+    "Hungary": {
+      "name": "Hungary",
+      "properties": {
+        "population": 9539502
+      }
+    },
+    "Austria": {
+      "name": "Austria",
+      "properties": {
+        "population": 9202428
+      }
+    },
+    "Belarus": {
+      "name": "Belarus",
+      "properties": {
+        "population": 9081361
+      }
+    },
+    "Cyprus": {
+      "name": "Cyprus",
+      "properties": {
+        "population": 966400
+      }
+    },
+    "Fiji": {
+      "name": "Fiji",
+      "properties": {
+        "population": 900869
+      }
+    },
+    "Australia": {
+      "name": "Australia",
+      "properties": {
+        "gdp_nominal": 1771681
+      }
+    },
+    "Switzerland": {
+      "name": "Switzerland",
+      "properties": {
+        "gdp_nominal": 947125
+      }
+    }
+  },
+  "rankings": {
+    "population": {
+      "name": "Population",
+      "description": "Total population (2024 estimates)",
+      "unit": "people",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population",
+      "direction": "desc",
+      "totalCountries": 95
+    },
+    "gdp_nominal": {
+      "name": "GDP (Nominal)",
+      "description": "Gross Domestic Product at current prices",
+      "unit": "million USD",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)",
+      "direction": "desc",
+      "totalCountries": 22
+    },
+    "gdp_per_capita": {
+      "name": "GDP per Capita",
+      "description": "Economic output per person",
+      "unit": "USD",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita",
+      "direction": "desc",
+      "totalCountries": 0
+    },
+    "area": {
+      "name": "Total Area",
+      "description": "Total land and water area",
+      "unit": "km²",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area",
+      "direction": "desc",
+      "totalCountries": 0
+    },
+    "hdi": {
+      "name": "Human Development Index",
+      "description": "Composite index of life expectancy, education, and per capita income",
+      "unit": "index (0-1)",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_Human_Development_Index",
+      "direction": "desc",
+      "totalCountries": 0
+    }
+  }
+}

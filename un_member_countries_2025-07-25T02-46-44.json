@@ -1,0 +1,1482 @@
+{
+  "Japan": {
+    "lifeExpectancy": 85.2,
+    "lifeExpectancy_raw": "85.2",
+    "gdpNominal": 418,
+    "gdpNominal_raw": "4,186,431",
+    "population": 123,
+    "population_raw": "123,360,000"
+  },
+  "South Korea": {
+    "lifeExpectancy": 83.4,
+    "lifeExpectancy_raw": "83.4"
+  },
+  "Andorra": {
+    "lifeExpectancy": 83.8,
+    "lifeExpectancy_raw": "83.8",
+    "gdpNominal": 403,
+    "gdpNominal_raw": "4,035",
+    "population": 876,
+    "population_raw": "87,682"
+  },
+  "Switzerland": {
+    "lifeExpectancy": 83.5,
+    "lifeExpectancy_raw": "83.5",
+    "gdpNominal": 947,
+    "gdpNominal_raw": "947,125",
+    "population": 906,
+    "population_raw": "9,067,144"
+  },
+  "Australia": {
+    "lifeExpectancy": 83.5,
+    "lifeExpectancy_raw": "83.5",
+    "gdpNominal": 177,
+    "gdpNominal_raw": "1,771,681",
+    "population": 274,
+    "population_raw": "27,400,013"
+  },
+  "Singapore": {
+    "lifeExpectancy": 86.7,
+    "lifeExpectancy_raw": "86.7",
+    "gdpNominal": 564,
+    "gdpNominal_raw": "564,774",
+    "population": 603,
+    "population_raw": "6,036,900"
+  },
+  "Italy": {
+    "lifeExpectancy": 83,
+    "lifeExpectancy_raw": "83.0",
+    "gdpNominal": 242,
+    "gdpNominal_raw": "2,422,855",
+    "population": 589,
+    "population_raw": "58,918,231"
+  },
+  "Spain": {
+    "lifeExpectancy": 83.2,
+    "lifeExpectancy_raw": "83.2",
+    "gdpNominal": 179,
+    "gdpNominal_raw": "1,799,511",
+    "population": 491,
+    "population_raw": "49,153,849"
+  },
+  "France": {
+    "lifeExpectancy": 82.3,
+    "lifeExpectancy_raw": "82.3",
+    "gdpNominal": 321,
+    "gdpNominal_raw": "3,211,292",
+    "population": 686,
+    "population_raw": "68,649,000"
+  },
+  "Norway": {
+    "lifeExpectancy": 82.6,
+    "lifeExpectancy_raw": "82.6",
+    "gdpNominal": 504,
+    "gdpNominal_raw": "504,276",
+    "population": 560,
+    "population_raw": "5,601,049"
+  },
+  "Malta": {
+    "lifeExpectancy": 83.6,
+    "lifeExpectancy_raw": "83.6",
+    "gdpNominal": 257,
+    "gdpNominal_raw": "25,750",
+    "population": 563,
+    "population_raw": "563,443"
+  },
+  "Sweden": {
+    "lifeExpectancy": 83.1,
+    "lifeExpectancy_raw": "83.1",
+    "gdpNominal": 620,
+    "gdpNominal_raw": "620,297",
+    "population": 105,
+    "population_raw": "10,591,058"
+  },
+  "United Arab Emirates": {
+    "lifeExpectancy": 79.9,
+    "lifeExpectancy_raw": "79.9",
+    "gdpNominal": 548,
+    "gdpNominal_raw": "548,598",
+    "population": 106,
+    "population_raw": "10,678,556"
+  },
+  "Iceland": {
+    "lifeExpectancy": 82.1,
+    "lifeExpectancy_raw": "82.1",
+    "gdpNominal": 353,
+    "gdpNominal_raw": "35,309",
+    "population": 389,
+    "population_raw": "389,990"
+  },
+  "Canada": {
+    "lifeExpectancy": 84.2,
+    "lifeExpectancy_raw": "84.2",
+    "gdpNominal": 222,
+    "gdpNominal_raw": "2,225,341",
+    "population": 415,
+    "population_raw": "41,548,787"
+  },
+  "Israel": {
+    "lifeExpectancy": 82.9,
+    "lifeExpectancy_raw": "82.9",
+    "gdpNominal": 583,
+    "gdpNominal_raw": "583,361",
+    "population": 100,
+    "population_raw": "10,098,200"
+  },
+  "Ireland": {
+    "lifeExpectancy": 82,
+    "lifeExpectancy_raw": "82.0",
+    "gdpNominal": 598,
+    "gdpNominal_raw": "598,840",
+    "population": 538,
+    "population_raw": "5,380,300"
+  },
+  "Qatar": {
+    "lifeExpectancy": 80.3,
+    "lifeExpectancy_raw": "80.3",
+    "gdpNominal": 222,
+    "gdpNominal_raw": "222,776",
+    "population": 285,
+    "population_raw": "2,857,822"
+  },
+  "Portugal": {
+    "lifeExpectancy": 81.7,
+    "lifeExpectancy_raw": "81.7",
+    "gdpNominal": 321,
+    "gdpNominal_raw": "321,440",
+    "population": 107,
+    "population_raw": "10,749,635"
+  },
+  "Luxembourg": {
+    "lifeExpectancy": 83,
+    "lifeExpectancy_raw": "83.0",
+    "gdpNominal": 966,
+    "gdpNominal_raw": "96,613",
+    "population": 681,
+    "population_raw": "681,973"
+  },
+  "Netherlands": {
+    "lifeExpectancy": 81.7,
+    "lifeExpectancy_raw": "81.7",
+    "gdpNominal": 127,
+    "gdpNominal_raw": "1,272,011",
+    "population": 180,
+    "population_raw": "18,077,662"
+  },
+  "Belgium": {
+    "lifeExpectancy": 81.8,
+    "lifeExpectancy_raw": "81.8",
+    "gdpNominal": 684,
+    "gdpNominal_raw": "684,864",
+    "population": 118,
+    "population_raw": "11,825,551"
+  },
+  "New Zealand": {
+    "lifeExpectancy": 82.9,
+    "lifeExpectancy_raw": "82.9",
+    "gdpNominal": 248,
+    "gdpNominal_raw": "248,666",
+    "population": 533,
+    "population_raw": "5,330,600"
+  },
+  "Austria": {
+    "lifeExpectancy": 81.1,
+    "lifeExpectancy_raw": "81.1",
+    "gdpNominal": 534,
+    "gdpNominal_raw": "534,301",
+    "population": 920,
+    "population_raw": "9,202,428"
+  },
+  "Denmark": {
+    "lifeExpectancy": 81.3,
+    "lifeExpectancy_raw": "81.3",
+    "gdpNominal": 449,
+    "gdpNominal_raw": "449,940",
+    "population": 600,
+    "population_raw": "6,001,008"
+  },
+  "Finland": {
+    "lifeExpectancy": 81.2,
+    "lifeExpectancy_raw": "81.2",
+    "gdpNominal": 303,
+    "gdpNominal_raw": "303,945",
+    "population": 564,
+    "population_raw": "5,641,532"
+  },
+  "Greece": {
+    "lifeExpectancy": 80.7,
+    "lifeExpectancy_raw": "80.7",
+    "gdpNominal": 267,
+    "gdpNominal_raw": "267,348",
+    "population": 104,
+    "population_raw": "10,400,720"
+  },
+  "Cyprus": {
+    "population": 476,
+    "population_raw": "476,214"
+  },
+  "Slovenia": {
+    "lifeExpectancy": 81.3,
+    "lifeExpectancy_raw": "81.3",
+    "gdpNominal": 752,
+    "gdpNominal_raw": "75,224",
+    "population": 213,
+    "population_raw": "2,130,850"
+  },
+  "Germany": {
+    "lifeExpectancy": 80.7,
+    "lifeExpectancy_raw": "80.7",
+    "gdpNominal": 474,
+    "gdpNominal_raw": "4,744,804",
+    "population": 835,
+    "population_raw": "83,577,140"
+  },
+  "United Kingdom": {
+    "lifeExpectancy": 82.2,
+    "lifeExpectancy_raw": "82.2",
+    "gdpNominal": 383,
+    "gdpNominal_raw": "3,839,180",
+    "population": 682,
+    "population_raw": "68,265,209"
+  },
+  "Bahrain": {
+    "lifeExpectancy": 80.4,
+    "lifeExpectancy_raw": "80.4",
+    "gdpNominal": 478,
+    "gdpNominal_raw": "47,829",
+    "population": 159,
+    "population_raw": "1,594,654"
+  },
+  "Chile": {
+    "lifeExpectancy": 81.2,
+    "lifeExpectancy_raw": "81.2",
+    "gdpNominal": 343,
+    "gdpNominal_raw": "343,823",
+    "population": 202,
+    "population_raw": "20,206,953"
+  },
+  "Maldives": {
+    "lifeExpectancy": 77.4,
+    "lifeExpectancy_raw": "77.4",
+    "gdpNominal": 748,
+    "gdpNominal_raw": "7,480",
+    "population": 515,
+    "population_raw": "515,132"
+  },
+  "Costa Rica": {
+    "lifeExpectancy": 80.9,
+    "lifeExpectancy_raw": "80.9",
+    "gdpNominal": 102,
+    "gdpNominal_raw": "102,591",
+    "population": 530,
+    "population_raw": "5,309,625"
+  },
+  "Taiwan": {
+    "lifeExpectancy": 81.6,
+    "lifeExpectancy_raw": "81.6",
+    "gdpNominal": 804,
+    "gdpNominal_raw": "804,889",
+    "population": 233,
+    "population_raw": "23,346,741"
+  },
+  "Kuwait": {
+    "lifeExpectancy": 79.6,
+    "lifeExpectancy_raw": "79.6",
+    "gdpNominal": 153,
+    "gdpNominal_raw": "153,101",
+    "population": 491,
+    "population_raw": "4,913,271"
+  },
+  "Oman": {
+    "lifeExpectancy": 77.4,
+    "lifeExpectancy_raw": "77.4",
+    "gdpNominal": 104,
+    "gdpNominal_raw": "104,351",
+    "population": 530,
+    "population_raw": "5,301,214"
+  },
+  "Czech Republic": {
+    "lifeExpectancy": 79.1,
+    "lifeExpectancy_raw": "79.1"
+  },
+  "Albania": {
+    "lifeExpectancy": 79.9,
+    "lifeExpectancy_raw": "79.9",
+    "gdpNominal": 283,
+    "gdpNominal_raw": "28,372",
+    "population": 236,
+    "population_raw": "2,363,314"
+  },
+  "Panama": {
+    "lifeExpectancy": 79.2,
+    "lifeExpectancy_raw": "79.2",
+    "gdpNominal": 916,
+    "gdpNominal_raw": "91,675",
+    "population": 406,
+    "population_raw": "4,064,780"
+  },
+  "United States": {
+    "lifeExpectancy": 78.5,
+    "lifeExpectancy_raw": "78.5"
+  },
+  "Estonia": {
+    "lifeExpectancy": 78.2,
+    "lifeExpectancy_raw": "78.2",
+    "gdpNominal": 450,
+    "gdpNominal_raw": "45,004",
+    "population": 136,
+    "population_raw": "1,369,995"
+  },
+  "Saudi Arabia": {
+    "lifeExpectancy": 77.2,
+    "lifeExpectancy_raw": "77.2",
+    "gdpNominal": 108,
+    "gdpNominal_raw": "1,083,749",
+    "population": 353,
+    "population_raw": "35,300,280"
+  },
+  "Poland": {
+    "lifeExpectancy": 77.4,
+    "lifeExpectancy_raw": "77.4",
+    "gdpNominal": 979,
+    "gdpNominal_raw": "979,960",
+    "population": 374,
+    "population_raw": "37,423,000"
+  },
+  "Croatia": {
+    "lifeExpectancy": 77.7,
+    "lifeExpectancy_raw": "77.7",
+    "gdpNominal": 989,
+    "gdpNominal_raw": "98,951",
+    "population": 385,
+    "population_raw": "3,859,686"
+  },
+  "Slovakia": {
+    "lifeExpectancy": 77.2,
+    "lifeExpectancy_raw": "77.2",
+    "gdpNominal": 147,
+    "gdpNominal_raw": "147,031",
+    "population": 541,
+    "population_raw": "5,415,978"
+  },
+  "Uruguay": {
+    "lifeExpectancy": 78.9,
+    "lifeExpectancy_raw": "78.9",
+    "gdpNominal": 797,
+    "gdpNominal_raw": "79,731",
+    "population": 349,
+    "population_raw": "3,499,451"
+  },
+  "Cuba": {
+    "lifeExpectancy": 80.1,
+    "lifeExpectancy_raw": "80.1",
+    "population": 974,
+    "population_raw": "9,748,007"
+  },
+  "China": {
+    "lifeExpectancy": 83.18,
+    "lifeExpectancy_raw": "83.18"
+  },
+  "Bosnia and Herzegovina": {
+    "lifeExpectancy": 78.5,
+    "lifeExpectancy_raw": "78.5",
+    "gdpNominal": 288,
+    "gdpNominal_raw": "28,807",
+    "population": 342,
+    "population_raw": "3,422,000"
+  },
+  "Lebanon": {
+    "lifeExpectancy": 79.2,
+    "lifeExpectancy_raw": "79.2",
+    "population": 549,
+    "population_raw": "5,490,000"
+  },
+  "Jordan": {
+    "lifeExpectancy": 76.5,
+    "lifeExpectancy_raw": "76.5",
+    "gdpNominal": 561,
+    "gdpNominal_raw": "56,102",
+    "population": 117,
+    "population_raw": "11,734,000"
+  },
+  "Peru": {
+    "lifeExpectancy": 72.4,
+    "lifeExpectancy_raw": "72.4",
+    "gdpNominal": 303,
+    "gdpNominal_raw": "303,293",
+    "population": 343,
+    "population_raw": "34,350,244"
+  },
+  "Colombia": {
+    "lifeExpectancy": 76.9,
+    "lifeExpectancy_raw": "76.9",
+    "gdpNominal": 427,
+    "gdpNominal_raw": "427,766",
+    "population": 526,
+    "population_raw": "52,695,952"
+  },
+  "Iran": {
+    "lifeExpectancy": 75.6,
+    "lifeExpectancy_raw": "75.6",
+    "gdpNominal": 341,
+    "gdpNominal_raw": "341,013",
+    "population": 859,
+    "population_raw": "85,961,000"
+  },
+  "Antigua and Barbuda": {
+    "lifeExpectancy": 78.3,
+    "lifeExpectancy_raw": "78.3",
+    "gdpNominal": 237,
+    "gdpNominal_raw": "2,373",
+    "population": 103,
+    "population_raw": "103,603"
+  },
+  "Sri Lanka": {
+    "lifeExpectancy": 76.8,
+    "lifeExpectancy_raw": "76.8",
+    "population": 217,
+    "population_raw": "21,763,170"
+  },
+  "Argentina": {
+    "lifeExpectancy": 75.4,
+    "lifeExpectancy_raw": "75.4",
+    "gdpNominal": 683,
+    "gdpNominal_raw": "683,533",
+    "population": 470,
+    "population_raw": "47,067,641"
+  },
+  "North Macedonia": {
+    "lifeExpectancy": 77.3,
+    "lifeExpectancy_raw": "77.3",
+    "gdpNominal": 178,
+    "gdpNominal_raw": "17,885",
+    "population": 182,
+    "population_raw": "1,826,247"
+  },
+  "Ecuador": {
+    "lifeExpectancy": 74.9,
+    "lifeExpectancy_raw": "74.9",
+    "gdpNominal": 125,
+    "gdpNominal_raw": "125,677",
+    "population": 169,
+    "population_raw": "16,938,986"
+  },
+  "Turkey": {
+    "lifeExpectancy": 76.7,
+    "lifeExpectancy_raw": "76.7",
+    "gdpNominal": 143,
+    "gdpNominal_raw": "1,437,406",
+    "population": 856,
+    "population_raw": "85,664,944"
+  },
+  "Montenegro": {
+    "lifeExpectancy": 78.2,
+    "lifeExpectancy_raw": "78.2",
+    "gdpNominal": 856,
+    "gdpNominal_raw": "8,562",
+    "population": 623,
+    "population_raw": "623,327"
+  },
+  "Hungary": {
+    "lifeExpectancy": 76.2,
+    "lifeExpectancy_raw": "76.2",
+    "gdpNominal": 237,
+    "gdpNominal_raw": "237,070",
+    "population": 953,
+    "population_raw": "9,539,502"
+  },
+  "Serbia": {
+    "lifeExpectancy": 75.3,
+    "lifeExpectancy_raw": "75.3",
+    "gdpNominal": 925,
+    "gdpNominal_raw": "92,549",
+    "population": 656,
+    "population_raw": "6,567,783"
+  },
+  "Malaysia": {
+    "lifeExpectancy": 76.6,
+    "lifeExpectancy_raw": "76.6",
+    "gdpNominal": 444,
+    "gdpNominal_raw": "444,984",
+    "population": 341,
+    "population_raw": "34,192,800"
+  },
+  "Tunisia": {
+    "lifeExpectancy": 77.3,
+    "lifeExpectancy_raw": "77.3",
+    "gdpNominal": 562,
+    "gdpNominal_raw": "56,291",
+    "population": 119,
+    "population_raw": "11,972,169"
+  },
+  "Thailand": {
+    "lifeExpectancy": 78.2,
+    "lifeExpectancy_raw": "78.2",
+    "gdpNominal": 546,
+    "gdpNominal_raw": "546,224",
+    "population": 658,
+    "population_raw": "65,870,610"
+  },
+  "Algeria": {
+    "lifeExpectancy": 77.9,
+    "lifeExpectancy_raw": "77.9",
+    "gdpNominal": 268,
+    "gdpNominal_raw": "268,885",
+    "population": 474,
+    "population_raw": "47,400,000"
+  },
+  "Latvia": {
+    "lifeExpectancy": 74.8,
+    "lifeExpectancy_raw": "74.8",
+    "gdpNominal": 455,
+    "gdpNominal_raw": "45,535",
+    "population": 185,
+    "population_raw": "1,852,100"
+  },
+  "Barbados": {
+    "lifeExpectancy": 79,
+    "lifeExpectancy_raw": "79.0",
+    "gdpNominal": 755,
+    "gdpNominal_raw": "7,552",
+    "population": 267,
+    "population_raw": "267,800"
+  },
+  "Cabo Verde": {
+    "lifeExpectancy": 74.3,
+    "lifeExpectancy_raw": "74.3"
+  },
+  "Lithuania": {
+    "lifeExpectancy": 76,
+    "lifeExpectancy_raw": "76.0",
+    "gdpNominal": 891,
+    "gdpNominal_raw": "89,192",
+    "population": 289,
+    "population_raw": "2,893,336"
+  },
+  "Romania": {
+    "lifeExpectancy": 75.3,
+    "lifeExpectancy_raw": "75.3",
+    "gdpNominal": 403,
+    "gdpNominal_raw": "403,395",
+    "population": 190,
+    "population_raw": "19,064,409"
+  },
+  "Brazil": {
+    "lifeExpectancy": 72.8,
+    "lifeExpectancy_raw": "72.8",
+    "gdpNominal": 212,
+    "gdpNominal_raw": "2,125,958",
+    "population": 212,
+    "population_raw": "212,583,750"
+  },
+  "Armenia": {
+    "lifeExpectancy": 76.7,
+    "lifeExpectancy_raw": "76.7",
+    "gdpNominal": 262,
+    "gdpNominal_raw": "26,258",
+    "population": 308,
+    "population_raw": "3,081,100"
+  },
+  "Bulgaria": {
+    "lifeExpectancy": 74.3,
+    "lifeExpectancy_raw": "74.3",
+    "gdpNominal": 117,
+    "gdpNominal_raw": "117,007",
+    "population": 643,
+    "population_raw": "6,437,360"
+  },
+  "Brunei": {
+    "lifeExpectancy": 74.3,
+    "lifeExpectancy_raw": "74.3"
+  },
+  "Morocco": {
+    "lifeExpectancy": 74.2,
+    "lifeExpectancy_raw": "74.2",
+    "gdpNominal": 165,
+    "gdpNominal_raw": "165,835",
+    "population": 368,
+    "population_raw": "36,828,330"
+  },
+  "Grenada": {
+    "lifeExpectancy": 76.3,
+    "lifeExpectancy_raw": "76.3",
+    "gdpNominal": 146,
+    "gdpNominal_raw": "1,464",
+    "population": 112,
+    "population_raw": "112,579"
+  },
+  "Mexico": {
+    "lifeExpectancy": 74.6,
+    "lifeExpectancy_raw": "74.6",
+    "gdpNominal": 169,
+    "gdpNominal_raw": "1,692,640",
+    "population": 130,
+    "population_raw": "130,417,144"
+  },
+  "Nicaragua": {
+    "lifeExpectancy": 74.7,
+    "lifeExpectancy_raw": "74.7",
+    "gdpNominal": 211,
+    "gdpNominal_raw": "21,155",
+    "population": 680,
+    "population_raw": "6,803,886"
+  },
+  "Mauritius": {
+    "lifeExpectancy": 75.4,
+    "lifeExpectancy_raw": "75.4",
+    "gdpNominal": 154,
+    "gdpNominal_raw": "15,495",
+    "population": 124,
+    "population_raw": "1,244,477"
+  },
+  "Bangladesh": {
+    "lifeExpectancy": 75.2,
+    "lifeExpectancy_raw": "75.2",
+    "gdpNominal": 467,
+    "gdpNominal_raw": "467,218",
+    "population": 169,
+    "population_raw": "169,828,911"
+  },
+  "Vietnam": {
+    "lifeExpectancy": 73.7,
+    "lifeExpectancy_raw": "73.7"
+  },
+  "Bahamas": {
+    "lifeExpectancy": 76.7,
+    "lifeExpectancy_raw": "76.7"
+  },
+  "Georgia": {
+    "lifeExpectancy": 72.8,
+    "lifeExpectancy_raw": "72.8",
+    "gdpNominal": 353,
+    "gdpNominal_raw": "35,353",
+    "population": 370,
+    "population_raw": "3,704,500"
+  },
+  "Belarus": {
+    "lifeExpectancy": 74.7,
+    "lifeExpectancy_raw": "74.7",
+    "gdpNominal": 715,
+    "gdpNominal_raw": "71,561",
+    "population": 910,
+    "population_raw": "9,109,280"
+  },
+  "Azerbaijan": {
+    "lifeExpectancy": 75.9,
+    "lifeExpectancy_raw": "75.9",
+    "gdpNominal": 788,
+    "gdpNominal_raw": "78,870",
+    "population": 102,
+    "population_raw": "10,236,227"
+  },
+  "Kazakhstan": {
+    "lifeExpectancy": 73.3,
+    "lifeExpectancy_raw": "73.3",
+    "gdpNominal": 300,
+    "gdpNominal_raw": "300,538",
+    "population": 203,
+    "population_raw": "20,370,672"
+  },
+  "Paraguay": {
+    "lifeExpectancy": 78.8,
+    "lifeExpectancy_raw": "78.8",
+    "gdpNominal": 454,
+    "gdpNominal_raw": "45,465",
+    "population": 610,
+    "population_raw": "6,109,644"
+  },
+  "Dominican Republic": {
+    "lifeExpectancy": 72.6,
+    "lifeExpectancy_raw": "72.6",
+    "gdpNominal": 127,
+    "gdpNominal_raw": "127,828",
+    "population": 107,
+    "population_raw": "10,771,504"
+  },
+  "North Korea": {
+    "lifeExpectancy": 73.5,
+    "lifeExpectancy_raw": "73.5"
+  },
+  "Suriname": {
+    "lifeExpectancy": 72.7,
+    "lifeExpectancy_raw": "72.7",
+    "gdpNominal": 450,
+    "gdpNominal_raw": "4,506",
+    "population": 616,
+    "population_raw": "616,500"
+  },
+  "Belize": {
+    "lifeExpectancy": 74.3,
+    "lifeExpectancy_raw": "74.3",
+    "gdpNominal": 361,
+    "gdpNominal_raw": "3,611",
+    "population": 410,
+    "population_raw": "410,919"
+  },
+  "Trinidad and Tobago": {
+    "lifeExpectancy": 76.5,
+    "lifeExpectancy_raw": "76.5",
+    "gdpNominal": 264,
+    "gdpNominal_raw": "26,467",
+    "population": 136,
+    "population_raw": "1,368,333"
+  },
+  "Ukraine": {
+    "lifeExpectancy": 70.5,
+    "lifeExpectancy_raw": "70.5",
+    "gdpNominal": 205,
+    "gdpNominal_raw": "205,742",
+    "population": 328,
+    "population_raw": "32,862,000"
+  },
+  "Russia": {
+    "lifeExpectancy": 72.3,
+    "lifeExpectancy_raw": "72.3",
+    "gdpNominal": 207,
+    "gdpNominal_raw": "2,076,396",
+    "population": 146,
+    "population_raw": "146,028,325"
+  },
+  "Bhutan": {
+    "lifeExpectancy": 73.7,
+    "lifeExpectancy_raw": "73.7",
+    "gdpNominal": 342,
+    "gdpNominal_raw": "3,422",
+    "population": 784,
+    "population_raw": "784,043"
+  },
+  "Tonga": {
+    "lifeExpectancy": 78,
+    "lifeExpectancy_raw": "78.0",
+    "gdpNominal": 568,
+    "gdpNominal_raw": "568",
+    "population": 100,
+    "population_raw": "100,179"
+  },
+  "Honduras": {
+    "lifeExpectancy": 73.1,
+    "lifeExpectancy_raw": "73.1",
+    "gdpNominal": 381,
+    "gdpNominal_raw": "38,172",
+    "population": 989,
+    "population_raw": "9,892,632"
+  },
+  "Seychelles": {
+    "lifeExpectancy": 76.6,
+    "lifeExpectancy_raw": "76.6",
+    "gdpNominal": 219,
+    "gdpNominal_raw": "2,198",
+    "population": 122,
+    "population_raw": "122,038"
+  },
+  "Saint Lucia": {
+    "lifeExpectancy": 79.4,
+    "lifeExpectancy_raw": "79.4",
+    "gdpNominal": 263,
+    "gdpNominal_raw": "2,632",
+    "population": 184,
+    "population_raw": "184,100"
+  },
+  "Guatemala": {
+    "lifeExpectancy": 73.5,
+    "lifeExpectancy_raw": "73.5",
+    "gdpNominal": 121,
+    "gdpNominal_raw": "121,177",
+    "population": 180,
+    "population_raw": "18,079,810"
+  },
+  "Venezuela": {
+    "lifeExpectancy": 74.5,
+    "lifeExpectancy_raw": "74.5",
+    "gdpNominal": 108,
+    "gdpNominal_raw": "108,511",
+    "population": 285,
+    "population_raw": "28,517,000"
+  },
+  "Uzbekistan": {
+    "lifeExpectancy": 76.2,
+    "lifeExpectancy_raw": "76.2",
+    "gdpNominal": 132,
+    "gdpNominal_raw": "132,484",
+    "population": 378,
+    "population_raw": "37,860,975"
+  },
+  "Iraq": {
+    "lifeExpectancy": 73.7,
+    "lifeExpectancy_raw": "73.7",
+    "gdpNominal": 258,
+    "gdpNominal_raw": "258,020",
+    "population": 461,
+    "population_raw": "46,118,793"
+  },
+  "Syria": {
+    "lifeExpectancy": 74.8,
+    "lifeExpectancy_raw": "74.8",
+    "population": 256,
+    "population_raw": "25,620,000"
+  },
+  "El Salvador": {
+    "lifeExpectancy": 75.9,
+    "lifeExpectancy_raw": "75.9",
+    "gdpNominal": 367,
+    "gdpNominal_raw": "36,749",
+    "population": 602,
+    "population_raw": "6,029,976"
+  },
+  "India": {
+    "lifeExpectancy": 67.2,
+    "lifeExpectancy_raw": "67.2",
+    "gdpNominal": 418,
+    "gdpNominal_raw": "4,187,017",
+    "population": 141,
+    "population_raw": "1,417,492,000"
+  },
+  "Tajikistan": {
+    "lifeExpectancy": 71.9,
+    "lifeExpectancy_raw": "71.9",
+    "gdpNominal": 148,
+    "gdpNominal_raw": "14,836",
+    "population": 104,
+    "population_raw": "10,499,000"
+  },
+  "Mongolia": {
+    "lifeExpectancy": 71.9,
+    "lifeExpectancy_raw": "71.9",
+    "gdpNominal": 258,
+    "gdpNominal_raw": "25,804",
+    "population": 354,
+    "population_raw": "3,544,835"
+  },
+  "Samoa": {
+    "lifeExpectancy": 75.8,
+    "lifeExpectancy_raw": "75.8",
+    "population": 497,
+    "population_raw": "49,710"
+  },
+  "Kyrgyzstan": {
+    "lifeExpectancy": 72.9,
+    "lifeExpectancy_raw": "72.9",
+    "gdpNominal": 198,
+    "gdpNominal_raw": "19,849",
+    "population": 728,
+    "population_raw": "7,281,800"
+  },
+  "Egypt": {
+    "lifeExpectancy": 75,
+    "lifeExpectancy_raw": "75.0",
+    "gdpNominal": 347,
+    "gdpNominal_raw": "347,342",
+    "population": 107,
+    "population_raw": "107,271,260"
+  },
+  "Jamaica": {
+    "lifeExpectancy": 76.3,
+    "lifeExpectancy_raw": "76.3",
+    "gdpNominal": 214,
+    "gdpNominal_raw": "21,411",
+    "population": 282,
+    "population_raw": "2,825,544"
+  },
+  "Vanuatu": {
+    "lifeExpectancy": 75.7,
+    "lifeExpectancy_raw": "75.7",
+    "gdpNominal": 126,
+    "gdpNominal_raw": "1,267",
+    "population": 321,
+    "population_raw": "321,409"
+  },
+  "Saint Vincent and the Grenadines": {
+    "lifeExpectancy": 77.2,
+    "lifeExpectancy_raw": "77.2",
+    "gdpNominal": 124,
+    "gdpNominal_raw": "1,242",
+    "population": 110,
+    "population_raw": "110,872"
+  },
+  "Moldova": {
+    "lifeExpectancy": 70.1,
+    "lifeExpectancy_raw": "70.1",
+    "gdpNominal": 194,
+    "gdpNominal_raw": "19,462",
+    "population": 238,
+    "population_raw": "2,381,300"
+  },
+  "Indonesia": {
+    "lifeExpectancy": 67.6,
+    "lifeExpectancy_raw": "67.6",
+    "gdpNominal": 142,
+    "gdpNominal_raw": "1,429,743",
+    "population": 284,
+    "population_raw": "284,438,782"
+  },
+  "Dominica": {
+    "lifeExpectancy": 78.7,
+    "lifeExpectancy_raw": "78.7",
+    "gdpNominal": 742,
+    "gdpNominal_raw": "742",
+    "population": 674,
+    "population_raw": "67,408"
+  },
+  "Cambodia": {
+    "lifeExpectancy": 71.4,
+    "lifeExpectancy_raw": "71.4",
+    "gdpNominal": 497,
+    "gdpNominal_raw": "49,799",
+    "population": 175,
+    "population_raw": "17,577,760"
+  },
+  "Solomon Islands": {
+    "lifeExpectancy": 77.2,
+    "lifeExpectancy_raw": "77.2",
+    "gdpNominal": 189,
+    "gdpNominal_raw": "1,898",
+    "population": 750,
+    "population_raw": "750,325"
+  },
+  "Nepal": {
+    "lifeExpectancy": 73,
+    "lifeExpectancy_raw": "73.0",
+    "gdpNominal": 460,
+    "gdpNominal_raw": "46,080",
+    "population": 299,
+    "population_raw": "29,911,840"
+  },
+  "Guyana": {
+    "lifeExpectancy": 72.4,
+    "lifeExpectancy_raw": "72.4",
+    "gdpNominal": 258,
+    "gdpNominal_raw": "25,822",
+    "population": 772,
+    "population_raw": "772,975"
+  },
+  "Turkmenistan": {
+    "lifeExpectancy": 72.4,
+    "lifeExpectancy_raw": "72.4",
+    "gdpNominal": 890,
+    "gdpNominal_raw": "89,054",
+    "population": 705,
+    "population_raw": "7,057,841"
+  },
+  "Philippines": {
+    "lifeExpectancy": 70.8,
+    "lifeExpectancy_raw": "70.8",
+    "gdpNominal": 497,
+    "gdpNominal_raw": "497,495",
+    "population": 114,
+    "population_raw": "114,123,600"
+  },
+  "São Tomé and Príncipe": {
+    "lifeExpectancy": 69.72,
+    "lifeExpectancy_raw": "69.72",
+    "gdpNominal": 864,
+    "gdpNominal_raw": "864",
+    "population": 209,
+    "population_raw": "209,607"
+  },
+  "Libya": {
+    "lifeExpectancy": 77.7,
+    "lifeExpectancy_raw": "77.7",
+    "gdpNominal": 474,
+    "gdpNominal_raw": "47,484",
+    "population": 745,
+    "population_raw": "7,459,000"
+  },
+  "Yemen": {
+    "lifeExpectancy": 68.2,
+    "lifeExpectancy_raw": "68.2",
+    "gdpNominal": 174,
+    "gdpNominal_raw": "17,401",
+    "population": 326,
+    "population_raw": "32,684,503"
+  },
+  "Botswana": {
+    "lifeExpectancy": 66.4,
+    "lifeExpectancy_raw": "66.4",
+    "gdpNominal": 194,
+    "gdpNominal_raw": "19,400",
+    "population": 235,
+    "population_raw": "2,359,609"
+  },
+  "Laos": {
+    "lifeExpectancy": 69,
+    "lifeExpectancy_raw": "69.0",
+    "gdpNominal": 163,
+    "gdpNominal_raw": "16,322",
+    "population": 764,
+    "population_raw": "7,647,000"
+  },
+  "Senegal": {
+    "lifeExpectancy": 70.6,
+    "lifeExpectancy_raw": "70.6",
+    "gdpNominal": 347,
+    "gdpNominal_raw": "34,728",
+    "population": 181,
+    "population_raw": "18,126,390"
+  },
+  "Eritrea": {
+    "lifeExpectancy": 67.5,
+    "lifeExpectancy_raw": "67.5",
+    "population": 360,
+    "population_raw": "3,607,000"
+  },
+  "Bolivia": {
+    "lifeExpectancy": 72.5,
+    "lifeExpectancy_raw": "72.5",
+    "gdpNominal": 563,
+    "gdpNominal_raw": "56,339",
+    "population": 113,
+    "population_raw": "11,312,620"
+  },
+  "Mauritania": {
+    "lifeExpectancy": 65.9,
+    "lifeExpectancy_raw": "65.9",
+    "gdpNominal": 114,
+    "gdpNominal_raw": "11,470",
+    "population": 492,
+    "population_raw": "4,927,532"
+  },
+  "Gabon": {
+    "lifeExpectancy": 70.4,
+    "lifeExpectancy_raw": "70.4",
+    "gdpNominal": 203,
+    "gdpNominal_raw": "20,391",
+    "population": 246,
+    "population_raw": "2,469,296"
+  },
+  "Uganda": {
+    "lifeExpectancy": 69.7,
+    "lifeExpectancy_raw": "69.7",
+    "gdpNominal": 642,
+    "gdpNominal_raw": "64,277",
+    "population": 459,
+    "population_raw": "45,905,417"
+  },
+  "Rwanda": {
+    "lifeExpectancy": 66.6,
+    "lifeExpectancy_raw": "66.6",
+    "gdpNominal": 147,
+    "gdpNominal_raw": "14,771",
+    "population": 141,
+    "population_raw": "14,104,969"
+  },
+  "Timor-Leste": {
+    "lifeExpectancy": 70.5,
+    "lifeExpectancy_raw": "70.5",
+    "gdpNominal": 211,
+    "gdpNominal_raw": "2,115",
+    "population": 139,
+    "population_raw": "1,391,221"
+  },
+  "Pakistan": {
+    "lifeExpectancy": 70.3,
+    "lifeExpectancy_raw": "70.3",
+    "population": 241,
+    "population_raw": "241,499,431"
+  },
+  "Namibia": {
+    "lifeExpectancy": 65.9,
+    "lifeExpectancy_raw": "65.9",
+    "gdpNominal": 142,
+    "gdpNominal_raw": "14,214",
+    "population": 302,
+    "population_raw": "3,022,401"
+  },
+  "Malawi": {
+    "lifeExpectancy": 73,
+    "lifeExpectancy_raw": "73.0",
+    "gdpNominal": 139,
+    "gdpNominal_raw": "13,959",
+    "population": 207,
+    "population_raw": "20,734,262"
+  },
+  "Fiji": {
+    "lifeExpectancy": 74.8,
+    "lifeExpectancy_raw": "74.8",
+    "gdpNominal": 625,
+    "gdpNominal_raw": "6,257",
+    "population": 900,
+    "population_raw": "900,869"
+  },
+  "Ethiopia": {
+    "lifeExpectancy": 67.7,
+    "lifeExpectancy_raw": "67.7",
+    "gdpNominal": 117,
+    "gdpNominal_raw": "117,457",
+    "population": 111,
+    "population_raw": "111,652,998"
+  },
+  "Micronesia": {
+    "lifeExpectancy": 75,
+    "lifeExpectancy_raw": "75.0"
+  },
+  "Tanzania": {
+    "lifeExpectancy": 70.8,
+    "lifeExpectancy_raw": "70.8",
+    "gdpNominal": 859,
+    "gdpNominal_raw": "85,977",
+    "population": 681,
+    "population_raw": "68,153,004"
+  },
+  "Myanmar": {
+    "lifeExpectancy": 69.1,
+    "lifeExpectancy_raw": "69.1",
+    "gdpNominal": 649,
+    "gdpNominal_raw": "64,944",
+    "population": 513,
+    "population_raw": "51,316,756"
+  },
+  "Comoros": {
+    "lifeExpectancy": 67.8,
+    "lifeExpectancy_raw": "67.8",
+    "gdpNominal": 154,
+    "gdpNominal_raw": "1,548",
+    "population": 870,
+    "population_raw": "870,038"
+  },
+  "Kiribati": {
+    "lifeExpectancy": 68.5,
+    "lifeExpectancy_raw": "68.5",
+    "gdpNominal": 312,
+    "gdpNominal_raw": "312",
+    "population": 120,
+    "population_raw": "120,740"
+  },
+  "Zambia": {
+    "lifeExpectancy": 66.9,
+    "lifeExpectancy_raw": "66.9",
+    "gdpNominal": 289,
+    "gdpNominal_raw": "28,910",
+    "population": 196,
+    "population_raw": "19,693,423"
+  },
+  "Sudan": {
+    "lifeExpectancy": 67.8,
+    "lifeExpectancy_raw": "67.8",
+    "gdpNominal": 315,
+    "gdpNominal_raw": "31,506",
+    "population": 516,
+    "population_raw": "51,662,000"
+  },
+  "South Africa": {
+    "lifeExpectancy": 62.3,
+    "lifeExpectancy_raw": "62.3",
+    "gdpNominal": 410,
+    "gdpNominal_raw": "410,338",
+    "population": 630,
+    "population_raw": "63,015,904"
+  },
+  "Papua New Guinea": {
+    "lifeExpectancy": 70.1,
+    "lifeExpectancy_raw": "70.1",
+    "gdpNominal": 328,
+    "gdpNominal_raw": "32,835",
+    "population": 117,
+    "population_raw": "11,781,559"
+  },
+  "Afghanistan": {
+    "lifeExpectancy": 54.4,
+    "lifeExpectancy_raw": "54.4",
+    "population": 438,
+    "population_raw": "43,844,000"
+  },
+  "Djibouti": {
+    "lifeExpectancy": 65.9,
+    "lifeExpectancy_raw": "65.9",
+    "gdpNominal": 458,
+    "gdpNominal_raw": "4,587",
+    "population": 106,
+    "population_raw": "1,066,809"
+  },
+  "Gambia": {
+    "lifeExpectancy": 68.4,
+    "lifeExpectancy_raw": "68.4"
+  },
+  "Congo": {
+    "population": 614,
+    "population_raw": "6,142,180"
+  },
+  "Ghana": {
+    "lifeExpectancy": 70.1,
+    "lifeExpectancy_raw": "70.1",
+    "gdpNominal": 883,
+    "gdpNominal_raw": "88,332",
+    "population": 337,
+    "population_raw": "33,742,380"
+  },
+  "Palestine": {
+    "lifeExpectancy": 65.17,
+    "lifeExpectancy_raw": "65.17",
+    "population": 548,
+    "population_raw": "5,483,450"
+  },
+  "Haiti": {
+    "lifeExpectancy": 65.6,
+    "lifeExpectancy_raw": "65.6",
+    "gdpNominal": 335,
+    "gdpNominal_raw": "33,548",
+    "population": 118,
+    "population_raw": "11,867,032"
+  },
+  "Angola": {
+    "lifeExpectancy": 62.9,
+    "lifeExpectancy_raw": "62.9",
+    "gdpNominal": 113,
+    "gdpNominal_raw": "113,343",
+    "population": 361,
+    "population_raw": "36,170,961"
+  },
+  "Eswatini": {
+    "lifeExpectancy": 60.7,
+    "lifeExpectancy_raw": "60.7",
+    "gdpNominal": 548,
+    "gdpNominal_raw": "5,483",
+    "population": 123,
+    "population_raw": "1,235,549"
+  },
+  "Guinea-Bissau": {
+    "lifeExpectancy": 64.5,
+    "lifeExpectancy_raw": "64.5",
+    "gdpNominal": 227,
+    "gdpNominal_raw": "2,274",
+    "population": 178,
+    "population_raw": "1,781,308"
+  },
+  "Equatorial Guinea": {
+    "lifeExpectancy": 63.9,
+    "lifeExpectancy_raw": "63.9",
+    "gdpNominal": 126,
+    "gdpNominal_raw": "12,684",
+    "population": 155,
+    "population_raw": "1,558,160"
+  },
+  "Cameroon": {
+    "lifeExpectancy": 64.2,
+    "lifeExpectancy_raw": "64.2",
+    "gdpNominal": 560,
+    "gdpNominal_raw": "56,011",
+    "population": 294,
+    "population_raw": "29,442,327"
+  },
+  "Burundi": {
+    "lifeExpectancy": 68.1,
+    "lifeExpectancy_raw": "68.1",
+    "gdpNominal": 674,
+    "gdpNominal_raw": "6,745",
+    "population": 123,
+    "population_raw": "12,332,788"
+  },
+  "Kenya": {
+    "lifeExpectancy": 70.4,
+    "lifeExpectancy_raw": "70.4",
+    "gdpNominal": 131,
+    "gdpNominal_raw": "131,673",
+    "population": 533,
+    "population_raw": "53,330,978"
+  },
+  "Madagascar": {
+    "lifeExpectancy": 68.8,
+    "lifeExpectancy_raw": "68.8",
+    "gdpNominal": 187,
+    "gdpNominal_raw": "18,708",
+    "population": 317,
+    "population_raw": "31,727,042"
+  },
+  "Mozambique": {
+    "lifeExpectancy": 58.3,
+    "lifeExpectancy_raw": "58.3",
+    "gdpNominal": 237,
+    "gdpNominal_raw": "23,771",
+    "population": 340,
+    "population_raw": "34,090,466"
+  },
+  "Zimbabwe": {
+    "lifeExpectancy": 67.2,
+    "lifeExpectancy_raw": "67.2",
+    "gdpNominal": 381,
+    "gdpNominal_raw": "38,172",
+    "population": 170,
+    "population_raw": "17,073,087"
+  },
+  "Togo": {
+    "lifeExpectancy": 72.1,
+    "lifeExpectancy_raw": "72.1",
+    "gdpNominal": 100,
+    "gdpNominal_raw": "10,023",
+    "population": 809,
+    "population_raw": "8,095,498"
+  },
+  "Liberia": {
+    "lifeExpectancy": 61.6,
+    "lifeExpectancy_raw": "61.6",
+    "gdpNominal": 516,
+    "gdpNominal_raw": "5,166",
+    "population": 524,
+    "population_raw": "5,248,621"
+  },
+  "Côte d'Ivoire": {
+    "lifeExpectancy": 63.2,
+    "lifeExpectancy_raw": "63.2"
+  },
+  "Democratic Republic of the Congo": {
+    "population": 112,
+    "population_raw": "112,832,000"
+  },
+  "Sierra Leone": {
+    "lifeExpectancy": 59.4,
+    "lifeExpectancy_raw": "59.4",
+    "gdpNominal": 838,
+    "gdpNominal_raw": "8,386",
+    "population": 907,
+    "population_raw": "9,077,691"
+  },
+  "Niger": {
+    "lifeExpectancy": 60.9,
+    "lifeExpectancy_raw": "60.9",
+    "gdpNominal": 218,
+    "gdpNominal_raw": "21,874",
+    "population": 263,
+    "population_raw": "26,312,034"
+  },
+  "Burkina Faso": {
+    "lifeExpectancy": 64.2,
+    "lifeExpectancy_raw": "64.2",
+    "gdpNominal": 270,
+    "gdpNominal_raw": "27,056",
+    "population": 240,
+    "population_raw": "24,070,553"
+  },
+  "Benin": {
+    "lifeExpectancy": 63,
+    "lifeExpectancy_raw": "63.0",
+    "gdpNominal": 222,
+    "gdpNominal_raw": "22,236",
+    "population": 132,
+    "population_raw": "13,224,860"
+  },
+  "Guinea": {
+    "lifeExpectancy": 64.6,
+    "lifeExpectancy_raw": "64.6",
+    "gdpNominal": 300,
+    "gdpNominal_raw": "30,094",
+    "population": 143,
+    "population_raw": "14,363,931"
+  },
+  "Mali": {
+    "lifeExpectancy": 63.2,
+    "lifeExpectancy_raw": "63.2",
+    "gdpNominal": 232,
+    "gdpNominal_raw": "23,208",
+    "population": 223,
+    "population_raw": "22,395,489"
+  },
+  "Somalia": {
+    "lifeExpectancy": 56.5,
+    "lifeExpectancy_raw": "56.5",
+    "gdpNominal": 129,
+    "gdpNominal_raw": "12,994",
+    "population": 196,
+    "population_raw": "19,655,000"
+  },
+  "South Sudan": {
+    "lifeExpectancy": 60.3,
+    "lifeExpectancy_raw": "60.3",
+    "gdpNominal": 399,
+    "gdpNominal_raw": "3,998",
+    "population": 157,
+    "population_raw": "15,786,898"
+  },
+  "Central African Republic": {
+    "lifeExpectancy": 56.4,
+    "lifeExpectancy_raw": "56.4",
+    "gdpNominal": 293,
+    "gdpNominal_raw": "2,932",
+    "population": 647,
+    "population_raw": "6,470,307"
+  },
+  "Lesotho": {
+    "lifeExpectancy": 60.2,
+    "lifeExpectancy_raw": "60.2",
+    "gdpNominal": 240,
+    "gdpNominal_raw": "2,404",
+    "population": 230,
+    "population_raw": "2,306,000"
+  },
+  "Chad": {
+    "lifeExpectancy": 60,
+    "lifeExpectancy_raw": "60.0",
+    "gdpNominal": 187,
+    "gdpNominal_raw": "18,792",
+    "population": 193,
+    "population_raw": "19,340,757"
+  },
+  "Nigeria": {
+    "lifeExpectancy": 62.2,
+    "lifeExpectancy_raw": "62.2",
+    "gdpNominal": 188,
+    "gdpNominal_raw": "188,271",
+    "population": 223,
+    "population_raw": "223,800,000"
+  },
+  "San Marino": {
+    "lifeExpectancy": 84.2,
+    "lifeExpectancy_raw": "84.2",
+    "gdpNominal": 204,
+    "gdpNominal_raw": "2,047",
+    "population": 340,
+    "population_raw": "34,062"
+  },
+  "Liechtenstein": {
+    "lifeExpectancy": 83,
+    "lifeExpectancy_raw": "83.0",
+    "population": 409,
+    "population_raw": "40,900"
+  },
+  "Saint Kitts and Nevis": {
+    "lifeExpectancy": 77.6,
+    "lifeExpectancy_raw": "77.6",
+    "gdpNominal": 112,
+    "gdpNominal_raw": "1,129",
+    "population": 513,
+    "population_raw": "51,320"
+  },
+  "Marshall Islands": {
+    "lifeExpectancy": 75.2,
+    "lifeExpectancy_raw": "75.2",
+    "gdpNominal": 297,
+    "gdpNominal_raw": "297",
+    "population": 424,
+    "population_raw": "42,418"
+  },
+  "Palau": {
+    "lifeExpectancy": 75.2,
+    "lifeExpectancy_raw": "75.2",
+    "gdpNominal": 333,
+    "gdpNominal_raw": "333",
+    "population": 167,
+    "population_raw": "16,733"
+  },
+  "Tuvalu": {
+    "lifeExpectancy": 69,
+    "lifeExpectancy_raw": "69.0",
+    "gdpNominal": 65,
+    "gdpNominal_raw": "65",
+    "population": 106,
+    "population_raw": "10,643"
+  },
+  "Nauru": {
+    "lifeExpectancy": 68.6,
+    "lifeExpectancy_raw": "68.6",
+    "gdpNominal": 169,
+    "gdpNominal_raw": "169",
+    "population": 116,
+    "population_raw": "11,680"
+  },
+  "Monaco": {
+    "population": 384,
+    "population_raw": "38,423"
+  },
+  "Vatican City": {
+    "population": 882,
+    "population_raw": "882"
+  }
+}

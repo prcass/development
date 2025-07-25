@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "created": "2025-07-25T02:10:53.842Z",
+    "totalChallenges": 9,
+    "source": "DBpedia property discovery"
+  },
+  "challenges": [
+    {
+      "id": "populationtotal",
+      "name": "Populationtotal",
+      "property": "http://dbpedia.org/ontology/populationTotal",
+      "category": "demographic",
+      "usage": 195,
+      "description": "Rank countries by Populationtotal",
+      "queryTemplate": "\n        PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?value\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name ;\n                     <http://dbpedia.org/ontology/populationTotal> ?value .\n            FILTER(lang(?name) = 'en')\n        }\n        ORDER BY DESC(?value)\n        LIMIT 20\n    "
+    },
+    {
+      "id": "areatotal",
+      "name": "Areatotal",
+      "property": "http://dbpedia.org/ontology/areaTotal",
+      "category": "geographic",
+      "usage": 195,
+      "description": "Rank countries by Areatotal",
+      "queryTemplate": "\n        PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?value\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name ;\n                     <http://dbpedia.org/ontology/areaTotal> ?value .\n            FILTER(lang(?name) = 'en')\n        }\n        ORDER BY DESC(?value)\n        LIMIT 20\n    "
+    },
+    {
+      "id": "gdpnominalpercapita",
+      "name": "Gdpnominalpercapita",
+      "property": "http://dbpedia.org/ontology/gdpNominalPerCapita",
+      "category": "economic",
+      "usage": 175,
+      "description": "Rank countries by Gdpnominalpercapita",
+      "queryTemplate": "\n        PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?value\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name ;\n                     <http://dbpedia.org/ontology/gdpNominalPerCapita> ?value .\n            FILTER(lang(?name) = 'en')\n        }\n        ORDER BY DESC(?value)\n        LIMIT 20\n    "
+    },
+    {
+      "id": "humandevelopmentindex",
+      "name": "Humandevelopmentindex",
+      "property": "http://dbpedia.org/ontology/humanDevelopmentIndex",
+      "category": "other",
+      "usage": 170,
+      "description": "Rank countries by Humandevelopmentindex",
+      "queryTemplate": "\n        PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?value\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name ;\n                     <http://dbpedia.org/ontology/humanDevelopmentIndex> ?value .\n            FILTER(lang(?name) = 'en')\n        }\n        ORDER BY DESC(?value)\n        LIMIT 20\n    "
+    },
+    {
+      "id": "gdpppppercapita",
+      "name": "Gdpppppercapita",
+      "property": "http://dbpedia.org/property/gdpPppPerCapita",
+      "category": "economic",
+      "usage": 155,
+      "description": "Rank countries by Gdpppppercapita",
+      "queryTemplate": "\n        PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?value\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name ;\n                     <http://dbpedia.org/property/gdpPppPerCapita> ?value .\n            FILTER(lang(?name) = 'en')\n        }\n        ORDER BY DESC(?value)\n        LIMIT 20\n    "
+    },
+    {
+      "id": "literacyrate",
+      "name": "Literacyrate",
+      "property": "http://dbpedia.org/property/literacyRate",
+      "category": "social",
+      "usage": 130,
+      "description": "Rank countries by Literacyrate",
+      "queryTemplate": "\n        PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?value\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name ;\n                     <http://dbpedia.org/property/literacyRate> ?value .\n            FILTER(lang(?name) = 'en')\n        }\n        ORDER BY DESC(?value)\n        LIMIT 20\n    "
+    },
+    {
+      "id": "pressfreedomindex",
+      "name": "Pressfreedomindex",
+      "property": "http://dbpedia.org/property/pressFreedomIndex",
+      "category": "social",
+      "usage": 60,
+      "description": "Rank countries by Pressfreedomindex",
+      "queryTemplate": "\n        PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?value\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name ;\n                     <http://dbpedia.org/property/pressFreedomIndex> ?value .\n            FILTER(lang(?name) = 'en')\n        }\n        ORDER BY DESC(?value)\n        LIMIT 20\n    "
+    },
+    {
+      "id": "populationtotal",
+      "name": "Total  Population",
+      "property": "http://dbpedia.org/ontology/populationTotal",
+      "category": "demographic",
+      "usage": 195,
+      "description": "Rank countries by Populationtotal",
+      "queryTemplate": "\n        PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?value\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name ;\n                     <http://dbpedia.org/ontology/populationTotal> ?value .\n            FILTER(lang(?name) = 'en')\n        }\n        ORDER BY DESC(?value)\n        LIMIT 20\n    "
+    },
+    {
+      "id": "areatotal",
+      "name": "Total  Area",
+      "property": "http://dbpedia.org/ontology/areaTotal",
+      "category": "geographic",
+      "usage": 195,
+      "description": "Rank countries by Areatotal",
+      "queryTemplate": "\n        PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?value\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name ;\n                     <http://dbpedia.org/ontology/areaTotal> ?value .\n            FILTER(lang(?name) = 'en')\n        }\n        ORDER BY DESC(?value)\n        LIMIT 20\n    "
+    }
+  ]
+}

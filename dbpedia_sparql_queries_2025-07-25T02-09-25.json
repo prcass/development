@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "source": "DBpedia SPARQL Endpoint",
+    "endpoint": "https://dbpedia.org/sparql",
+    "created": "2025-07-25T02:09:25.407Z",
+    "queries": [
+      "population",
+      "economic",
+      "geographic",
+      "political",
+      "development",
+      "allCountries"
+    ],
+    "description": "Complete country data from DBpedia structured data"
+  },
+  "queries": {
+    "population": {
+      "name": "population",
+      "query": "PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX dbr: <http://dbpedia.org/resource/>\n        PREFIX dbp: <http://dbpedia.org/property/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?population ?area ?gdp ?gdpPerCapita\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name ;\n                     dbo:populationTotal ?population .\n            OPTIONAL { ?country dbo:areaTotal ?area }\n            OPTIONAL { ?country dbo:gdpNominal ?gdp }\n            OPTIONAL { ?country dbo:gdpNominalPerCapita ?gdpPerCapita }\n            FILTER (lang(?name) = 'en')\n        }\n        ORDER BY DESC(?population)",
+      "url": "https://dbpedia.org/sparql?query=%0A++++++++PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A++++++++PREFIX+dbr%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2F%3E%0A++++++++PREFIX+dbp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0A++++++++PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A++++++++%0A++++++++SELECT+%3Fcountry+%3Fname+%3Fpopulation+%3Farea+%3Fgdp+%3FgdpPerCapita%0A++++++++WHERE+%7B%0A++++++++++++%3Fcountry+a+dbo%3ACountry+%3B%0A+++++++++++++++++++++rdfs%3Alabel+%3Fname+%3B%0A+++++++++++++++++++++dbo%3ApopulationTotal+%3Fpopulation+.%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3AareaTotal+%3Farea+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3AgdpNominal+%3Fgdp+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3AgdpNominalPerCapita+%3FgdpPerCapita+%7D%0A++++++++++++FILTER+%28lang%28%3Fname%29+%3D+%27en%27%29%0A++++++++%7D%0A++++++++ORDER+BY+DESC%28%3Fpopulation%29%0A++++&format=json&timeout=30000",
+      "description": "Get all countries with population, area, and GDP data"
+    },
+    "economic": {
+      "name": "economic",
+      "query": "PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX dbp: <http://dbpedia.org/property/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?gdp ?gdpPerCapita ?gini ?hdi ?currency\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name .\n            OPTIONAL { ?country dbo:gdpNominal ?gdp }\n            OPTIONAL { ?country dbo:gdpNominalPerCapita ?gdpPerCapita }\n            OPTIONAL { ?country dbo:giniCoefficient ?gini }\n            OPTIONAL { ?country dbo:humanDevelopmentIndex ?hdi }\n            OPTIONAL { ?country dbp:currency ?currency }\n            FILTER (lang(?name) = 'en')\n        }",
+      "url": "https://dbpedia.org/sparql?query=%0A++++++++PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A++++++++PREFIX+dbp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0A++++++++PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A++++++++%0A++++++++SELECT+%3Fcountry+%3Fname+%3Fgdp+%3FgdpPerCapita+%3Fgini+%3Fhdi+%3Fcurrency%0A++++++++WHERE+%7B%0A++++++++++++%3Fcountry+a+dbo%3ACountry+%3B%0A+++++++++++++++++++++rdfs%3Alabel+%3Fname+.%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3AgdpNominal+%3Fgdp+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3AgdpNominalPerCapita+%3FgdpPerCapita+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3AginiCoefficient+%3Fgini+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3AhumanDevelopmentIndex+%3Fhdi+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbp%3Acurrency+%3Fcurrency+%7D%0A++++++++++++FILTER+%28lang%28%3Fname%29+%3D+%27en%27%29%0A++++++++%7D%0A++++&format=json&timeout=30000",
+      "description": "Economic indicators including GDP, Gini coefficient, HDI"
+    },
+    "geographic": {
+      "name": "geographic",
+      "query": "PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX dbp: <http://dbpedia.org/property/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>\n        \n        SELECT ?country ?name ?area ?population ?density ?capital ?lat ?long\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name .\n            OPTIONAL { ?country dbo:areaTotal ?area }\n            OPTIONAL { ?country dbo:populationTotal ?population }\n            OPTIONAL { ?country dbo:populationDensity ?density }\n            OPTIONAL { ?country dbo:capital ?capital }\n            OPTIONAL { ?country geo:lat ?lat }\n            OPTIONAL { ?country geo:long ?long }\n            FILTER (lang(?name) = 'en')\n        }",
+      "url": "https://dbpedia.org/sparql?query=%0A++++++++PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A++++++++PREFIX+dbp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0A++++++++PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A++++++++PREFIX+geo%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2003%2F01%2Fgeo%2Fwgs84_pos%23%3E%0A++++++++%0A++++++++SELECT+%3Fcountry+%3Fname+%3Farea+%3Fpopulation+%3Fdensity+%3Fcapital+%3Flat+%3Flong%0A++++++++WHERE+%7B%0A++++++++++++%3Fcountry+a+dbo%3ACountry+%3B%0A+++++++++++++++++++++rdfs%3Alabel+%3Fname+.%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3AareaTotal+%3Farea+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3ApopulationTotal+%3Fpopulation+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3ApopulationDensity+%3Fdensity+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3Acapital+%3Fcapital+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+geo%3Alat+%3Flat+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+geo%3Along+%3Flong+%7D%0A++++++++++++FILTER+%28lang%28%3Fname%29+%3D+%27en%27%29%0A++++++++%7D%0A++++&format=json&timeout=30000",
+      "description": "Geographic data including area, coordinates, capital cities"
+    },
+    "political": {
+      "name": "political",
+      "query": "PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX dbp: <http://dbpedia.org/property/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?governmentType ?leader ?legislature\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name .\n            OPTIONAL { ?country dbo:governmentType ?governmentType }\n            OPTIONAL { ?country dbo:leader ?leader }\n            OPTIONAL { ?country dbp:legislature ?legislature }\n            FILTER (lang(?name) = 'en')\n        }",
+      "url": "https://dbpedia.org/sparql?query=%0A++++++++PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A++++++++PREFIX+dbp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0A++++++++PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A++++++++%0A++++++++SELECT+%3Fcountry+%3Fname+%3FgovernmentType+%3Fleader+%3Flegislature%0A++++++++WHERE+%7B%0A++++++++++++%3Fcountry+a+dbo%3ACountry+%3B%0A+++++++++++++++++++++rdfs%3Alabel+%3Fname+.%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3AgovernmentType+%3FgovernmentType+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3Aleader+%3Fleader+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbp%3Alegislature+%3Flegislature+%7D%0A++++++++++++FILTER+%28lang%28%3Fname%29+%3D+%27en%27%29%0A++++++++%7D%0A++++&format=json&timeout=30000",
+      "description": "Government type, current leaders, legislature information"
+    },
+    "development": {
+      "name": "development",
+      "query": "PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX dbp: <http://dbpedia.org/property/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT ?country ?name ?hdi ?lifeExpectancy ?literacyRate ?internetUsers\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name .\n            OPTIONAL { ?country dbo:humanDevelopmentIndex ?hdi }\n            OPTIONAL { ?country dbp:lifeExpectancy ?lifeExpectancy }\n            OPTIONAL { ?country dbp:literacy ?literacyRate }\n            OPTIONAL { ?country dbp:internetTld ?internetUsers }\n            FILTER (lang(?name) = 'en')\n        }",
+      "url": "https://dbpedia.org/sparql?query=%0A++++++++PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A++++++++PREFIX+dbp%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fproperty%2F%3E%0A++++++++PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A++++++++%0A++++++++SELECT+%3Fcountry+%3Fname+%3Fhdi+%3FlifeExpectancy+%3FliteracyRate+%3FinternetUsers%0A++++++++WHERE+%7B%0A++++++++++++%3Fcountry+a+dbo%3ACountry+%3B%0A+++++++++++++++++++++rdfs%3Alabel+%3Fname+.%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbo%3AhumanDevelopmentIndex+%3Fhdi+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbp%3AlifeExpectancy+%3FlifeExpectancy+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbp%3Aliteracy+%3FliteracyRate+%7D%0A++++++++++++OPTIONAL+%7B+%3Fcountry+dbp%3AinternetTld+%3FinternetUsers+%7D%0A++++++++++++FILTER+%28lang%28%3Fname%29+%3D+%27en%27%29%0A++++++++%7D%0A++++&format=json&timeout=30000",
+      "description": "Development indicators like HDI, life expectancy, literacy"
+    },
+    "allCountries": {
+      "name": "allCountries",
+      "query": "PREFIX dbo: <http://dbpedia.org/ontology/>\n        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n        \n        SELECT DISTINCT ?country ?name\n        WHERE {\n            ?country a dbo:Country ;\n                     rdfs:label ?name .\n            FILTER (lang(?name) = 'en')\n            FILTER NOT EXISTS { ?country dbo:dissolutionYear ?year }\n        }\n        ORDER BY ?name",
+      "url": "https://dbpedia.org/sparql?query=%0A++++++++PREFIX+dbo%3A+%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0A++++++++PREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A++++++++%0A++++++++SELECT+DISTINCT+%3Fcountry+%3Fname%0A++++++++WHERE+%7B%0A++++++++++++%3Fcountry+a+dbo%3ACountry+%3B%0A+++++++++++++++++++++rdfs%3Alabel+%3Fname+.%0A++++++++++++FILTER+%28lang%28%3Fname%29+%3D+%27en%27%29%0A++++++++++++FILTER+NOT+EXISTS+%7B+%3Fcountry+dbo%3AdissolutionYear+%3Fyear+%7D%0A++++++++%7D%0A++++++++ORDER+BY+%3Fname%0A++++&format=json&timeout=30000",
+      "description": "Complete list of all sovereign countries"
+    }
+  },
+  "instructions": {
+    "usage": "Execute SPARQL queries against DBpedia endpoint to get complete country data",
+    "advantages": [
+      "Structured data format",
+      "Complete country coverage (all 195+ countries)",
+      "Consistent property names",
+      "Linked data with relationships",
+      "Multiple data points per query"
+    ],
+    "implementation": "Use fetch/axios to POST queries to SPARQL endpoint"
+  }
+}

@@ -1,0 +1,1400 @@
+{
+  "metadata": {
+    "created": "2025-07-25T02:17:43.266Z",
+    "description": "Complete country rankings dataset from Wikipedia",
+    "totalCountries": 196,
+    "totalRankings": 5,
+    "dataSources": [
+      {
+        "ranking": "population",
+        "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+      },
+      {
+        "ranking": "area",
+        "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area"
+      },
+      {
+        "ranking": "gdp_nominal",
+        "source": "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)"
+      },
+      {
+        "ranking": "hdi",
+        "source": "https://en.wikipedia.org/wiki/List_of_countries_by_Human_Development_Index"
+      },
+      {
+        "ranking": "life_expectancy",
+        "source": "https://en.wikipedia.org/wiki/List_of_countries_by_life_expectancy"
+      }
+    ]
+  },
+  "countries": {
+    "India": {
+      "name": "India",
+      "data": {
+        "population": 1417492000,
+        "area": 3287263,
+        "gdp_nominal": 4187017
+      }
+    },
+    "China": {
+      "name": "China",
+      "data": {
+        "population": 1408280000,
+        "area": 9596960,
+        "gdp_nominal": 19231705
+      }
+    },
+    "United States": {
+      "name": "United States",
+      "data": {
+        "population": 340110988,
+        "area": 9525067,
+        "gdp_nominal": 30507217,
+        "hdi": 0.938
+      }
+    },
+    "Indonesia": {
+      "name": "Indonesia",
+      "data": {
+        "population": 284438782,
+        "area": 1904569,
+        "gdp_nominal": 1429743
+      }
+    },
+    "Pakistan": {
+      "name": "Pakistan",
+      "data": {
+        "population": 241499431,
+        "area": 796095
+      }
+    },
+    "Nigeria": {
+      "name": "Nigeria",
+      "data": {
+        "population": 223800000,
+        "area": 923768
+      }
+    },
+    "Brazil": {
+      "name": "Brazil",
+      "data": {
+        "population": 212583750,
+        "area": 8510346,
+        "gdp_nominal": 2125958
+      }
+    },
+    "Bangladesh": {
+      "name": "Bangladesh",
+      "data": {
+        "population": 169828911,
+        "area": 148460
+      }
+    },
+    "Russia": {
+      "name": "Russia",
+      "data": {
+        "population": 146028325,
+        "area": 17098246,
+        "gdp_nominal": 2076396
+      }
+    },
+    "Mexico": {
+      "name": "Mexico",
+      "data": {
+        "population": 130417144,
+        "area": 1964375,
+        "gdp_nominal": 1692640
+      }
+    },
+    "Japan": {
+      "name": "Japan",
+      "data": {
+        "population": 123360000,
+        "area": 377930,
+        "gdp_nominal": 4186431,
+        "life_expectancy": 84.71
+      }
+    },
+    "Philippines": {
+      "name": "Philippines",
+      "data": {
+        "population": 114123600,
+        "area": 300000
+      }
+    },
+    "Democratic Republic of the Congo": {
+      "name": "Democratic Republic of the Congo",
+      "data": {
+        "population": 112832000,
+        "area": 2344858
+      }
+    },
+    "Ethiopia": {
+      "name": "Ethiopia",
+      "data": {
+        "population": 111652998,
+        "area": 1104300
+      }
+    },
+    "Egypt": {
+      "name": "Egypt",
+      "data": {
+        "population": 107271260,
+        "area": 1001450
+      }
+    },
+    "Vietnam": {
+      "name": "Vietnam",
+      "data": {
+        "population": 101343800,
+        "area": 331212
+      }
+    },
+    "Iran": {
+      "name": "Iran",
+      "data": {
+        "population": 85961000,
+        "area": 1648195
+      }
+    },
+    "Turkey": {
+      "name": "Turkey",
+      "data": {
+        "population": 85664944,
+        "area": 783562,
+        "gdp_nominal": 1437406
+      }
+    },
+    "Germany": {
+      "name": "Germany",
+      "data": {
+        "population": 83577140,
+        "area": 357114,
+        "gdp_nominal": 4744804,
+        "hdi": 0.959
+      }
+    },
+    "France": {
+      "name": "France",
+      "data": {
+        "population": 68649000,
+        "area": 551695,
+        "gdp_nominal": 3211292
+      }
+    },
+    "United Kingdom": {
+      "name": "United Kingdom",
+      "data": {
+        "population": 68265209,
+        "area": 242495,
+        "gdp_nominal": 3839180,
+        "hdi": 0.946
+      }
+    },
+    "Tanzania": {
+      "name": "Tanzania",
+      "data": {
+        "population": 68153004,
+        "area": 947303
+      }
+    },
+    "Thailand": {
+      "name": "Thailand",
+      "data": {
+        "population": 65870610,
+        "area": 513120
+      }
+    },
+    "South Africa": {
+      "name": "South Africa",
+      "data": {
+        "population": 63015904,
+        "area": 1221037
+      }
+    },
+    "Italy": {
+      "name": "Italy",
+      "data": {
+        "population": 58918231,
+        "area": 301336,
+        "gdp_nominal": 2422855,
+        "life_expectancy": 83.72
+      }
+    },
+    "Kenya": {
+      "name": "Kenya",
+      "data": {
+        "population": 53330978,
+        "area": 580367
+      }
+    },
+    "Colombia": {
+      "name": "Colombia",
+      "data": {
+        "population": 52695952,
+        "area": 1141748
+      }
+    },
+    "Sudan": {
+      "name": "Sudan",
+      "data": {
+        "population": 51662000,
+        "area": 1861484
+      }
+    },
+    "Myanmar": {
+      "name": "Myanmar",
+      "data": {
+        "population": 51316756,
+        "area": 676578
+      }
+    },
+    "South Korea": {
+      "name": "South Korea",
+      "data": {
+        "population": 51164582,
+        "area": 100210,
+        "gdp_nominal": 1790322,
+        "hdi": 0.937,
+        "life_expectancy": 84.33
+      }
+    },
+    "Uganda": {
+      "name": "Uganda",
+      "data": {
+        "population": 49924868,
+        "area": 241550
+      }
+    },
+    "Spain": {
+      "name": "Spain",
+      "data": {
+        "population": 48059777,
+        "area": 505990,
+        "gdp_nominal": 1799511,
+        "life_expectancy": 83.67
+      }
+    },
+    "Iraq": {
+      "name": "Iraq",
+      "data": {
+        "population": 44414800,
+        "area": 435244
+      }
+    },
+    "Algeria": {
+      "name": "Algeria",
+      "data": {
+        "population": 44758398,
+        "area": 2381741
+      }
+    },
+    "Argentina": {
+      "name": "Argentina",
+      "data": {
+        "population": 47327407,
+        "area": 2780400
+      }
+    },
+    "Poland": {
+      "name": "Poland",
+      "data": {
+        "population": 37840000,
+        "area": 312679,
+        "gdp_nominal": 979960
+      }
+    },
+    "Canada": {
+      "name": "Canada",
+      "data": {
+        "population": 39858480,
+        "area": 9984670,
+        "gdp_nominal": 2225341,
+        "hdi": 0.939
+      }
+    },
+    "Morocco": {
+      "name": "Morocco",
+      "data": {
+        "population": 38081173,
+        "area": 446550
+      }
+    },
+    "Saudi Arabia": {
+      "name": "Saudi Arabia",
+      "data": {
+        "population": 35844909,
+        "area": 2149690,
+        "gdp_nominal": 1083749
+      }
+    },
+    "Ukraine": {
+      "name": "Ukraine",
+      "data": {
+        "population": 36000000,
+        "area": 603500
+      }
+    },
+    "Angola": {
+      "name": "Angola",
+      "data": {
+        "population": 35027343,
+        "area": 1246700
+      }
+    },
+    "Uzbekistan": {
+      "name": "Uzbekistan",
+      "data": {
+        "population": 34915100,
+        "area": 447400
+      }
+    },
+    "Peru": {
+      "name": "Peru",
+      "data": {
+        "population": 34234630,
+        "area": 1285216
+      }
+    },
+    "Malaysia": {
+      "name": "Malaysia",
+      "data": {
+        "population": 33938221,
+        "area": 330803
+      }
+    },
+    "Afghanistan": {
+      "name": "Afghanistan",
+      "data": {
+        "population": 34262840,
+        "area": 652230
+      }
+    },
+    "Venezuela": {
+      "name": "Venezuela",
+      "data": {
+        "population": 33098422,
+        "area": 912050
+      }
+    },
+    "Ghana": {
+      "name": "Ghana",
+      "data": {
+        "population": 33475870,
+        "area": 238533
+      }
+    },
+    "Yemen": {
+      "name": "Yemen",
+      "data": {
+        "population": 33696614,
+        "area": 527968
+      }
+    },
+    "Nepal": {
+      "name": "Nepal",
+      "data": {
+        "population": 30327877,
+        "area": 147181
+      }
+    },
+    "Mozambique": {
+      "name": "Mozambique",
+      "data": {
+        "population": 33089461,
+        "area": 801590
+      }
+    },
+    "Syria": {
+      "name": "Syria",
+      "data": {
+        "population": 25620000,
+        "area": 185180
+      }
+    },
+    "Burkina Faso": {
+      "name": "Burkina Faso",
+      "data": {
+        "population": 24070553,
+        "area": 274222
+      }
+    },
+    "Taiwan": {
+      "name": "Taiwan",
+      "data": {
+        "population": 23346741,
+        "area": 36193,
+        "gdp_nominal": 804889
+      }
+    },
+    "Mali": {
+      "name": "Mali",
+      "data": {
+        "population": 22395489,
+        "area": 1240192
+      }
+    },
+    "Sri Lanka": {
+      "name": "Sri Lanka",
+      "data": {
+        "population": 21763170,
+        "area": 65610
+      }
+    },
+    "Malawi": {
+      "name": "Malawi",
+      "data": {
+        "population": 20734262,
+        "area": 118484
+      }
+    },
+    "Kazakhstan": {
+      "name": "Kazakhstan",
+      "data": {
+        "population": 20370672,
+        "area": 2724910
+      }
+    },
+    "Chile": {
+      "name": "Chile",
+      "data": {
+        "population": 20206953,
+        "area": 756096
+      }
+    },
+    "Zambia": {
+      "name": "Zambia",
+      "data": {
+        "population": 19693423,
+        "area": 752612
+      }
+    },
+    "Somalia": {
+      "name": "Somalia",
+      "data": {
+        "population": 19655000,
+        "area": 637657
+      }
+    },
+    "Chad": {
+      "name": "Chad",
+      "data": {
+        "population": 19340757,
+        "area": 1284000
+      }
+    },
+    "Romania": {
+      "name": "Romania",
+      "data": {
+        "population": 19064409,
+        "area": 238391
+      }
+    },
+    "Senegal": {
+      "name": "Senegal",
+      "data": {
+        "population": 18126390,
+        "area": 196722
+      }
+    },
+    "Guatemala": {
+      "name": "Guatemala",
+      "data": {
+        "population": 18079810,
+        "area": 108889
+      }
+    },
+    "Netherlands": {
+      "name": "Netherlands",
+      "data": {
+        "population": 18077662,
+        "area": 41850,
+        "gdp_nominal": 1272011,
+        "hdi": 0.955
+      }
+    },
+    "Cambodia": {
+      "name": "Cambodia",
+      "data": {
+        "population": 17577760,
+        "area": 181035
+      }
+    },
+    "Zimbabwe": {
+      "name": "Zimbabwe",
+      "data": {
+        "population": 17073087,
+        "area": 390757
+      }
+    },
+    "Ecuador": {
+      "name": "Ecuador",
+      "data": {
+        "population": 16938986,
+        "area": 283561
+      }
+    },
+    "South Sudan": {
+      "name": "South Sudan",
+      "data": {
+        "population": 15786898,
+        "area": 619745
+      }
+    },
+    "Guinea": {
+      "name": "Guinea",
+      "data": {
+        "population": 14363931,
+        "area": 245857
+      }
+    },
+    "Rwanda": {
+      "name": "Rwanda",
+      "data": {
+        "population": 14104969,
+        "area": 26338
+      }
+    },
+    "Benin": {
+      "name": "Benin",
+      "data": {
+        "population": 13224860,
+        "area": 112622
+      }
+    },
+    "Burundi": {
+      "name": "Burundi",
+      "data": {
+        "population": 12332788,
+        "area": 27830
+      }
+    },
+    "Tunisia": {
+      "name": "Tunisia",
+      "data": {
+        "population": 11972169,
+        "area": 163610
+      }
+    },
+    "Haiti": {
+      "name": "Haiti",
+      "data": {
+        "population": 11867032,
+        "area": 27750
+      }
+    },
+    "Belgium": {
+      "name": "Belgium",
+      "data": {
+        "population": 11825551,
+        "area": 30528,
+        "hdi": 0.951
+      }
+    },
+    "Papua New Guinea": {
+      "name": "Papua New Guinea",
+      "data": {
+        "population": 11781559,
+        "area": 462840
+      }
+    },
+    "Jordan": {
+      "name": "Jordan",
+      "data": {
+        "population": 11734000,
+        "area": 89342
+      }
+    },
+    "Bolivia": {
+      "name": "Bolivia",
+      "data": {
+        "population": 11312620,
+        "area": 1098581
+      }
+    },
+    "Czech Republic": {
+      "name": "Czech Republic",
+      "data": {
+        "population": 10876875,
+        "area": 78867
+      }
+    },
+    "Dominican Republic": {
+      "name": "Dominican Republic",
+      "data": {
+        "population": 10771504,
+        "area": 48671
+      }
+    },
+    "Portugal": {
+      "name": "Portugal",
+      "data": {
+        "population": 10749635,
+        "area": 92090
+      }
+    },
+    "United Arab Emirates": {
+      "name": "United Arab Emirates",
+      "data": {
+        "population": 10678556,
+        "area": 83600,
+        "hdi": 0.94
+      }
+    },
+    "Sweden": {
+      "name": "Sweden",
+      "data": {
+        "population": 10591058,
+        "area": 450295,
+        "hdi": 0.959
+      }
+    },
+    "Tajikistan": {
+      "name": "Tajikistan",
+      "data": {
+        "population": 10499000,
+        "area": 143100
+      }
+    },
+    "Greece": {
+      "name": "Greece",
+      "data": {
+        "population": 10400720,
+        "area": 131957
+      }
+    },
+    "Azerbaijan": {
+      "name": "Azerbaijan",
+      "data": {
+        "population": 10236227,
+        "area": 86600
+      }
+    },
+    "Israel": {
+      "name": "Israel",
+      "data": {
+        "population": 10098200,
+        "area": 22072
+      }
+    },
+    "Honduras": {
+      "name": "Honduras",
+      "data": {
+        "population": 9892632,
+        "area": 112492
+      }
+    },
+    "Cuba": {
+      "name": "Cuba",
+      "data": {
+        "population": 9748007,
+        "area": 109884
+      }
+    },
+    "Hungary": {
+      "name": "Hungary",
+      "data": {
+        "population": 9539502,
+        "area": 93028
+      }
+    },
+    "Austria": {
+      "name": "Austria",
+      "data": {
+        "population": 9202428,
+        "area": 83879
+      }
+    },
+    "Belarus": {
+      "name": "Belarus",
+      "data": {
+        "population": 9081361,
+        "area": 207600
+      }
+    },
+    "Cyprus": {
+      "name": "Cyprus",
+      "data": {
+        "population": 966400,
+        "area": 9251
+      }
+    },
+    "Fiji": {
+      "name": "Fiji",
+      "data": {
+        "population": 900869,
+        "area": 18274
+      }
+    },
+    "Australia": {
+      "name": "Australia",
+      "data": {
+        "area": 7741220,
+        "gdp_nominal": 1771681,
+        "hdi": 0.958,
+        "life_expectancy": 83.92
+      }
+    },
+    "Libya": {
+      "name": "Libya",
+      "data": {
+        "area": 1759540
+      }
+    },
+    "Mongolia": {
+      "name": "Mongolia",
+      "data": {
+        "area": 1564110
+      }
+    },
+    "Niger": {
+      "name": "Niger",
+      "data": {
+        "area": 1267000
+      }
+    },
+    "Mauritania": {
+      "name": "Mauritania",
+      "data": {
+        "area": 1030700
+      }
+    },
+    "Namibia": {
+      "name": "Namibia",
+      "data": {
+        "area": 825615
+      }
+    },
+    "Central African Republic": {
+      "name": "Central African Republic",
+      "data": {
+        "area": 622984
+      }
+    },
+    "Madagascar": {
+      "name": "Madagascar",
+      "data": {
+        "area": 587041
+      }
+    },
+    "Botswana": {
+      "name": "Botswana",
+      "data": {
+        "area": 582000
+      }
+    },
+    "Turkmenistan": {
+      "name": "Turkmenistan",
+      "data": {
+        "area": 488100
+      }
+    },
+    "Cameroon": {
+      "name": "Cameroon",
+      "data": {
+        "area": 475442
+      }
+    },
+    "Paraguay": {
+      "name": "Paraguay",
+      "data": {
+        "area": 406752
+      }
+    },
+    "Norway": {
+      "name": "Norway",
+      "data": {
+        "area": 385207,
+        "hdi": 0.97
+      }
+    },
+    "Republic of the Congo": {
+      "name": "Republic of the Congo",
+      "data": {
+        "area": 342000
+      }
+    },
+    "Finland": {
+      "name": "Finland",
+      "data": {
+        "area": 338424,
+        "hdi": 0.948
+      }
+    },
+    "Ivory Coast": {
+      "name": "Ivory Coast",
+      "data": {
+        "area": 322463
+      }
+    },
+    "Oman": {
+      "name": "Oman",
+      "data": {
+        "area": 309500
+      }
+    },
+    "New Zealand": {
+      "name": "New Zealand",
+      "data": {
+        "area": 268838,
+        "hdi": 0.938
+      }
+    },
+    "Gabon": {
+      "name": "Gabon",
+      "data": {
+        "area": 267668
+      }
+    },
+    "Laos": {
+      "name": "Laos",
+      "data": {
+        "area": 236800
+      }
+    },
+    "Guyana": {
+      "name": "Guyana",
+      "data": {
+        "area": 214969
+      }
+    },
+    "Kyrgyzstan": {
+      "name": "Kyrgyzstan",
+      "data": {
+        "area": 199951
+      }
+    },
+    "Uruguay": {
+      "name": "Uruguay",
+      "data": {
+        "area": 176215
+      }
+    },
+    "Suriname": {
+      "name": "Suriname",
+      "data": {
+        "area": 163820
+      }
+    },
+    "Nicaragua": {
+      "name": "Nicaragua",
+      "data": {
+        "area": 130373
+      }
+    },
+    "North Korea": {
+      "name": "North Korea",
+      "data": {
+        "area": 120538
+      }
+    },
+    "Eritrea": {
+      "name": "Eritrea",
+      "data": {
+        "area": 117600
+      }
+    },
+    "Liberia": {
+      "name": "Liberia",
+      "data": {
+        "area": 111369
+      }
+    },
+    "Bulgaria": {
+      "name": "Bulgaria",
+      "data": {
+        "area": 110879
+      }
+    },
+    "Iceland": {
+      "name": "Iceland",
+      "data": {
+        "area": 103000,
+        "hdi": 0.972
+      }
+    },
+    "Panama": {
+      "name": "Panama",
+      "data": {
+        "area": 75417
+      }
+    },
+    "Sierra Leone": {
+      "name": "Sierra Leone",
+      "data": {
+        "area": 71740
+      }
+    },
+    "Ireland": {
+      "name": "Ireland",
+      "data": {
+        "area": 70273,
+        "hdi": 0.949
+      }
+    },
+    "Georgia": {
+      "name": "Georgia",
+      "data": {
+        "area": 69700
+      }
+    },
+    "Lithuania": {
+      "name": "Lithuania",
+      "data": {
+        "area": 65300
+      }
+    },
+    "Latvia": {
+      "name": "Latvia",
+      "data": {
+        "area": 64559
+      }
+    },
+    "Togo": {
+      "name": "Togo",
+      "data": {
+        "area": 56785
+      }
+    },
+    "Croatia": {
+      "name": "Croatia",
+      "data": {
+        "area": 56594
+      }
+    },
+    "Bosnia and Herzegovina": {
+      "name": "Bosnia and Herzegovina",
+      "data": {
+        "area": 51197
+      }
+    },
+    "Costa Rica": {
+      "name": "Costa Rica",
+      "data": {
+        "area": 51100
+      }
+    },
+    "Slovakia": {
+      "name": "Slovakia",
+      "data": {
+        "area": 49035
+      }
+    },
+    "Estonia": {
+      "name": "Estonia",
+      "data": {
+        "area": 45228
+      }
+    },
+    "Denmark": {
+      "name": "Denmark",
+      "data": {
+        "area": 43094,
+        "hdi": 0.962
+      }
+    },
+    "Switzerland": {
+      "name": "Switzerland",
+      "data": {
+        "area": 41285,
+        "gdp_nominal": 947125,
+        "hdi": 0.97,
+        "life_expectancy": 83.95
+      }
+    },
+    "Bhutan": {
+      "name": "Bhutan",
+      "data": {
+        "area": 38394
+      }
+    },
+    "Guinea-Bissau": {
+      "name": "Guinea-Bissau",
+      "data": {
+        "area": 36125
+      }
+    },
+    "Moldova": {
+      "name": "Moldova",
+      "data": {
+        "area": 33846
+      }
+    },
+    "Lesotho": {
+      "name": "Lesotho",
+      "data": {
+        "area": 30355
+      }
+    },
+    "Armenia": {
+      "name": "Armenia",
+      "data": {
+        "area": 29743
+      }
+    },
+    "Solomon Islands": {
+      "name": "Solomon Islands",
+      "data": {
+        "area": 28896
+      }
+    },
+    "Albania": {
+      "name": "Albania",
+      "data": {
+        "area": 28748
+      }
+    },
+    "Equatorial Guinea": {
+      "name": "Equatorial Guinea",
+      "data": {
+        "area": 28051
+      }
+    },
+    "Djibouti": {
+      "name": "Djibouti",
+      "data": {
+        "area": 23200
+      }
+    },
+    "Belize": {
+      "name": "Belize",
+      "data": {
+        "area": 22966
+      }
+    },
+    "El Salvador": {
+      "name": "El Salvador",
+      "data": {
+        "area": 21041
+      }
+    },
+    "Slovenia": {
+      "name": "Slovenia",
+      "data": {
+        "area": 20273
+      }
+    },
+    "Kuwait": {
+      "name": "Kuwait",
+      "data": {
+        "area": 17818
+      }
+    },
+    "Eswatini": {
+      "name": "Eswatini",
+      "data": {
+        "area": 17364
+      }
+    },
+    "East Timor": {
+      "name": "East Timor",
+      "data": {
+        "area": 14874
+      }
+    },
+    "Bahamas": {
+      "name": "Bahamas",
+      "data": {
+        "area": 13943
+      }
+    },
+    "Montenegro": {
+      "name": "Montenegro",
+      "data": {
+        "area": 13812
+      }
+    },
+    "Vanuatu": {
+      "name": "Vanuatu",
+      "data": {
+        "area": 12189
+      }
+    },
+    "Qatar": {
+      "name": "Qatar",
+      "data": {
+        "area": 11586
+      }
+    },
+    "Gambia": {
+      "name": "Gambia",
+      "data": {
+        "area": 11295
+      }
+    },
+    "Jamaica": {
+      "name": "Jamaica",
+      "data": {
+        "area": 10991
+      }
+    },
+    "Kosovo": {
+      "name": "Kosovo",
+      "data": {
+        "area": 10887
+      }
+    },
+    "Lebanon": {
+      "name": "Lebanon",
+      "data": {
+        "area": 10452
+      }
+    },
+    "Brunei": {
+      "name": "Brunei",
+      "data": {
+        "area": 5765
+      }
+    },
+    "Trinidad and Tobago": {
+      "name": "Trinidad and Tobago",
+      "data": {
+        "area": 5130
+      }
+    },
+    "Cape Verde": {
+      "name": "Cape Verde",
+      "data": {
+        "area": 4033
+      }
+    },
+    "Samoa": {
+      "name": "Samoa",
+      "data": {
+        "area": 2831
+      }
+    },
+    "Luxembourg": {
+      "name": "Luxembourg",
+      "data": {
+        "area": 2586
+      }
+    },
+    "Comoros": {
+      "name": "Comoros",
+      "data": {
+        "area": 2235
+      }
+    },
+    "Mauritius": {
+      "name": "Mauritius",
+      "data": {
+        "area": 2040
+      }
+    },
+    "São Tomé and Príncipe": {
+      "name": "São Tomé and Príncipe",
+      "data": {
+        "area": 964
+      }
+    },
+    "Kiribati": {
+      "name": "Kiribati",
+      "data": {
+        "area": 811
+      }
+    },
+    "Bahrain": {
+      "name": "Bahrain",
+      "data": {
+        "area": 765
+      }
+    },
+    "Dominica": {
+      "name": "Dominica",
+      "data": {
+        "area": 751
+      }
+    },
+    "Tonga": {
+      "name": "Tonga",
+      "data": {
+        "area": 747
+      }
+    },
+    "Singapore": {
+      "name": "Singapore",
+      "data": {
+        "area": 719,
+        "hdi": 0.946,
+        "life_expectancy": 83.74
+      }
+    },
+    "Micronesia": {
+      "name": "Micronesia",
+      "data": {
+        "area": 702
+      }
+    },
+    "Palau": {
+      "name": "Palau",
+      "data": {
+        "area": 459
+      }
+    },
+    "Andorra": {
+      "name": "Andorra",
+      "data": {
+        "area": 468,
+        "life_expectancy": 84.04
+      }
+    },
+    "Seychelles": {
+      "name": "Seychelles",
+      "data": {
+        "area": 452
+      }
+    },
+    "Antigua and Barbuda": {
+      "name": "Antigua and Barbuda",
+      "data": {
+        "area": 442
+      }
+    },
+    "Barbados": {
+      "name": "Barbados",
+      "data": {
+        "area": 430
+      }
+    },
+    "Saint Vincent and the Grenadines": {
+      "name": "Saint Vincent and the Grenadines",
+      "data": {
+        "area": 389
+      }
+    },
+    "Malta": {
+      "name": "Malta",
+      "data": {
+        "area": 316
+      }
+    },
+    "Maldives": {
+      "name": "Maldives",
+      "data": {
+        "area": 298
+      }
+    },
+    "Saint Kitts and Nevis": {
+      "name": "Saint Kitts and Nevis",
+      "data": {
+        "area": 261
+      }
+    },
+    "Niue": {
+      "name": "Niue",
+      "data": {
+        "area": 260
+      }
+    },
+    "Cook Islands": {
+      "name": "Cook Islands",
+      "data": {
+        "area": 236
+      }
+    },
+    "Marshall Islands": {
+      "name": "Marshall Islands",
+      "data": {
+        "area": 181
+      }
+    },
+    "Liechtenstein": {
+      "name": "Liechtenstein",
+      "data": {
+        "area": 160,
+        "hdi": 0.938
+      }
+    },
+    "San Marino": {
+      "name": "San Marino",
+      "data": {
+        "area": 61
+      }
+    },
+    "Tuvalu": {
+      "name": "Tuvalu",
+      "data": {
+        "area": 26
+      }
+    },
+    "Nauru": {
+      "name": "Nauru",
+      "data": {
+        "area": 21
+      }
+    },
+    "Monaco": {
+      "name": "Monaco",
+      "data": {
+        "area": 2
+      }
+    },
+    "Vatican City": {
+      "name": "Vatican City",
+      "data": {
+        "area": 0.17
+      }
+    },
+    "Hong Kong": {
+      "name": "Hong Kong",
+      "data": {
+        "hdi": 0.955,
+        "life_expectancy": 85.51
+      }
+    },
+    "French Polynesia": {
+      "name": "French Polynesia",
+      "data": {
+        "life_expectancy": 84.07
+      }
+    }
+  },
+  "rankings": {
+    "population": {
+      "id": "population",
+      "name": "Population",
+      "description": "Total population (2024 estimates)",
+      "unit": "people",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population",
+      "direction": "desc",
+      "totalCountries": 95
+    },
+    "area": {
+      "id": "area",
+      "name": "Total Area",
+      "description": "Total land and water area",
+      "unit": "km²",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area",
+      "direction": "desc",
+      "totalCountries": 194
+    },
+    "gdp_nominal": {
+      "id": "gdp_nominal",
+      "name": "GDP (Nominal)",
+      "description": "Gross Domestic Product at current prices",
+      "unit": "million USD",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)",
+      "direction": "desc",
+      "totalCountries": 22
+    },
+    "hdi": {
+      "id": "hdi",
+      "name": "Human Development Index",
+      "description": "Composite index of life expectancy, education, and per capita income",
+      "unit": "index (0-1)",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_Human_Development_Index",
+      "direction": "desc",
+      "totalCountries": 20
+    },
+    "life_expectancy": {
+      "id": "life_expectancy",
+      "name": "Life Expectancy",
+      "description": "Average life expectancy at birth",
+      "unit": "years",
+      "source": "https://en.wikipedia.org/wiki/List_of_countries_by_life_expectancy",
+      "direction": "desc",
+      "totalCountries": 10
+    }
+  }
+}

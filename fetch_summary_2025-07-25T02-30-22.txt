@@ -1,0 +1,33 @@
+
+DBpedia Automated Fetch Summary
+===============================
+Fetch Date: 2025-07-25T02:30:07.605Z
+Duration: 15.35s
+Queries Executed: 0
+Total Countries: 9994
+
+Data Completeness:
+  population: 484 countries (4.8%)
+  area: 259 countries (2.6%)
+  gdp: 0 countries (0.0%)
+  gdpPerCapita: 0 countries (0.0%)
+  hdi: 176 countries (1.8%)
+  lifeExpectancy: 0 countries (0.0%)
+
+Key Improvements over WebFetch:
+  Life Expectancy: 0 vs 79 (+-79)
+  GDP: 0 vs 22 (+-22)
+  HDI: 176 vs 20 (+156)
+
+Sample Countries Retrieved:
+  • 'I' and the 'me'
+  • ...
+  • 1 in 60 rule
+  • 10th century
+  • 11th century
+  • 12th century
+  • 13th century BC
+  • 18-Electron rule
+  • 1830 Constitution of Ecuador
+  • 1844 New Jersey Constitution
+  ... and 9984 more

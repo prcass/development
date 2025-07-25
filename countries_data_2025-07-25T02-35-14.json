@@ -1,0 +1,879 @@
+{
+  "Georgia (country)": {
+    "population": 36886474012104,
+    "hdi": 0.8019999861717224
+  },
+  "China": {
+    "population": 1410539758,
+    "hdi": 0.7680000066757202
+  },
+  "India": {
+    "population": 1375586000,
+    "hdi": 0.6330000162124634
+  },
+  "Passports in Europe": {
+    "population": 447206135
+  },
+  "United States": {
+    "population": 331893745,
+    "hdi": 0.9210000038146973
+  },
+  "Indonesia": {
+    "population": 275773800,
+    "hdi": 0.7049999833106995
+  },
+  "Pakistan": {
+    "population": 242923845,
+    "hdi": 0.5440000295639038
+  },
+  "Nigeria": {
+    "population": 225082083,
+    "hdi": 0.5389999747276306
+  },
+  "Brazil": {
+    "population": 217240060,
+    "hdi": 0.7540000081062317
+  },
+  "History of Brazil (1985–present)": {
+    "population": 214047375,
+    "hdi": 0.7649999856948853
+  },
+  "Russia": {
+    "population": 147182123,
+    "hdi": 0.8240000009536743
+  },
+  "History of Russia (1991–present)": {
+    "population": 145478097,
+    "hdi": 0.8240000009536743
+  },
+  "Mexico": {
+    "population": 129150971,
+    "hdi": 0.7580000162124634
+  },
+  "Japan": {
+    "population": 124214766,
+    "hdi": 0.925000011920929
+  },
+  "Ethiopia": {
+    "population": 113656596,
+    "hdi": 0.4850000143051147
+  },
+  "Democratic Republic of the Congo": {
+    "population": 108407721,
+    "hdi": 0.4790000021457672
+  },
+  "Egypt": {
+    "population": 107770524,
+    "hdi": 0.7310000061988831
+  },
+  "Vietnam": {
+    "population": 103808319,
+    "hdi": 0.7039999961853027
+  },
+  "Iran": {
+    "population": 86758304,
+    "hdi": 0.7739999890327454
+  },
+  "Turkey": {
+    "population": 84680273,
+    "hdi": 0.8379999995231628
+  },
+  "Germany": {
+    "population": 83695430,
+    "hdi": 0.9419999718666077
+  },
+  "History of Germany (1990–present)": {
+    "population": 83190556,
+    "hdi": 0.9470000267028809
+  },
+  "History of the Islamic Republic of Iran": {
+    "population": 83183741,
+    "hdi": 0.7829999923706055
+  },
+  "Korea": {
+    "population": 77000000
+  },
+  "Thailand": {
+    "population": 69648117,
+    "hdi": 0.800000011920929
+  },
+  "France": {
+    "population": 67897000,
+    "hdi": 0.902999997138977
+  },
+  "United Kingdom": {
+    "population": 67791400,
+    "hdi": 0.9290000200271606
+  },
+  "Metropolitan France": {
+    "population": 65250000
+  },
+  "Italy": {
+    "population": 61095551,
+    "hdi": 0.8949999809265137
+  },
+  "South Africa": {
+    "population": 60604992,
+    "hdi": 0.7129999995231628
+  },
+  "Myanmar": {
+    "population": 57526449,
+    "hdi": 0.5849999785423279
+  },
+  "Kenya": {
+    "population": 55864655,
+    "hdi": 0.574999988079071
+  },
+  "Colombia": {
+    "population": 52156254,
+    "hdi": 0.7519999742507935
+  },
+  "South Korea": {
+    "population": 51844834,
+    "hdi": 0.925000011920929
+  },
+  "Sudan": {
+    "population": 47958856,
+    "hdi": 0.5080000162124634
+  },
+  "Spain": {
+    "population": 47163418,
+    "hdi": 0.9049999713897705
+  },
+  "Algeria": {
+    "population": 44700000,
+    "hdi": 0.7450000047683716
+  },
+  "Ukraine": {
+    "population": 41167336,
+    "hdi": 0.7730000019073486
+  },
+  "Iraq": {
+    "population": 40462701,
+    "hdi": 0.6859999895095825
+  },
+  "Canada": {
+    "population": 38929902,
+    "hdi": 0.9359999895095825
+  },
+  "Afghanistan": {
+    "population": 38346720,
+    "hdi": 0.4779999852180481
+  },
+  "Polish People's Republic": {
+    "population": 37970155,
+    "hdi": 0.9100000262260437
+  },
+  "Morocco": {
+    "population": 36767655,
+    "hdi": 0.6830000281333923
+  },
+  "Uzbekistan": {
+    "population": 35955400,
+    "hdi": 0.7269999980926514
+  },
+  "Angola": {
+    "population": 34795287,
+    "hdi": 0.5809999704360962
+  },
+  "Malaysia": {
+    "population": 33871431,
+    "hdi": 0.8029999732971191
+  },
+  "Peru": {
+    "population": 32275736,
+    "hdi": 0.7620000243186951
+  },
+  "Ghana": {
+    "population": 32103042,
+    "hdi": 0.6320000290870667
+  },
+  "Mozambique": {
+    "population": 31693239,
+    "hdi": 0.4460000097751617
+  },
+  "Yemen": {
+    "population": 30984689,
+    "hdi": 0.4550000131130219
+  },
+  "Nepal": {
+    "population": 30666598,
+    "hdi": 0.6019999980926514
+  },
+  "Venezuela": {
+    "population": 29789730,
+    "hdi": 0.6909999847412109
+  },
+  "Cameroon": {
+    "population": 29321637,
+    "hdi": 0.5759999752044678
+  },
+  "Madagascar": {
+    "population": 28172462,
+    "hdi": 0.5009999871253967
+  },
+  "North Korea": {
+    "population": 25955138
+  },
+  "Niger": {
+    "population": 24484587,
+    "hdi": 0.4000000059604645
+  },
+  "Taiwan": {
+    "population": 23894394,
+    "hdi": 0.9259999990463257
+  },
+  "Crime in Ivory Coast": {
+    "population": 23740424
+  },
+  "Sri Lanka": {
+    "population": 22156000,
+    "hdi": 0.7820000052452087
+  },
+  "Syria": {
+    "population": 21563800,
+    "hdi": 0.5770000219345093
+  },
+  "Mali": {
+    "population": 21473764,
+    "hdi": 0.4280000030994415
+  },
+  "Malawi": {
+    "population": 20091635,
+    "hdi": 0.5120000243186951
+  },
+  "Zambia": {
+    "population": 19642123,
+    "hdi": 0.5649999976158142
+  },
+  "Kazakhstan": {
+    "population": 19398331,
+    "hdi": 0.824999988079071
+  },
+  "Romania": {
+    "population": 19038098,
+    "hdi": 0.8209999799728394
+  },
+  "Chile": {
+    "population": 18430408,
+    "hdi": 0.8550000190734863
+  },
+  "Chad": {
+    "population": 17963211,
+    "hdi": 0.3939999938011169
+  },
+  "Kingdom of the Netherlands": {
+    "population": 17749262
+  },
+  "Guatemala": {
+    "population": 17703190,
+    "hdi": 0.6269999742507935
+  },
+  "Ecuador": {
+    "population": 17289554,
+    "hdi": 0.7400000095367432
+  },
+  "Senegal": {
+    "population": 17196308,
+    "hdi": 0.5109999775886536
+  },
+  "Somalia": {
+    "population": 17066000,
+    "hdi": 0.4309999942779541
+  },
+  "Cambodia": {
+    "population": 16713015,
+    "hdi": 0.5929999947547913
+  },
+  "Zimbabwe": {
+    "population": 15121004,
+    "hdi": 0.5929999947547913
+  },
+  "Benin": {
+    "population": 13754688,
+    "hdi": 0.5450000166893005
+  },
+  "Guinea": {
+    "population": 13237832,
+    "hdi": 0.4650000035762787
+  },
+  "Rwanda": {
+    "population": 12955736,
+    "hdi": 0.5339999794960022
+  },
+  "Bolivia": {
+    "population": 12054379,
+    "hdi": 0.6919999718666077
+  },
+  "Burundi": {
+    "population": 11865821,
+    "hdi": 0.4259999990463257
+  },
+  "Tunisia": {
+    "population": 11708370,
+    "hdi": 0.7400000095367432
+  },
+  "Belgium": {
+    "population": 11584008,
+    "hdi": 0.9309999942779541
+  },
+  "South Sudan": {
+    "population": 11544905,
+    "hdi": 0.3849999904632568
+  },
+  "Haiti": {
+    "population": 11334637,
+    "hdi": 0.5350000262260437
+  },
+  "Jordan": {
+    "population": 11042719,
+    "hdi": 0.7200000286102295
+  },
+  "Cuba": {
+    "population": 11008112,
+    "hdi": 0.7639999985694885
+  },
+  "Third Hellenic Republic": {
+    "population": 10768477,
+    "hdi": 0.8880000114440918
+  },
+  "Dominican Republic": {
+    "population": 10694700,
+    "hdi": 0.7670000195503235
+  },
+  "Czech Republic": {
+    "population": 10516707,
+    "hdi": 0.8889999985694885
+  },
+  "Sweden": {
+    "population": 10481937,
+    "hdi": 0.9470000267028809
+  },
+  "Azerbaijan": {
+    "population": 10353296,
+    "hdi": 0.7559999823570251
+  },
+  "Portugal": {
+    "population": 10352042,
+    "hdi": 0.8659999966621399
+  },
+  "Third Portuguese Republic": {
+    "population": 10341330,
+    "hdi": 0.8429999947547913
+  },
+  "Hungary": {
+    "population": 9749763,
+    "hdi": 0.8460000157356262
+  },
+  "Honduras": {
+    "population": 9459440,
+    "hdi": 0.6209999918937683
+  },
+  "Belarus": {
+    "population": 9413505,
+    "hdi": 0.8080000281333923
+  },
+  "United Arab Emirates": {
+    "population": 9282410,
+    "hdi": 0.9110000133514404
+  },
+  "Congo Free State": {
+    "population": 9130000
+  },
+  "Tajikistan": {
+    "population": 9119347,
+    "hdi": 0.6850000023841858
+  },
+  "Austria": {
+    "population": 9027999,
+    "hdi": 0.9160000085830688
+  },
+  "Papua New Guinea": {
+    "population": 8935000,
+    "hdi": 0.5580000281333923
+  },
+  "Sierra Leone": {
+    "population": 8692606,
+    "hdi": 0.4769999980926514
+  },
+  "Switzerland": {
+    "population": 8636896,
+    "hdi": 0.9620000123977661
+  },
+  "Togo": {
+    "population": 8492333,
+    "hdi": 0.5149999856948853
+  },
+  "Laos": {
+    "population": 7749595,
+    "hdi": 0.6069999933242798
+  },
+  "Republic of the Rif": {
+    "population": 7500000
+  },
+  "Paraguay": {
+    "population": 7356409,
+    "hdi": 0.7279999852180481
+  },
+  "Libya": {
+    "population": 7054493,
+    "hdi": 0.7179999947547913
+  },
+  "Kyrgyzstan": {
+    "population": 7000000,
+    "hdi": 0.6919999718666077
+  },
+  "Second East Turkestan Republic": {
+    "population": 7000000
+  },
+  "Paraguayan architecture": {
+    "population": 6802000
+  },
+  "Serbia": {
+    "population": 6797105,
+    "hdi": 0.8019999861717224
+  },
+  "El Salvador": {
+    "population": 6568745,
+    "hdi": 0.675000011920929
+  },
+  "Bulgaria": {
+    "population": 6520314,
+    "hdi": 0.7960000038146973
+  },
+  "Nicaragua": {
+    "population": 6301880,
+    "hdi": 0.6669999957084656
+  },
+  "Eritrea": {
+    "population": 6209262,
+    "hdi": 0.4589999914169312
+  },
+  "State of Slovenes, Croats and Serbs": {
+    "population": 6000000
+  },
+  "Afsharid Iran": {
+    "population": 6000000
+  },
+  "Danish Realm": {
+    "population": 5958380
+  },
+  "Somaliland": {
+    "population": 5741086
+  },
+  "Singapore": {
+    "population": 5637000,
+    "hdi": 0.9390000104904175
+  },
+  "Turkmenistan": {
+    "population": 5636011,
+    "hdi": 0.7450000047683716
+  },
+  "Finland": {
+    "population": 5553000,
+    "hdi": 0.9399999976158142
+  },
+  "Republic of the Congo": {
+    "population": 5546307,
+    "hdi": 0.5709999799728394
+  },
+  "Central African Republic": {
+    "population": 5454533,
+    "hdi": 0.4040000140666962
+  },
+  "Norway": {
+    "population": 5425270,
+    "hdi": 0.9610000252723694
+  },
+  "Liberia": {
+    "population": 5358483,
+    "hdi": 0.4810000061988831
+  },
+  "Lebanon": {
+    "population": 5296814,
+    "hdi": 0.7059999704360962
+  },
+  "Costa Rica": {
+    "population": 5204411,
+    "hdi": 0.8090000152587891
+  },
+  "Kingdom of Dagbon": {
+    "population": 5197937
+  },
+  "State of Palestine": {
+    "population": 5159076,
+    "hdi": 0.7080000042915344
+  },
+  "Republic of Ireland": {
+    "population": 5123536,
+    "hdi": 0.9449999928474426
+  },
+  "Azerbaijan Democratic Republic": {
+    "population": 4617671
+  },
+  "Kuwait": {
+    "population": 4460000,
+    "hdi": 0.8410000205039978
+  },
+  "Panama": {
+    "population": 4337768,
+    "hdi": 0.8149999976158142
+  },
+  "Puntland": {
+    "population": 4334633
+  },
+  "Hirshabelle State": {
+    "population": 3771638,
+    "hdi": 0.300000011920929
+  },
+  "Ambazonia": {
+    "population": 3521900
+  },
+  "Bosnia and Herzegovina": {
+    "population": 3475000,
+    "hdi": 0.7799999713897705
+  },
+  "Uruguay": {
+    "population": 3407213,
+    "hdi": 0.8090000152587891
+  },
+  "Mongolia": {
+    "population": 3227863,
+    "hdi": 0.7369999885559082
+  },
+  "Armenia": {
+    "population": 3000756,
+    "hdi": 0.7590000033378601
+  },
+  "Lithuania": {
+    "population": 2835988,
+    "hdi": 0.875
+  },
+  "Jamaica": {
+    "population": 2818596,
+    "hdi": 0.7089999914169312
+  },
+  "Qatar": {
+    "population": 2795484,
+    "hdi": 0.8550000190734863
+  },
+  "Albania": {
+    "population": 2793592,
+    "hdi": 0.7960000038146973
+  },
+  "Overseas France": {
+    "population": 2785000
+  },
+  "Moldova": {
+    "population": 2603813,
+    "hdi": 0.7670000195503235
+  },
+  "Namibia": {
+    "population": 2550226,
+    "hdi": 0.6150000095367432
+  },
+  "The Gambia": {
+    "population": 2413403,
+    "hdi": 0.4959999918937683
+  },
+  "Botswana": {
+    "population": 2384246,
+    "hdi": 0.7300000190734863
+  },
+  "Gabon": {
+    "population": 2340613,
+    "hdi": 0.7059999704360962
+  },
+  "Galmudug": {
+    "population": 2320000
+  },
+  "South West State of Somalia": {
+    "population": 2268245,
+    "hdi": 0.2000000029802322
+  },
+  "Slovenia": {
+    "population": 2108708,
+    "hdi": 0.9179999828338623
+  },
+  "Gaza Strip": {
+    "population": 2047969
+  },
+  "Guinea-Bissau": {
+    "population": 2026778,
+    "hdi": 0.4799999892711639
+  },
+  "Autonomous Administration of North and East Syria": {
+    "population": 2000000
+  },
+  "Karakalpakstan": {
+    "population": 1948488
+  },
+  "European Collectivity of Alsace": {
+    "population": 1895811
+  },
+  "Latvia": {
+    "population": 1842226,
+    "hdi": 0.8659999966621399
+  },
+  "Tyrol": {
+    "population": 1813400
+  },
+  "Kosovo": {
+    "population": 1806279,
+    "hdi": 0.7419999837875366
+  },
+  "State of Katanga": {
+    "population": 1700000
+  },
+  "Equatorial Guinea": {
+    "population": 1679172,
+    "hdi": 0.5960000157356262
+  },
+  "Volkstaat": {
+    "population": 1500000
+  },
+  "Trinidad and Tobago": {
+    "population": 1405646,
+    "hdi": 0.8100000023841858
+  },
+  "Bunyoro": {
+    "population": 1400000
+  },
+  "Military General Governorate of Serbia": {
+    "population": 1373511
+  },
+  "Jubaland": {
+    "population": 1360633
+  },
+  "East Timor": {
+    "population": 1340513,
+    "hdi": 0.6060000061988831
+  },
+  "Estonia": {
+    "population": 1331796,
+    "hdi": 0.8899999856948853
+  },
+  "Mauritius": {
+    "population": 1265475,
+    "hdi": 0.8019999861717224
+  },
+  "Savoy": {
+    "population": 1262528
+  },
+  "Eswatini": {
+    "population": 1160164,
+    "hdi": 0.597000002861023
+  },
+  "Lokot Autonomy": {
+    "population": 1000000
+  },
+  "Djibouti": {
+    "population": 957273,
+    "hdi": 0.5239999890327454
+  },
+  "Fiji": {
+    "population": 926276,
+    "hdi": 0.7429999709129333
+  },
+  "Rwenzururu": {
+    "population": 900000
+  },
+  "Comoros": {
+    "population": 850886,
+    "hdi": 0.5540000200271606
+  },
+  "Himan and Heeb": {
+    "population": 811918
+  },
+  "Guyana": {
+    "population": 795408,
+    "hdi": 0.7139999866485596
+  },
+  "Duchy of Milan": {
+    "population": 750000
+  },
+  "Luxembourg": {
+    "population": 645397,
+    "hdi": 0.9300000071525574
+  },
+  "Suriname": {
+    "population": 632638,
+    "hdi": 0.7379999756813049
+  },
+  "Twente": {
+    "population": 626586
+  },
+  "Montenegro": {
+    "population": 620739,
+    "hdi": 0.8320000171661377
+  },
+  "Sahrawi Arab Democratic Republic": {
+    "population": 612000
+  },
+  "Duchy of Modena and Reggio": {
+    "population": 605000
+  },
+  "Maldives": {
+    "population": 579330,
+    "hdi": 0.7400000095367432
+  },
+  "Malta": {
+    "population": 519562,
+    "hdi": 0.9179999828338623
+  },
+  "Administrative-Territorial Units of the Left Bank of the Dniester": {
+    "population": 505153
+  },
+  "Duchy of Parma and Piacenza": {
+    "population": 501000
+  },
+  "Brunei": {
+    "population": 460345,
+    "hdi": 0.8379999995231628
+  },
+  "Belize": {
+    "population": 412387,
+    "hdi": 0.6830000281333923
+  },
+  "The Bahamas": {
+    "population": 400516,
+    "hdi": 0.8140000104904175
+  },
+  "Northern Cyprus": {
+    "population": 382836
+  },
+  "Iceland": {
+    "population": 376248,
+    "hdi": 0.9589999914169312
+  },
+  "Kingdom of Soissons": {
+    "population": 360000
+  },
+  "Republic of Pisa": {
+    "population": 350000
+  },
+  "Omani Empire": {
+    "population": 347400
+  },
+  "Transnistria": {
+    "population": 347251
+  },
+  "Vanuatu": {
+    "population": 307815,
+    "hdi": 0.6069999933242798
+  },
+  "Barbados": {
+    "population": 287025,
+    "hdi": 0.7900000214576721
+  },
+  "Autonomous Region of Bougainville": {
+    "population": 249358,
+    "hdi": 0.5950000286102295
+  },
+  "Abkhazia": {
+    "population": 244926
+  },
+  "Autonomous Republic of Northern Epirus": {
+    "population": 223000
+  },
+  "Mwene Mbonwean Sultanate of Ujiji": {
+    "population": 200000
+  },
+  "Saint Lucia": {
+    "population": 184961,
+    "hdi": 0.7149999737739563
+  },
+  "Tenochtitlan": {
+    "population": 140000
+  },
+  "Kiribati": {
+    "population": 121388,
+    "hdi": 0.6240000128746033
+  },
+  "Republic of Artsakh": {
+    "population": 120000
+  },
+  "Federated States of Micronesia": {
+    "population": 104468,
+    "hdi": 0.628000020980835
+  },
+  "Antigua and Barbuda": {
+    "population": 100772,
+    "hdi": 0.777999997138977
+  },
+  "Seychelles": {
+    "population": 100447,
+    "hdi": 0.7850000262260437
+  },
+  "Republic of Lucca": {
+    "population": 100000
+  },
+  "Republic of Ragusa": {
+    "population": 90000
+  },
+  "Andorra": {
+    "population": 77543,
+    "hdi": 0.8579999804496765
+  },
+  "Associated State of Antigua": {
+    "population": 70000
+  },
+  "Marshall Islands": {
+    "population": 61988,
+    "hdi": 0.6389999985694885
+  },
+  "South Ossetia": {
+    "population": 56520
+  },
+  "Republic of Siena": {
+    "population": 50000
+  },
+  "Liechtenstein": {
+    "population": 38387,
+    "hdi": 0.9350000023841858
+  },
+  "Monaco": {
+    "population": 38300
+  },
+  "San Marino": {
+    "population": 33600,
+    "hdi": 0.8529999852180481
+  },
+  "Red Republic of Caulonia": {
+    "population": 12500
+  },
+  "Tuvalu": {
+    "population": 11900,
+    "hdi": 0.640999972820282
+  },
+  "Nauru": {
+    "population": 10834
+  },
+  "Comrat Republic": {
+    "population": 10000
+  },
+  "Republic of Baja California": {
+    "population": 8000
+  },
+  "Seneca Nation of New York": {
+    "population": 8000
+  },
+  "Upper Mustang": {
+    "population": 7000
+  },
+  "Carriacou and Petite Martinique": {
+    "population": 6081
+  },
+  "Republic of Saugeais": {
+    "population": 5029
+  },
+  "Monastic community of Mount Athos": {
+    "population": 2416
+  },
+  "Mohegan Tribe": {
+    "population": 1920
+  },
+  "Republic of Noli": {
+    "population": 1500
+  }
+}

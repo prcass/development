@@ -1,0 +1,228 @@
+{
+  "summary": {
+    "totalRankings": 30,
+    "implementedRankings": 1,
+    "totalUniqueCountries": 50,
+    "createdAt": "2025-07-25T02:06:43.980Z"
+  },
+  "rankings": [
+    {
+      "id": "population",
+      "name": "Population",
+      "totalCountries": 50,
+      "url": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+    }
+  ],
+  "potentialChallenges": [
+    {
+      "id": "gdp_nominal",
+      "name": "GDP (Nominal)",
+      "description": "Total economic output in current USD",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "gdp_per_capita",
+      "name": "GDP per Capita",
+      "description": "Economic output per person",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "population",
+      "name": "Population",
+      "description": "Total population",
+      "direction": "Highest to Lowest",
+      "status": "Data Available"
+    },
+    {
+      "id": "area",
+      "name": "Total Area",
+      "description": "Total land and water area",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "population_density",
+      "name": "Population Density",
+      "description": "People per square kilometer",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "life_expectancy",
+      "name": "Life Expectancy",
+      "description": "Average life expectancy at birth",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "hdi",
+      "name": "Human Development Index",
+      "description": "Composite index of life expectancy, education, and income",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "military_expenditure",
+      "name": "Military Expenditure",
+      "description": "Annual military spending",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "military_personnel",
+      "name": "Military Personnel",
+      "description": "Active military personnel",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "co2_emissions",
+      "name": "CO2 Emissions",
+      "description": "Annual carbon dioxide emissions",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "co2_per_capita",
+      "name": "CO2 Emissions per Capita",
+      "description": "Carbon emissions per person",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "renewable_energy",
+      "name": "Renewable Energy Production",
+      "description": "Percentage of electricity from renewable sources",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "oil_production",
+      "name": "Oil Production",
+      "description": "Daily oil production",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "internet_users",
+      "name": "Internet Users",
+      "description": "Percentage of population using internet",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "mobile_subscriptions",
+      "name": "Mobile Phone Subscriptions",
+      "description": "Mobile subscriptions per 100 people",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "tourism_arrivals",
+      "name": "International Tourism Arrivals",
+      "description": "Annual international tourist arrivals",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "exports",
+      "name": "Total Exports",
+      "description": "Total value of exports",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "imports",
+      "name": "Total Imports",
+      "description": "Total value of imports",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "gold_reserves",
+      "name": "Gold Reserves",
+      "description": "National gold reserves",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "forest_area",
+      "name": "Forest Area",
+      "description": "Total forest coverage",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "nobel_laureates",
+      "name": "Nobel Prize Laureates",
+      "description": "Total Nobel Prize winners",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "olympic_medals",
+      "name": "Olympic Gold Medals",
+      "description": "Total Olympic gold medals",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "fifa_ranking",
+      "name": "FIFA World Ranking",
+      "description": "FIFA football ranking",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "corruption_perception",
+      "name": "Corruption Perceptions Index",
+      "description": "Perceived corruption (higher = less corrupt)",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "press_freedom",
+      "name": "Press Freedom Index",
+      "description": "Press freedom ranking (lower = more free)",
+      "direction": "Lowest to Highest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "happiness_index",
+      "name": "World Happiness Index",
+      "description": "National happiness score",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "education_expenditure",
+      "name": "Education Expenditure",
+      "description": "Education spending as % of GDP",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "healthcare_expenditure",
+      "name": "Healthcare Expenditure",
+      "description": "Healthcare spending per capita",
+      "direction": "Highest to Lowest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "unemployment_rate",
+      "name": "Unemployment Rate",
+      "description": "Percentage of labor force unemployed",
+      "direction": "Lowest to Highest",
+      "status": "Pending Scrape"
+    },
+    {
+      "id": "inflation_rate",
+      "name": "Inflation Rate",
+      "description": "Annual inflation rate",
+      "direction": "Lowest to Highest",
+      "status": "Pending Scrape"
+    }
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "metadata": {
+    "created": "2025-07-25T02:06:43.980Z",
+    "purpose": "Potential challenge dataset from Wikipedia rankings",
+    "totalRankings": 1,
+    "totalCountries": {},
+    "sources": [
+      {
+        "id": "population",
+        "name": "Population",
+        "url": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
+      }
+    ]
+  },
+  "rankings": {
+    "population": {
+      "id": "population",
+      "name": "Population",
+      "url": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population",
+      "description": "Total population",
+      "unit": "People",
+      "direction": "desc",
+      "countries": {
+        "India": 1417492000,
+        "China": 1408280000,
+        "United States": 340110988,
+        "Indonesia": 284438782,
+        "Pakistan": 241499431,
+        "Nigeria": 223800000,
+        "Brazil": 212583750,
+        "Bangladesh": 169828911,
+        "Russia": 146028325,
+        "Mexico": 130417144,
+        "Japan": 123360000,
+        "Philippines": 114123600,
+        "Democratic Republic of the Congo": 112832000,
+        "Ethiopia": 111652998,
+        "Egypt": 107271260,
+        "Vietnam": 101343800,
+        "Iran": 85961000,
+        "Turkey": 85664944,
+        "Germany": 83577140,
+        "France": 68649000,
+        "United Kingdom": 68265209,
+        "Tanzania": 68153004,
+        "Thailand": 65870610,
+        "South Africa": 63015904,
+        "Italy": 58918231,
+        "Kenya": 53330978,
+        "Colombia": 52695952,
+        "Sudan": 51662000,
+        "Myanmar": 51316756,
+        "South Korea": 51164582,
+        "Uganda": 49924868,
+        "Spain": 48059777,
+        "Iraq": 44414800,
+        "Algeria": 44758398,
+        "Argentina": 47327407,
+        "Poland": 37840000,
+        "Canada": 39858480,
+        "Morocco": 38081173,
+        "Saudi Arabia": 35844909,
+        "Ukraine": 36000000,
+        "Angola": 35027343,
+        "Uzbekistan": 34915100,
+        "Peru": 34234630,
+        "Malaysia": 33938221,
+        "Afghanistan": 34262840,
+        "Venezuela": 33098422,
+        "Ghana": 33475870,
+        "Yemen": 33696614,
+        "Nepal": 30327877,
+        "Mozambique": 33089461
+      },
+      "totalCountries": 50,
+      "lastUpdated": "2025-07-25T02:06:43.981Z"
+    }
+  },
+  "countries": {
+    "India": {
+      "name": "India",
+      "data": {
+        "population": 1417492000
+      }
+    },
+    "China": {
+      "name": "China",
+      "data": {
+        "population": 1408280000
+      }
+    },
+    "United States": {
+      "name": "United States",
+      "data": {
+        "population": 340110988
+      }
+    },
+    "Indonesia": {
+      "name": "Indonesia",
+      "data": {
+        "population": 284438782
+      }
+    },
+    "Pakistan": {
+      "name": "Pakistan",
+      "data": {
+        "population": 241499431
+      }
+    },
+    "Nigeria": {
+      "name": "Nigeria",
+      "data": {
+        "population": 223800000
+      }
+    },
+    "Brazil": {
+      "name": "Brazil",
+      "data": {
+        "population": 212583750
+      }
+    },
+    "Bangladesh": {
+      "name": "Bangladesh",
+      "data": {
+        "population": 169828911
+      }
+    },
+    "Russia": {
+      "name": "Russia",
+      "data": {
+        "population": 146028325
+      }
+    },
+    "Mexico": {
+      "name": "Mexico",
+      "data": {
+        "population": 130417144
+      }
+    },
+    "Japan": {
+      "name": "Japan",
+      "data": {
+        "population": 123360000
+      }
+    },
+    "Philippines": {
+      "name": "Philippines",
+      "data": {
+        "population": 114123600
+      }
+    },
+    "Democratic Republic of the Congo": {
+      "name": "Democratic Republic of the Congo",
+      "data": {
+        "population": 112832000
+      }
+    },
+    "Ethiopia": {
+      "name": "Ethiopia",
+      "data": {
+        "population": 111652998
+      }
+    },
+    "Egypt": {
+      "name": "Egypt",
+      "data": {
+        "population": 107271260
+      }
+    },
+    "Vietnam": {
+      "name": "Vietnam",
+      "data": {
+        "population": 101343800
+      }
+    },
+    "Iran": {
+      "name": "Iran",
+      "data": {
+        "population": 85961000
+      }
+    },
+    "Turkey": {
+      "name": "Turkey",
+      "data": {
+        "population": 85664944
+      }
+    },
+    "Germany": {
+      "name": "Germany",
+      "data": {
+        "population": 83577140
+      }
+    },
+    "France": {
+      "name": "France",
+      "data": {
+        "population": 68649000
+      }
+    },
+    "United Kingdom": {
+      "name": "United Kingdom",
+      "data": {
+        "population": 68265209
+      }
+    },
+    "Tanzania": {
+      "name": "Tanzania",
+      "data": {
+        "population": 68153004
+      }
+    },
+    "Thailand": {
+      "name": "Thailand",
+      "data": {
+        "population": 65870610
+      }
+    },
+    "South Africa": {
+      "name": "South Africa",
+      "data": {
+        "population": 63015904
+      }
+    },
+    "Italy": {
+      "name": "Italy",
+      "data": {
+        "population": 58918231
+      }
+    },
+    "Kenya": {
+      "name": "Kenya",
+      "data": {
+        "population": 53330978
+      }
+    },
+    "Colombia": {
+      "name": "Colombia",
+      "data": {
+        "population": 52695952
+      }
+    },
+    "Sudan": {
+      "name": "Sudan",
+      "data": {
+        "population": 51662000
+      }
+    },
+    "Myanmar": {
+      "name": "Myanmar",
+      "data": {
+        "population": 51316756
+      }
+    },
+    "South Korea": {
+      "name": "South Korea",
+      "data": {
+        "population": 51164582
+      }
+    },
+    "Uganda": {
+      "name": "Uganda",
+      "data": {
+        "population": 49924868
+      }
+    },
+    "Spain": {
+      "name": "Spain",
+      "data": {
+        "population": 48059777
+      }
+    },
+    "Iraq": {
+      "name": "Iraq",
+      "data": {
+        "population": 44414800
+      }
+    },
+    "Algeria": {
+      "name": "Algeria",
+      "data": {
+        "population": 44758398
+      }
+    },
+    "Argentina": {
+      "name": "Argentina",
+      "data": {
+        "population": 47327407
+      }
+    },
+    "Poland": {
+      "name": "Poland",
+      "data": {
+        "population": 37840000
+      }
+    },
+    "Canada": {
+      "name": "Canada",
+      "data": {
+        "population": 39858480
+      }
+    },
+    "Morocco": {
+      "name": "Morocco",
+      "data": {
+        "population": 38081173
+      }
+    },
+    "Saudi Arabia": {
+      "name": "Saudi Arabia",
+      "data": {
+        "population": 35844909
+      }
+    },
+    "Ukraine": {
+      "name": "Ukraine",
+      "data": {
+        "population": 36000000
+      }
+    },
+    "Angola": {
+      "name": "Angola",
+      "data": {
+        "population": 35027343
+      }
+    },
+    "Uzbekistan": {
+      "name": "Uzbekistan",
+      "data": {
+        "population": 34915100
+      }
+    },
+    "Peru": {
+      "name": "Peru",
+      "data": {
+        "population": 34234630
+      }
+    },
+    "Malaysia": {
+      "name": "Malaysia",
+      "data": {
+        "population": 33938221
+      }
+    },
+    "Afghanistan": {
+      "name": "Afghanistan",
+      "data": {
+        "population": 34262840
+      }
+    },
+    "Venezuela": {
+      "name": "Venezuela",
+      "data": {
+        "population": 33098422
+      }
+    },
+    "Ghana": {
+      "name": "Ghana",
+      "data": {
+        "population": 33475870
+      }
+    },
+    "Yemen": {
+      "name": "Yemen",
+      "data": {
+        "population": 33696614
+      }
+    },
+    "Nepal": {
+      "name": "Nepal",
+      "data": {
+        "population": 30327877
+      }
+    },
+    "Mozambique": {
+      "name": "Mozambique",
+      "data": {
+        "population": 33089461
+      }
+    }
+  }
+}
