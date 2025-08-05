@@ -131,12 +131,15 @@ development.git                               outrank.git → GitHub Pages
   - `summarize_changes.js` - Concise change summaries
 
 ## Version History
+- **2025-07-28 v5.4** `outrank-v5.4`: Major Performance Release - 97% faster load time, GPU animations, memory leak fixes
+- **2025-07-28 v5.3** `outrank-v5.3`: Exciting reveal animations, master dataset fixes, mobile optimizations
+- **2025-07-26**: Master dataset created with 200 countries and 146 challenges
 - **2025-07-20 v2.2** `outrank-v2.2`: Major dataset expansion - 40 countries, 32 comprehensive challenges with Crime Index, Pollution Index, Airports, Unemployment Rate, and complete World Bank indicators
 - **2025-07-14 v2.1** `outrank-v2.1`: All UI issues fixed, responsive design, leaderboard working
 - **2025-07-12 v2.0**: State management migration completed, Fast Automated Test functional  
 - **2025-07-06 v1.9**: Code quality improvements, security enhancements
 
-## Current State (July 2025 - Last Updated: July 17)
+## Current State (July 2025 - Last Updated: July 28)
 - ✅ Fully functional with all mechanics implemented
 - ✅ Movie category added with 47 comprehensive entries
 - ✅ End-game token scoring (1 point per remaining token)
@@ -144,6 +147,18 @@ development.git                               outrank.git → GitHub Pages
 - ✅ Player statistics tracking (cards used, owned, left in play)
 - ✅ Automated testing system with detailed reporting
 - ✅ Local deployment working (Python/Node servers)
+- ✅ **MAJOR PERFORMANCE RELEASE v5.4:**
+  - 97% faster initial load (464KB → 15KB)
+  - Lazy loading system for on-demand data
+  - GPU-accelerated 60fps animations
+  - Mobile optimized with instant touch response
+  - Memory leak prevention with cleanup routines
+- ✅ **Live Validation Feature:**
+  - Real-time ranking validation for board game play
+  - Dataset selection (Production 40 vs Master 200 countries)
+  - Exciting reveal animations (countdown, flips, fireworks)
+  - Green highlighting for countries with data
+  - Alphabetically sorted dropdowns
 - ✅ **Code quality improvements completed:**
   - Memory leak prevention (timeout/event listener tracking)
   - XSS vulnerability mitigation (sanitization utilities)
@@ -178,6 +193,15 @@ development.git                               outrank.git → GitHub Pages
 - **Browser compatibility** - Chrome/Firefox minimum
 - **No external APIs** - Self-contained game data
 - **Security** - No eval(), proper input sanitization
+
+## Performance Optimizations (v5.4)
+- **Lazy Loading**: Data loads on-demand by category (15KB initial vs 464KB)
+- **DOM Caching**: All getElementById calls use DOMCache system
+- **GPU Acceleration**: All animations use transform3d and will-change
+- **Mobile Touch**: touch-action CSS and proper event handling (no 300ms delay)
+- **Memory Management**: Bounded arrays, event cleanup, periodic GC
+- **Animation System**: requestAnimationFrame-based 60fps rendering
+- **Offline Support**: Service worker caches data after first load
 
 ## Development Patterns
 - **State updates** → Always through centralized functions
